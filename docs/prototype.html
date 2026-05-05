@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImagineArt Audio Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --px: clamp(40px, 8vw, 120px);
+      --font: 'Google Sans Flex', 'Google Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Background layers */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg img.base {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-bg img.overlay {
+      position: absolute;
+      width: 123.21%;
+      height: 136.08%;
+      left: -11.61%;
+      top: -18.04%;
+      object-fit: cover;
+    }
+
+    .hero-bg .dim {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 15, 15, 0.5);
+    }
+
+    .hero-bg .purple-sweep {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: screen;
+      background: linear-gradient(243.27deg, rgba(0,0,0,0) 5.78%, rgba(160,0,223,0.15) 79.39%);
+    }
+
+    /* Content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+      padding: 120px var(--px) 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Announcement chip */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 4px 4px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.04);
+      box-shadow: inset 0 4px 14px rgba(255,255,255,0.25);
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .chip-label { line-height: 20px; }
+
+    .chip-cta {
+      background: #fff;
+      color: #7678ed;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 4px 7px;
+      border-radius: 10px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    /* Headline */
+    .headline-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .headline-row {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+    }
+
+    .headline {
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .headline-boxed {
+      border: 1px solid rgba(237,237,237,0.9);
+      border-radius: 16px;
+      padding: 4px 16px;
+    }
+
+    .headline-muted {
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Decorative blobs */
+    .blob-red {
+      position: absolute;
+      width: 732px;
+      height: 66px;
+      border-radius: 270px;
+      background: rgba(51,4,19,0.77);
+      filter: blur(40px);
+      transform: rotate(2.45deg);
+      top: calc(50% + 80px);
+      left: 50%;
+      translate: -50% 0;
+      pointer-events: none;
+    }
+
+    .blob-blue {
+      position: absolute;
+      width: 732px;
+      height: 66px;
+      border-radius: 270px;
+      background: rgba(0,54,189,0.77);
+      filter: blur(40px);
+      transform: rotate(-5.12deg);
+      top: calc(50% + 20px);
+      left: 50%;
+      translate: -50% 0;
+      pointer-events: none;
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Prompt box */
+    .prompt-box {
+      width: min(746px, 100%);
+      background: rgba(247,247,247,0.8);
+      border: 1px solid #ededed;
+      border-radius: 24px;
+      box-shadow: 0 0 12px rgba(176,175,175,0.2);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .prompt-input-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-right: 16px;
+      position: relative;
+    }
+
+    .prompt-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(15,15,15,0.5);
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+
+    .dragger {
+      width: 12px;
+      height: 12px;
+      opacity: 0.3;
+      flex-shrink: 0;
+      cursor: se-resize;
+    }
+
+    .dragger svg { display: block; }
+
+    .prompt-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .prompt-left {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: none;
+      cursor: pointer;
+      color: #0f0f0f;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 28px;
+      padding: 0 8px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: none;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      color: #0f0f0f;
+      letter-spacing: 0.03em;
+      font-family: var(--font);
+    }
+
+    .pill-btn svg { flex-shrink: 0; }
+
+    .send-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 1000px;
+      background: #8a3ffc;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+
+    .send-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(138,63,252,0.4);
+    }
+
+    /* ── LOGO TICKER ── */
+    .ticker-wrap {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 48px 0 80px;
+      overflow: hidden;
+    }
+
+    .ticker-label {
+      text-align: center;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 28px;
+    }
+
+    .ticker-track-outer {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 56px;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .ticker-track:hover { animation-play-state: paused; }
+
+    .ticker-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+      opacity: 0.45;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.3px;
+      transition: opacity 0.2s;
+    }
+
+    .ticker-logo:hover { opacity: 0.75; }
+
+    .ticker-logo svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ── VIDEO CARDS ── */
+    .hero-cards {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .vid-card {
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      width: 235px;
+      height: 294px;
+      border-radius: 16px;
+      overflow: hidden;
+      opacity: 0.8;
+      filter: blur(2.5px);
+    }
+
+    .vid-card.left  { left: clamp(-80px, -3vw, -20px); transform: rotate(-15deg); }
+    .vid-card.right { right: clamp(-80px, -3vw, -20px); transform: rotate(15deg); }
+
+    .vid-card img.thumb {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Dark drop shadow behind each card */
+    .vid-card::before {
+      content: '';
+      position: absolute;
+      inset: 10px 7px auto 7px;
+      height: 276px;
+      border-radius: 270px;
+      background: rgba(0,0,0,0.8);
+      filter: blur(40px);
+      z-index: -1;
+    }
+
+    .vid-card-info {
+      position: absolute;
+      bottom: 16px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .vid-card-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.03em;
+      line-height: 16px;
+    }
+
+    .vid-card-author {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .vid-card-author img {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .vid-card-author span {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.02em;
+      line-height: 16px;
+      white-space: nowrap;
+    }
+
+    .vid-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 32px;
+      height: 32px;
+      border-radius: 1000px;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vid-play img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      :root { --px: 20px; }
+
+      .headline { font-size: clamp(36px, 10vw, 52px); white-space: normal; }
+      .headline-row { flex-wrap: wrap; justify-content: center; gap: 12px; }
+      .blob-red, .blob-blue { width: 90vw; }
+      .prompt-box { width: 100%; }
+      .vid-card { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+
+  <!-- Background -->
+  <div class="hero-bg">
+    <img class="base" src="https://www.figma.com/api/mcp/asset/0575d69b-25a4-48c7-b804-f242a0b0ecc5" alt="" />
+    <div style="position:absolute;inset:0;overflow:hidden;">
+      <img class="overlay" src="https://www.figma.com/api/mcp/asset/8fab5cd4-d665-4315-8b68-e2f0e419feaa" alt="" />
+    </div>
+    <div class="dim"></div>
+    <div class="purple-sweep"></div>
+  </div>
+
+  <!-- Video thumbnail cards -->
+  <div class="hero-cards" aria-hidden="true">
+
+    <!-- Left card (rotate -15deg) -->
+    <div class="vid-card left">
+      <img class="thumb" src="https://www.figma.com/api/mcp/asset/1c9b4be8-12fc-4ee6-988a-20909303b29d" alt="" />
+      <div class="vid-play">
+        <img src="https://www.figma.com/api/mcp/asset/d37c7822-a8bd-4ae0-aa99-07211132e58d" alt="" />
+      </div>
+      <div class="vid-card-info">
+        <span class="vid-card-title">Liquid Gold</span>
+        <div class="vid-card-author">
+          <img src="https://www.figma.com/api/mcp/asset/0a3b4194-f3a3-4fd1-a5ae-e2b6350152d1" alt="" />
+          <span>by Tayyab Abbas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right card (rotate +15deg) -->
+    <div class="vid-card right">
+      <img class="thumb" src="https://www.figma.com/api/mcp/asset/499c5e36-4a2c-48cc-95c4-7a0de2981e57" alt="" />
+      <div class="vid-play">
+        <img src="https://www.figma.com/api/mcp/asset/c91801aa-17cf-4189-95b5-27ac7a0bbec5" alt="" />
+      </div>
+      <div class="vid-card-info">
+        <span class="vid-card-title">Liquid Gold</span>
+        <div class="vid-card-author">
+          <img src="https://www.figma.com/api/mcp/asset/9adf0e3a-b841-411e-9824-360adcc8ceb6" alt="" />
+          <span>by Tayyab Abbas</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+
+    <!-- Announcement chip -->
+    <a href="#" class="chip">
+      <span class="chip-label">Muze4.5 is out now on ImagineArt!</span>
+      <span class="chip-cta">Try now →</span>
+    </a>
+
+    <!-- Headline block -->
+    <div style="position:relative;">
+      <div class="blob-blue"></div>
+      <div class="blob-red"></div>
+      <div class="headline-wrap">
+        <div class="headline-row">
+          <span class="headline headline-boxed">Voice</span>
+          <span class="headline">that feels</span>
+        </div>
+        <span class="headline headline-muted">— authentic</span>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="subtitle">Kick off with a natural voice prompt or explore our advanced singing and music tools—your next hit is just a sound away.</p>
+
+    <!-- Prompt box -->
+    <div class="prompt-box">
+      <div class="prompt-input-row">
+        <span class="prompt-placeholder">Chat to generate voice overs</span>
+        <div class="dragger">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 1L1 11M11 6L6 11" stroke="#0f0f0f" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="prompt-actions">
+        <div class="prompt-left">
+          <button class="icon-btn" aria-label="Add">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="pill-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 4h10M4 7h6M5.5 10h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Advanced
+          </button>
+          <button class="pill-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 2l1.2 2.6L11 5.3l-2 1.9.5 2.8L7 8.7l-2.5 1.3.5-2.8-2-1.9 2.8-.7L7 2z" fill="currentColor"/>
+            </svg>
+            Random
+          </button>
+        </div>
+        <button class="send-btn" aria-label="Send">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 15V5M5 10l5-5 5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Logo ticker -->
+  <div class="ticker-wrap">
+    <p class="ticker-label">Trusted by creators on</p>
+    <div class="ticker-track-outer">
+      <div class="ticker-track">
+        <!-- set 1 -->
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><path d="M11 2a9 9 0 100 18A9 9 0 0011 2zm0 2a7 7 0 110 14A7 7 0 0111 4zm-1 3v4l3 2-1 1.5-3.5-2.2V7H10z"/></svg>
+          Spotify
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><rect x="3" y="3" width="16" height="16" rx="5"/><path d="M8 11h6M8 8h6M8 14h4" stroke="#0b0b0b" stroke-width="1.4" stroke-linecap="round"/></svg>
+          SoundCloud
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><circle cx="11" cy="11" r="9"/><path d="M8 7l7 4-7 4V7z" fill="#0b0b0b"/></svg>
+          YouTube Music
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><path d="M4 4h14v14H4z" rx="3"/><path d="M8 9h6M8 13h4" stroke="#0b0b0b" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Apple Music
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-5" stroke="#0b0b0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Tidal
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><rect x="3" y="3" width="16" height="16" rx="4"/><path d="M7 11l4-4 4 4M11 7v8" stroke="#0b0b0b" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Deezer
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><circle cx="11" cy="11" r="9"/><circle cx="11" cy="11" r="3"/></svg>
+          Amazon Music
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><path d="M3 6h16M3 11h16M3 16h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Audiomack
+        </span>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><path d="M11 2a9 9 0 100 18A9 9 0 0011 2zm0 2a7 7 0 110 14A7 7 0 0111 4zm-1 3v4l3 2-1 1.5-3.5-2.2V7H10z"/></svg>
+          Spotify
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><rect x="3" y="3" width="16" height="16" rx="5"/><path d="M8 11h6M8 8h6M8 14h4" stroke="#0b0b0b" stroke-width="1.4" stroke-linecap="round"/></svg>
+          SoundCloud
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><circle cx="11" cy="11" r="9"/><path d="M8 7l7 4-7 4V7z" fill="#0b0b0b"/></svg>
+          YouTube Music
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><path d="M4 4h14v14H4z" rx="3"/><path d="M8 9h6M8 13h4" stroke="#0b0b0b" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Apple Music
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-5" stroke="#0b0b0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Tidal
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><rect x="3" y="3" width="16" height="16" rx="4"/><path d="M7 11l4-4 4 4M11 7v8" stroke="#0b0b0b" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Deezer
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><circle cx="11" cy="11" r="9"/><circle cx="11" cy="11" r="3"/></svg>
+          Amazon Music
+        </span>
+        <span class="ticker-logo">
+          <svg viewBox="0 0 22 22" fill="currentColor"><path d="M3 6h16M3 11h16M3 16h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Audiomack
+        </span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

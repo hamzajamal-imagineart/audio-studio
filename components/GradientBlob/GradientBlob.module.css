@@ -1,0 +1,48 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* The wrap IS the blob shape — no background, transparent corners */
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blobMorph var(--blob-dur, 9s) ease-in-out infinite;
+  will-change: border-radius;
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--blob-a) 0%,
+    var(--blob-b) 52%,
+    var(--blob-c, var(--blob-b)) 100%
+  );
+  background-size: 250% 250%;
+  animation: gradientDrift calc(var(--blob-dur, 9s) * 1.6) ease-in-out infinite;
+  will-change: background-position;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+@keyframes blobMorph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  20%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  40%       { border-radius: 50% 40% 60% 30% / 30% 60% 40% 70%; }
+  60%       { border-radius: 40% 70% 30% 60% / 50% 30% 70% 40%; }
+  80%       { border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%; }
+}
+
+@keyframes gradientDrift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}

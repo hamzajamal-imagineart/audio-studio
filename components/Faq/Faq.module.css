@@ -1,0 +1,128 @@
+.section {
+  background: var(--surface-white);
+  padding: 100px var(--px) 120px;
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+}
+
+/* ── Left column ── */
+.left {
+  flex-shrink: 0;
+  max-width: 380px;
+}
+
+.heading {
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: var(--text-primary);
+}
+
+.sub {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 280px;
+}
+
+/* ── Right column (accordion) ── */
+.list {
+  flex: 1;
+  min-width: 0;
+}
+
+.item {
+  border-top: 1px solid var(--border-light);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 28px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  transition: color 0.25s var(--ease-ui);
+}
+
+.trigger[aria-expanded="true"] {
+  color: #7b2ff2;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-primary);
+  transition: transform 0.3s var(--ease-ui);
+}
+
+.trigger[aria-expanded="true"] .icon {
+  color: #7b2ff2;
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-entrance);
+}
+
+.answer[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  overflow: hidden;
+}
+
+.answerText {
+  padding: 0 0 28px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+
+  .sub {
+    max-width: 100%;
+  }
+}
