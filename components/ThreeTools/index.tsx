@@ -53,24 +53,26 @@ function MusicIcon() {
   return (
     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="80" height="80" rx="16" fill="#f7f7f7" />
-      {/* Staff lines */}
-      <line x1="12" y1="28" x2="68" y2="28" stroke="#7c3aed" strokeWidth="1.2" opacity="0.25" />
-      <line x1="12" y1="34" x2="68" y2="34" stroke="#7c3aed" strokeWidth="1.2" opacity="0.25" />
-      <line x1="12" y1="40" x2="68" y2="40" stroke="#7c3aed" strokeWidth="1.2" opacity="0.25" />
-      <line x1="12" y1="46" x2="68" y2="46" stroke="#7c3aed" strokeWidth="1.2" opacity="0.25" />
-      <line x1="12" y1="52" x2="68" y2="52" stroke="#7c3aed" strokeWidth="1.2" opacity="0.25" />
-      {/* Wave flowing through staff */}
-      <path
-        d="M12 40 C18 40 20 28 26 28 C32 28 34 52 40 52 C46 52 48 30 54 30 C60 30 62 46 68 40"
-        stroke="#7c3aed"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
+      {/* Abstract Music Circle */}
+      <circle cx="40" cy="40" r="22" stroke="#7c3aed" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.2" />
+      <circle cx="40" cy="40" r="18" stroke="#7c3aed" strokeWidth="2" opacity="0.4" />
+      
+      {/* Central stylized note/waveform */}
+      <path 
+        d="M34 52V28L52 34V58" 
+        stroke="#7c3aed" 
+        strokeWidth="3" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
         opacity="0.9"
       />
-      {/* Note head */}
-      <ellipse cx="40" cy="52" rx="4" ry="3" fill="#7c3aed" opacity="0.7" />
-      <line x1="44" y1="52" x2="44" y2="34" stroke="#7c3aed" strokeWidth="1.8" opacity="0.7" />
+      <circle cx="30" cy="52" r="5" fill="#7c3aed" opacity="0.9" />
+      <circle cx="48" cy="58" r="5" fill="#7c3aed" opacity="0.9" />
+      
+      {/* Dynamic sparks/particles */}
+      <circle cx="56" cy="30" r="2" fill="#7c3aed" opacity="0.5" />
+      <circle cx="24" cy="34" r="1.5" fill="#7c3aed" opacity="0.3" />
+      <circle cx="40" cy="22" r="1.5" fill="#7c3aed" opacity="0.4" />
     </svg>
   );
 }
