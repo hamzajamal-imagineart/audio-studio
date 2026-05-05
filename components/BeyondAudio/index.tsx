@@ -1,4 +1,3 @@
-import GradientBlob from "@/components/GradientBlob";
 import styles from "./BeyondAudio.module.css";
 
 type BeyondCard = {
@@ -6,10 +5,7 @@ type BeyondCard = {
   title: string;
   body: string;
   href: string;
-  blobA: string;
-  blobB: string;
-  blobC: string;
-  offset: number;
+  image: string;
   highlight?: boolean;
 };
 
@@ -19,30 +15,21 @@ const cards: BeyondCard[] = [
     title: "AI Image Generator",
     body: "Create stunning visuals from text prompts. Pair with your voiceovers for complete content.",
     href: "/ai-image-generator",
-    blobA: "#fda4af",
-    blobB: "#fdba74",
-    blobC: "#fecdd3",
-    offset: -1,
+    image: "/assets/Rectangle 499866.jpg",
   },
   {
     tag: "Video",
     title: "AI Video Generator",
     body: "Turn text or images into video clips ready for social, ads, or storytelling.",
     href: "/ai-video-generator",
-    blobA: "#c4b5fd",
-    blobB: "#93c5fd",
-    blobC: "#e9d5ff",
-    offset: -4,
+    image: "/assets/Rectangle 499867.jpg",
   },
   {
     tag: "You are here",
     title: "AI Audio Studio",
     body: "Voice, cloning, music. The complete audio platform.",
     href: "/audio",
-    blobA: "#2dd4bf",
-    blobB: "#818cf8",
-    blobC: "#5eead4",
-    offset: -7,
+    image: "/assets/Rectangle 499868.jpg",
     highlight: true,
   },
 ];
@@ -66,13 +53,8 @@ export default function BeyondAudio() {
               className={`${styles.card} ${card.highlight ? styles.cardHighlight : ""}`}
             >
               <div className={styles.cardImgWrap}>
-                <GradientBlob
-                  colorA={card.blobA}
-                  colorB={card.blobB}
-                  colorC={card.blobC}
-                  duration={11}
-                  offset={card.offset}
-                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={card.image} alt="" className={styles.cardImg} />
               </div>
               <div className={styles.cardContent}>
                 <p className={`${styles.tag} ${card.highlight ? styles.tagHighlight : ""}`}>

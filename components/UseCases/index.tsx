@@ -1,14 +1,10 @@
-import GradientBlob from "@/components/GradientBlob";
 import styles from "./UseCases.module.css";
 
 type UseCase = {
   tag: string;
   title: string;
   body: string;
-  blobA: string;
-  blobB: string;
-  blobC: string;
-  offset: number;
+  image: string;
 };
 
 const useCases: UseCase[] = [
@@ -16,37 +12,25 @@ const useCases: UseCase[] = [
     tag: "For YouTubers",
     title: "Ship videos faster. Sound like a pro.",
     body: "No more re-recording takes. Generate voiceovers in your own voice or any voice, in any language. Drop in custom background music, copyright-free and ready for monetization.",
-    blobA: "#93c5fd",
-    blobB: "#67e8f9",
-    blobC: "#bae6fd",
-    offset: 0,
+    image: "/assets/Rectangle 499862.jpg",
   },
   {
     tag: "For Podcasters",
     title: "From script to studio sound, instantly.",
     body: "Whether correcting a mispronounced name or producing a full episode, generate broadcast-quality narration without re-recording. Clone your voice once, use it forever.",
-    blobA: "#fcd34d",
-    blobB: "#fb923c",
-    blobC: "#fde68a",
-    offset: -3,
+    image: "/assets/Rectangle 499863.jpg",
   },
   {
     tag: "For Marketers",
     title: "Scale audio content without scaling headcount.",
     body: "Generate voiceovers, ads, training videos, and explainers in 70+ languages at a fraction of the cost of traditional voice actors.",
-    blobA: "#86efac",
-    blobB: "#5eead4",
-    blobC: "#bbf7d0",
-    offset: -6,
+    image: "/assets/Rectangle 499864.jpg",
   },
   {
     tag: "For Developers",
     title: "Production-grade audio. Drop-in API.",
     body: "Power conversational AI, NPC dialogue, audiobooks, and interactive experiences. Sub-second latency. SDKs available.",
-    blobA: "#c4b5fd",
-    blobB: "#93c5fd",
-    blobC: "#ddd6fe",
-    offset: -2,
+    image: "/assets/Rectangle 499865.jpg",
   },
 ];
 
@@ -65,14 +49,9 @@ export default function UseCases() {
         <div className={styles.list}>
           {useCases.map((uc, i) => (
             <div key={uc.tag} className={`${styles.item} ${i % 2 === 1 ? styles.reverse : ''}`}>
-              <div className={styles.blobWrap}>
-                <GradientBlob
-                  colorA={uc.blobA}
-                  colorB={uc.blobB}
-                  colorC={uc.blobC}
-                  duration={10}
-                  offset={uc.offset}
-                />
+              <div className={styles.imageWrap}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={uc.image} alt="" className={styles.image} />
               </div>
               <div className={styles.textCol}>
                 <p className={styles.tag}>{uc.tag}</p>

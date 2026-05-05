@@ -200,19 +200,6 @@
 }
 
 
-.blobRed {
-  position: absolute;
-  width: 732px;
-  height: 66px;
-  border-radius: 270px;
-  background: rgba(51, 4, 19, 0.77);
-  filter: blur(40px);
-  transform: rotate(2.45deg);
-  top: calc(50% + 80px);
-  left: 50%;
-  translate: -50% 0;
-  pointer-events: none;
-}
 
 .headlineWrap {
   display: flex;
@@ -231,7 +218,7 @@
   font-size: clamp(42px, 5vw, 64px);
   font-weight: 600;
   line-height: 1.06;
-  letter-spacing: -3px;
+  letter-spacing: -1.5px;
   color: #fff;
   white-space: nowrap;
 }
@@ -424,7 +411,6 @@
 @media (max-width: 768px) {
   .headline { font-size: clamp(36px, 10vw, 52px); white-space: normal; }
   .headlineRow { flex-wrap: wrap; justify-content: center; gap: 12px; }
-  .blobRed { width: 90vw; }
   .promptBox { width: 100%; }
   .vidCard { display: none; }
 }

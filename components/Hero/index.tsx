@@ -1,4 +1,3 @@
-import GradientBlob from '@/components/GradientBlob'
 import RotatingText from './RotatingText'
 import styles from './Hero.module.css'
 
@@ -7,20 +6,11 @@ const ASSETS = {
   bgOverlay: 'https://www.figma.com/api/mcp/asset/8fab5cd4-d665-4315-8b68-e2f0e419feaa',
 }
 
-function HeroCard({ side, colorA, colorB, colorC, offset }: {
-  side: 'left' | 'right'
-  colorA: string; colorB: string; colorC: string; offset: number
-}) {
+function HeroCard({ side, image }: { side: 'left' | 'right', image: string }) {
   return (
     <div className={`${styles.vidCard} ${styles[side]}`}>
-      <GradientBlob
-        colorA={colorA}
-        colorB={colorB}
-        colorC={colorC}
-        duration={12}
-        offset={offset}
-        className={styles.vidThumb}
-      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={image} alt="" className={styles.vidThumb} />
     </div>
   )
 }
@@ -43,8 +33,8 @@ export default function Hero() {
 
       {/* Hero cards */}
       <div className={styles.heroCards} aria-hidden="true">
-        <HeroCard side="left"  colorA="#a78bfa" colorB="#60a5fa" colorC="#7c3aed" offset={0}  />
-        <HeroCard side="right" colorA="#2dd4bf" colorB="#34d399" colorC="#0891b2" offset={-5} />
+        <HeroCard side="left" image="/assets/Rectangle 49986.jpg" />
+        <HeroCard side="right" image="/assets/Rectangle 499861.jpg" />
       </div>
 
       {/* Content */}
@@ -58,8 +48,6 @@ export default function Hero() {
 
         {/* Headline */}
         <div className={styles.headlineBlock}>
-          <div className={styles.blobBlue} />
-          <div className={styles.blobRed} />
           <div className={styles.headlineWrap}>
             <span className={`${styles.headline} ${styles.headlineMuted}`}>All in One Studio</span>
             <div className={styles.headlineRow}>

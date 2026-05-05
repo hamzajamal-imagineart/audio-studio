@@ -27,7 +27,7 @@ Large display text. Used in page heroes and dark full-bleed sections.
 font-size: clamp(42px, 5vw, 64px);
 font-weight: 600;
 line-height: 1.06;
-letter-spacing: -3px;
+letter-spacing: -1.5px;
 ```
 
 ---
@@ -39,7 +39,7 @@ Primary section titles. Used to open content blocks.
 font-size: clamp(28px, 3.2vw, 40px);
 font-weight: 600;
 line-height: 1.05;
-letter-spacing: -2px;
+letter-spacing: -0.5px;
 ```
 
 ---
@@ -51,7 +51,7 @@ Large editorial callouts. Used in statement blocks and testimonials.
 font-size: clamp(32px, 4vw, 56px);
 font-weight: 600;
 line-height: 1.2;
-letter-spacing: -1.5px;
+letter-spacing: -0.2px;
 ```
 
 ---
@@ -115,7 +115,7 @@ line-height: 1.6;
 
 ## Rules
 
-1. **Negative tracking on large type** – apply `-2px` to `-3px` letter-spacing on anything above 28px. Makes display type feel controlled, not bloated.
+1. **Negative tracking on large type** – apply `-0.5px` to `-1.5px` letter-spacing on anything above 28px. Makes display type feel controlled, not bloated.
 
 2. **Muted secondary text** – never use full `#000` or `#fff` for supporting copy. Use opacity variants:
    - Light bg: `rgba(0,0,0,0.42)` muted · `rgba(0,0,0,0.22)` disabled

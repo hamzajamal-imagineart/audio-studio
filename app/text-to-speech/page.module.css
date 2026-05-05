@@ -17,7 +17,7 @@
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600;
   line-height: 1.05;
-  letter-spacing: -2px;
+  letter-spacing: -0.5px;
   color: #0f0f0f;
   margin-bottom: 16px;
 }
@@ -47,8 +47,8 @@
   font-size: clamp(42px, 5vw, 64px);
   font-weight: 600;
   line-height: 1.06;
-  letter-spacing: -3px;
-  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: -1.5px;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -222,7 +222,7 @@
 .stepNum {
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 600;
-  letter-spacing: -2px;
+  letter-spacing: -0.5px;
   color: rgba(0, 0, 0, 0.08);
   line-height: 1;
 }
