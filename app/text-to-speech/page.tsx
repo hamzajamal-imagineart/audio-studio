@@ -35,14 +35,14 @@ const QUALITY = [
 ]
 
 const USECASES = [
-  { title: 'YouTube & Short-Form Video', body: 'Generate AI voiceovers for YouTube videos, Reels, TikToks, and YouTube Shorts. No mic, no recording setup: type your script and export.' },
-  { title: 'Podcasts & Audio Content', body: 'Read text aloud for podcast intros, sponsor segments, summaries, or full AI-voiced podcast episodes using multiple voice personas.' },
-  { title: 'E-Learning & Training', body: 'Turn course scripts and training materials into natural AI narration. Consistent voice quality across every lesson with no reshoots.' },
-  { title: 'Audiobooks & Long-Form', body: 'Convert written content into audio format for distribution on Spotify, Audible, or your own platform using consistent, natural AI voices.' },
-  { title: 'Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties. AI read-aloud makes your platform more inclusive.' },
-  { title: 'Presentations & Demos', body: 'Add professional narration to slide decks, product demos, and sales materials. Faster than recording, more consistent than human narration.' },
-  { title: 'Games & Interactive Media', body: 'Prototype game dialogue, character voices, and interactive story narration without hiring a voice actor for every draft.' },
-  { title: 'Multilingual Content', body: 'Localize your content into 20+ languages instantly. Generate the same script in English, Spanish, French, and Arabic with one tool.' },
+  { title: 'YouTube & Short-Form Video', body: 'Generate AI voiceovers for YouTube videos, Reels, TikToks, and Shorts. No mic, no setup.', image: '/assets/usecase-youtubers.jpg' },
+  { title: 'Podcasts & Audio Content', body: 'Produce broadcast-quality narration for podcast intros, sponsor reads, or full AI-voiced episodes.', image: '/assets/usecase-podcasters.jpg' },
+  { title: 'E-Learning & Training', body: 'Turn course scripts into consistent AI narration. No reshoots, no re-recording.', image: '/assets/Rectangle 499866.jpg' },
+  { title: 'Audiobooks & Long-Form', body: 'Convert written content into audio ready for Spotify, Audible, or your own platform.', image: '/assets/Rectangle 499863.jpg' },
+  { title: 'Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/Rectangle 499867.jpg' },
+  { title: 'Presentations & Demos', body: 'Add professional narration to slide decks and product demos. Faster and more consistent than recording.', image: '/assets/usecase-marketers.jpg' },
+  { title: 'Games & Interactive Media', body: 'Prototype NPC dialogue and interactive story narration without hiring a voice actor for every draft.', image: '/assets/usecase-developers.jpg' },
+  { title: 'Multilingual Content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/Rectangle 499864.jpg' },
 ]
 
 const STEPS = [
@@ -106,18 +106,23 @@ export default function TextToSpeechPage() {
       </section>
 
       {/* Use cases */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <section className={`${styles.section} ${styles.sectionDark}`}>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.heading}>Built for Creators, Teams, and Everyday Use</h2>
-            <p className={styles.sub}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
+            <h2 className={styles.headingLight}>Built for Creators, Teams, and Everyday Use</h2>
+            <p className={styles.subLight}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
           </div>
           <div className={styles.grid}>
             {USECASES.map((u, i) => (
-              <div key={i} className={styles.card} data-animate data-d={String((i % 3) + 1)}>
-                <span className={styles.cardIndex}>{String(i + 1).padStart(2, '0')}</span>
-                <h3 className={styles.cardTitle}>{u.title}</h3>
-                <p className={styles.cardBody}>{u.body}</p>
+              <div key={i} className={styles.card} data-animate data-d={String((i % 4) + 1)}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={u.image} alt="" className={styles.cardImg} />
+                <div className={styles.cardOverlay} />
+                <div className={styles.cardContent}>
+                  <span className={styles.cardIndex}>{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className={styles.cardTitle}>{u.title}</h3>
+                  <p className={styles.cardBody}>{u.body}</p>
+                </div>
               </div>
             ))}
           </div>
