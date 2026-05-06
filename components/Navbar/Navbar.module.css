@@ -144,9 +144,9 @@
 
 .megaMenu {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 2px);
   left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  transform: translateX(-50%) translateY(-4px);
   width: calc(100vw - 80px);
   max-width: 1240px;
   background: rgba(255, 255, 255, 0.92);
@@ -160,9 +160,19 @@
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   padding: 40px;
   z-index: 150;
+}
+
+/* Hover bridge to prevent closing when moving mouse from navbar to menu */
+.megaMenu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
 .navDropdownFull:hover .megaMenu {
