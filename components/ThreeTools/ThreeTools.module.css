@@ -12,6 +12,33 @@
   margin: 0 auto;
 }
 
+.cardIcon {
+  width: 64px;
+  height: 64px;
+  background: #000;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+  margin-bottom: 0;
+}
+
+.cardIcon svg {
+  width: 44px;
+  height: 44px;
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .header {
   margin-bottom: 64px;
 }
@@ -44,47 +71,89 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: flex;
+  gap: 16px;
   align-items: stretch;
+  height: 500px;
 }
 
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 16px;
-  background: #fff;
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  flex: 1;
+  min-width: 0;
+  border-radius: 24px;
+  background: #111;
+  overflow: hidden;
+  position: relative;
+  transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  flex: 2;
 }
 
-.cardIcon {
-  margin-bottom: 20px;
-  line-height: 0;
+.cardBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.6s ease;
+  filter: brightness(0.8);
+}
+
+.card:hover .cardBg {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+}
+
+.cardContent {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cardTitle {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.3px;
-  color: #0f0f0f;
-  margin: 0 0 8px;
+  letter-spacing: -1.2px;
+  color: #fff;
+  margin: 0;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.revealContent {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease, margin-top 0.6s ease;
+}
+
+.card:hover .revealContent {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 20px;
 }
 
 .cardOneLiner {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.42);
-  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 24px;
 }
 
 .bulletList {
@@ -97,11 +166,11 @@
 }
 
 .bulletItem {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.5);
-  padding-left: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  padding-left: 20px;
   position: relative;
 }
 
@@ -109,33 +178,33 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 7px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.25);
+  top: 9px;
+  width: 4px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .ctaButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
-  height: 44px;
-  padding: 0 20px;
-  border-radius: 10px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
-  background: #0f0f0f;
-  color: #fff;
+  background: #fff;
+  color: #0f0f0f;
   text-decoration: none;
-  transition: opacity 0.18s ease;
+  transition: all 0.2s ease;
   border: none;
   cursor: pointer;
+  width: fit-content;
 }
 
 .ctaButton:hover {
-  opacity: 0.82;
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {
