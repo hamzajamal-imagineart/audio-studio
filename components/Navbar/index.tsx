@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -123,7 +124,7 @@ export default function Navbar() {
                 </svg>
               </button>
               <div className={styles.navDropdownMenu}>
-                <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>Text to Speech</a>
+                <Link href="/text-to-speech" className={styles.navDropdownItem}>Text to Speech</Link>
                 <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>Voice Cloning</a>
                 <a href="https://www.imagine.art/ai-audio-studio/ai-music-generator" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>Music</a>
               </div>
@@ -179,7 +180,7 @@ export default function Navbar() {
             </div>
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Features</a>
             <div className={styles.navMobileSub}>
-              <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Text to Speech</a>
+              <Link href="/text-to-speech" className={styles.navMobileSubLink} onClick={closeMobile}>Text to Speech</Link>
               <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Voice Cloning</a>
               <a href="https://www.imagine.art/ai-audio-studio/ai-music-generator" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Music</a>
             </div>
