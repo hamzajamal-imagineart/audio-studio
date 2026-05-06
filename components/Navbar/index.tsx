@@ -32,7 +32,19 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className={styles.navLinks}>
-            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Tools</a>
+            <div className={styles.navDropdown}>
+              <button className={`${styles.navLink} ${styles.navDropdownTrigger}`}>
+                Tools
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className={styles.navDropdownMenu}>
+                <a href="https://www.imagine.art/ai-image-generator" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Image Generator</a>
+                <a href="https://www.imagine.art/ai-video-generator" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Video Generator</a>
+                <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Audio Studio</a>
+              </div>
+            </div>
             <div className={styles.navDropdown}>
               <button className={`${styles.navLink} ${styles.navDropdownTrigger}`}>
                 Features
@@ -90,6 +102,11 @@ export default function Navbar() {
         <div className={styles.navMobileBody}>
           <div className={styles.navMobileInner}>
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Tools</a>
+            <div className={styles.navMobileSub}>
+              <a href="https://www.imagine.art/ai-image-generator" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>AI Image Generator</a>
+              <a href="https://www.imagine.art/ai-video-generator" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>AI Video Generator</a>
+              <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>AI Audio Studio</a>
+            </div>
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Features</a>
             <div className={styles.navMobileSub}>
               <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Text to Speech</a>
