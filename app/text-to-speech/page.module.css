@@ -58,7 +58,11 @@
   padding: 160px var(--px) 120px;
   text-align: center;
   background: #0b0b0b;
-  background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(110, 40, 220, 0.22) 0%, transparent 70%);
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 100%),
+    url('/assets/tts-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
