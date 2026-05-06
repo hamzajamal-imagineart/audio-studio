@@ -16,12 +16,12 @@ const FEATURES = [
 ]
 
 const QUALITY_GRADIENTS = [
-  'linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #f39c12 100%)',
-  'linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)',
-  'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
-  'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
-  'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-  'linear-gradient(135deg, #141e30 0%, #243b55 100%)',
+  'linear-gradient(145deg, #100d20 0%, #1e1442 100%)',
+  'linear-gradient(145deg, #0c1520 0%, #0f2235 100%)',
+  'linear-gradient(145deg, #190d28 0%, #2c1850 100%)',
+  'linear-gradient(145deg, #0d1a16 0%, #0f2a22 100%)',
+  'linear-gradient(145deg, #1c0e18 0%, #2c1428 100%)',
+  'linear-gradient(145deg, #0f0f18 0%, #181828 100%)',
 ]
 
 const QUALITY = [
