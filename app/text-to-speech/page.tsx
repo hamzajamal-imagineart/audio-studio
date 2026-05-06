@@ -31,7 +31,7 @@ const USECASES = [
   { title: 'Podcasts & Audio Content', body: 'Produce broadcast-quality narration for podcast intros, sponsor reads, or full AI-voiced episodes.', image: '/assets/usecase-podcasters.jpg' },
   { title: 'E-Learning & Training', body: 'Turn course scripts into consistent AI narration. No reshoots, no re-recording.', image: '/assets/Rectangle 499866.jpg' },
   { title: 'Audiobooks & Long-Form', body: 'Convert written content into audio ready for Spotify, Audible, or your own platform.', image: '/assets/Rectangle 499863.jpg' },
-  { title: 'Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/Rectangle 499867.jpg' },
+  { title: 'Screen Reader & Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/Rectangle 499867.jpg' },
   { title: 'Presentations & Demos', body: 'Add professional narration to slide decks and product demos. Faster and more consistent than recording.', image: '/assets/usecase-marketers.jpg' },
   { title: 'Games & Interactive Media', body: 'Prototype NPC dialogue and interactive story narration without hiring a voice actor for every draft.', image: '/assets/usecase-developers.jpg' },
   { title: 'Multilingual Content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/Rectangle 499864.jpg' },
@@ -106,16 +106,20 @@ export default function TextToSpeechPage() {
             <h2 className={styles.headingLight}>Built for Creators, Teams, and Everyday Use</h2>
             <p className={styles.subLight}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
           </div>
-          <div className={styles.grid}>
+          <div className={styles.stack}>
             {USECASES.map((u, i) => (
-              <div key={i} className={styles.card} data-animate data-d={String((i % 4) + 1)}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={u.image} alt="" className={styles.cardImg} />
-                <div className={styles.cardOverlay} />
-                <div className={styles.cardContent}>
-                  <span className={styles.cardIndex}>{String(i + 1).padStart(2, '0')}</span>
-                  <h3 className={styles.cardTitle}>{u.title}</h3>
-                  <p className={styles.cardBody}>{u.body}</p>
+              <div
+                key={i}
+                className={styles.stackCard}
+                style={{ top: `calc(80px + ${i * 14}px)`, zIndex: i + 1 }}
+              >
+                <div className={styles.stackLeft}>
+                  <h3 className={styles.stackTitle}>{u.title}</h3>
+                  <p className={styles.stackBody}>{u.body}</p>
+                </div>
+                <div className={styles.stackRight}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={u.image} alt="" className={styles.stackImg} />
                 </div>
               </div>
             ))}
