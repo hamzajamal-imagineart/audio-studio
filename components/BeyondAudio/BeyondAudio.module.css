@@ -61,6 +61,9 @@
   overflow: hidden;
   aspect-ratio: 4 / 3;
   position: relative;
+  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
 }
 
 .youAreHere {

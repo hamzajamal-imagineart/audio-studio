@@ -62,6 +62,9 @@
   justify-content: flex-end;
   transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
+  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
 }
 
 .card:hover {

@@ -376,6 +376,9 @@
 .stackRight {
   position: relative;
   overflow: hidden;
+  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
 }
 
 .stackImg {
@@ -408,7 +411,9 @@
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
-  background: #1a1a1a;
+  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
   margin-bottom: 24px;
   aspect-ratio: 4/3;
 }
@@ -471,7 +476,9 @@
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: border-color 0.2s;
-  background: #111;
+  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
 }
 
 .bentoImg {
