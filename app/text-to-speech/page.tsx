@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Faq from '@/components/Faq'
+import PromptBox from '@/components/Hero/PromptBox'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -69,10 +70,7 @@ export default function TextToSpeechPage() {
       <section className={styles.hero}>
         <h1 className={styles.heroHeading}>Turn Text into Natural<br />AI Speech</h1>
         <p className={styles.heroSub}>Paste your text, choose a voice, preview the audio, and create realistic voice output. No complex setup, no software to download.</p>
-        <div className={styles.heroCtas}>
-          <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
-          <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
-        </div>
+        <PromptBox />
         <p className={styles.heroMeta}>Free to start · No signup needed · 20+ languages · Download MP3</p>
       </section>
 
