@@ -3,7 +3,9 @@
 import { useState } from 'react'
 import styles from './Faq.module.css'
 
-const FAQS = [
+type FaqItem = { q: string; a: string }
+
+const DEFAULT_FAQS: FaqItem[] = [
   {
     q: 'What is AI Audio Studio?',
     a: 'AI Audio Studio is ImagineArt\'s all-in-one audio platform. It combines AI text-to-speech, voice cloning, and music generation in a single workspace. Whether you\'re creating YouTube videos, podcasts, ads, or audiobooks, you can generate every audio element in one place.',
@@ -38,8 +40,8 @@ const FAQS = [
   },
 ]
 
-function FaqItem({ faq, isOpen, onToggle }: {
-  faq: typeof FAQS[number]
+function FaqRow({ faq, isOpen, onToggle }: {
+  faq: FaqItem
   isOpen: boolean
   onToggle: () => void
 }) {
@@ -62,37 +64,41 @@ function FaqItem({ faq, isOpen, onToggle }: {
   )
 }
 
-const FAQ_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: FAQS.map(f => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
+type FaqProps = {
+  faqs?: FaqItem[]
+  heading?: string
+  sub?: string
 }
 
-export default function Faq() {
+export default function Faq({ faqs = DEFAULT_FAQS, heading = 'Frequently asked questions', sub = 'Everything you need to know about AI Audio Studio' }: FaqProps) {
   const [openIndex, setOpenIndex] = useState(0)
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
 
   return (
     <section className={styles.section} id="faq">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div className={styles.inner}>
 
-        {/* Left column */}
-        <div className={styles.left}>
-          <h2 className={styles.heading}>Frequently asked questions</h2>
-          <p className={styles.sub}>Everything you need to know about AI Audio Studio</p>
+        <div className={styles.left} data-animate>
+          <h2 className={styles.heading}>{heading}</h2>
+          <p className={styles.sub}>{sub}</p>
         </div>
 
-        {/* Right column */}
-        <div className={styles.list}>
-          {FAQS.map((faq, i) => (
-            <FaqItem
+        <div className={styles.list} data-animate data-d="1">
+          {faqs.map((faq, i) => (
+            <FaqRow
               key={i}
               faq={faq}
               isOpen={openIndex === i}

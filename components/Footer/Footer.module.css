@@ -91,6 +91,13 @@
 }
 .col ul li a:hover { color: rgba(255, 255, 255, 0.9); }
 
+.currentPage {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1.4;
+  cursor: default;
+}
+
 /* ── Trust block ─────────────────────────────────────── */
 .trust { display: flex; flex-direction: column; gap: 16px; }
 

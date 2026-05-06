@@ -115,7 +115,6 @@ export default function Tools() {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <p className={styles.eyebrow}>More Tools</p>
         <h2 className={styles.heading}>More audio tools at your fingertips</h2>
         <p className={styles.sub}>
           Beyond voice and music, polish your audio with our complete toolkit.

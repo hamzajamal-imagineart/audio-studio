@@ -1,4 +1,5 @@
 import RotatingText from './RotatingText'
+import PromptBox from './PromptBox'
 import styles from './Hero.module.css'
 
 const ASSETS = {
@@ -41,7 +42,7 @@ export default function Hero() {
       <div className={styles.heroContent}>
 
         {/* Announcement chip */}
-        <a href="#" className={styles.chip}>
+        <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.chip}>
           <span>Muze4.5 is out now on ImagineArt!</span>
           <span className={styles.chipCta}>Try now →</span>
         </a>
@@ -49,7 +50,7 @@ export default function Hero() {
         {/* Headline */}
         <div className={styles.headlineBlock}>
           <div className={styles.headlineWrap}>
-            <span className={`${styles.headline} ${styles.headlineMuted}`}>All in One Studio</span>
+            <span className={`${styles.headline} ${styles.headlineMuted}`}>All in One Audio Studio</span>
             <div className={styles.headlineRow}>
               <span className={styles.headline}>AI</span>
               <RotatingText />
@@ -62,17 +63,14 @@ export default function Hero() {
           Generate lifelike voiceovers, clone any voice from a 10-second sample, and compose original music — all from one studio.
         </p>
 
-        {/* Primary CTA + trust */}
-        <div className={styles.heroCtas}>
-          <a href="/audio-studio" className={styles.heroCta}>Try Free AI Voice Generator</a>
-          <p className={styles.heroTrust}>Free 10,000 characters/month · No credit card</p>
-        </div>
+        {/* Prompt box */}
+        <PromptBox />
 
         {/* Product chips */}
         <div className={styles.productChips}>
-          <a href="#text-to-speech" className={styles.productChip}>Text to Speech</a>
-          <a href="#voice-cloning" className={styles.productChip}>Voice Cloning</a>
-          <a href="#ai-music" className={styles.productChip}>AI Music</a>
+          <a href="/text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.productChip}>Text to Speech</a>
+          <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.productChip}>Voice Cloning</a>
+          <a href="https://www.imagine.art/ai-audio-studio/ai-music-generator" target="_blank" rel="noopener noreferrer" className={styles.productChip}>AI Music</a>
         </div>
 
       </div>

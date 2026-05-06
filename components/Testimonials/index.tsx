@@ -36,7 +36,6 @@ export default function Testimonials() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Testimonials</p>
           <h2 className={styles.h2}>Trusted by creators worldwide.</h2>
         </div>
 

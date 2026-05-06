@@ -81,7 +81,7 @@ type Card = {
   bullets: string[];
   ctaText: string;
   ctaHref: string;
-  image: string;
+  video: string;
 };
 
 const cards: Card[] = [
@@ -89,7 +89,7 @@ const cards: Card[] = [
     icon: <TtsIcon />,
     title: "AI Text to Speech",
     oneLiner: "Turn any text into lifelike voiceovers in 70+ languages.",
-    image: "/assets/Rectangle 499862.jpg",
+    video: "/assets/tts-tool.mp4",
     bullets: [
       "10,000+ ultra-realistic AI voices",
       "Adjust tone, pace, emotion",
@@ -97,13 +97,13 @@ const cards: Card[] = [
       "Free to start",
     ],
     ctaText: "Try Text to Speech",
-    ctaHref: "/text-to-speech",
+    ctaHref: "https://www.imagine.art/ai-audio-studio/ai-text-to-speech",
   },
   {
     icon: <CloneIcon />,
     title: "AI Voice Cloning",
     oneLiner: "Clone any voice from just 10 seconds of audio.",
-    image: "/assets/Rectangle 499863.jpg",
+    video: "/assets/voice-cloning-tool.mp4",
     bullets: [
       "99% similarity to source voice",
       "Cross-language cloning",
@@ -111,13 +111,13 @@ const cards: Card[] = [
       "No studio needed",
     ],
     ctaText: "Try Voice Cloning",
-    ctaHref: "/ai-voice-cloning",
+    ctaHref: "https://www.imagine.art/audio",
   },
   {
     icon: <MusicIcon />,
     title: "AI Music Generator",
     oneLiner: "Compose original songs and instrumentals from a text prompt.",
-    image: "/assets/Rectangle 499868.jpg",
+    video: "/assets/music-generator-tool.mp4",
     bullets: [
       "Any genre, any mood",
       "Up to 4-minute tracks",
@@ -125,7 +125,7 @@ const cards: Card[] = [
       "Export MP3",
     ],
     ctaText: "Try AI Music",
-    ctaHref: "/ai-music-generator",
+    ctaHref: "https://www.imagine.art/ai-audio-studio/ai-music-generator",
   },
 ];
 
@@ -133,39 +133,33 @@ export default function ThreeTools() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>Three Tools</p>
-          <h2 className={styles.h2}>Three powerful audio tools. One unified studio.</h2>
+        <div className={styles.header} data-animate>
+<h2 className={styles.h2}>Three powerful audio tools. One unified studio.</h2>
           <p className={styles.sub}>
             From podcast narration to voice cloning to custom soundtracks, AI Audio Studio provides
             everything you need to sound professional.
           </p>
         </div>
         <div className={styles.grid}>
-          {cards.map((card) => (
-            <div key={card.title} className={styles.card}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={card.image} alt="" className={styles.cardBg} />
+          {cards.map((card, i) => (
+            <div key={card.title} className={styles.card} data-animate data-d={String(i + 1)}>
+              <video src={card.video} autoPlay loop muted playsInline className={styles.cardBg} />
               <div className={styles.overlay} />
-              
-              <div className={styles.cardContent}>
-                <div className={styles.cardTop}>
-                  <div className={styles.cardIcon}>{card.icon}</div>
-                </div>
 
+              <div className={styles.cardIcon}>{card.icon}</div>
+
+              <div className={styles.cardContent}>
                 <div className={styles.cardBottom}>
                   <h3 className={styles.cardTitle}>{card.title}</h3>
-                  
+
                   <div className={styles.revealContent}>
                     <p className={styles.cardOneLiner}>{card.oneLiner}</p>
                     <ul className={styles.bulletList}>
                       {card.bullets.map((b) => (
-                        <li key={b} className={styles.bulletItem}>
-                          {b}
-                        </li>
+                        <li key={b} className={styles.bulletItem}>{b}</li>
                       ))}
                     </ul>
-                    <a href={card.ctaHref} className={styles.ctaButton}>
+                    <a href={card.ctaHref} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
                       {card.ctaText}
                     </a>
                   </div>

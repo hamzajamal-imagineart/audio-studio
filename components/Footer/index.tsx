@@ -30,34 +30,44 @@ export default function Footer() {
           <div className={styles.cols}>
 
             <div className={styles.col}>
-              <span className={styles.colH}>Explore</span>
+              <span className={styles.colH}>ImagineArt AI Studios</span>
               <ul>
-                <li><a href={`${BASE}/ai-image-generator`}>Image</a></li>
-                <li><a href={`${BASE}/ai-video-generator`}>Video</a></li>
-                <li><a href={`${BASE}/music-studio`}>Music</a></li>
-                <li><a href={`${BASE}/voice-studio`}>Voice</a></li>
-                <li><a href={`${BASE}/teams-plan`}>Teams</a></li>
+                <li><a href={`${BASE}/image`} target="_blank" rel="noopener noreferrer">Image Studio</a></li>
+                <li><a href={`${BASE}/video`} target="_blank" rel="noopener noreferrer">Video Studio</a></li>
+                <li><a href={`${BASE}/audio`} target="_blank" rel="noopener noreferrer">Audio Studio</a></li>
+                <li><a href={`${BASE}/film-studio`} target="_blank" rel="noopener noreferrer">Film Studio</a></li>
+                <li><a href={`${BASE}/flow`} target="_blank" rel="noopener noreferrer">Workflow</a></li>
+                <li><a href={`${BASE}/business/enterprise`} target="_blank" rel="noopener noreferrer">Enterprise</a></li>
+                <li><a href={`${BASE}/teams-plan`} target="_blank" rel="noopener noreferrer">Teams</a></li>
               </ul>
             </div>
 
             <div className={styles.col}>
               <span className={styles.colH}>Tools</span>
               <ul>
-                <li><a href={`${BASE}/ai-image-generator`}>AI Image Generator</a></li>
-                <li><a href={`${BASE}/ai-art-generator`}>AI Art Generator</a></li>
-                <li><a href={`${BASE}/ai-video-generator`}>AI Video Generator</a></li>
-                <li><a href={`${BASE}/music-studio`}>AI Music Generator</a></li>
-                <li><a href={`${BASE}/avatars`}>AI Avatar Generator</a></li>
-                <li><a href={`${BASE}/shorts`}>AI Shorts Generator</a></li>
-                <li><a href={`${BASE}/voice-studio`}>AI Voice Generator</a></li>
+                <li><a href={`${BASE}/ai-image-generator`} target="_blank" rel="noopener noreferrer">AI Image Generator</a></li>
+                <li><a href={`${BASE}/ai-video-generator`} target="_blank" rel="noopener noreferrer">AI Video Generator</a></li>
+                <li><span className={styles.currentPage}>AI Audio Generator</span></li>
+                <li><a href={`${BASE}/ai-audio-studio/ai-text-to-speech`} target="_blank" rel="noopener noreferrer">AI Text-to-Speech</a></li>
+                <li><a href={`${BASE}/ai-audio-studio/ai-music-generator`} target="_blank" rel="noopener noreferrer">AI Music Generator</a></li>
+                <li><a href={`${BASE}/ai-film-studio`} target="_blank" rel="noopener noreferrer">AI Film Studio</a></li>
+                <li><a href={`${BASE}/workflow`} target="_blank" rel="noopener noreferrer">AI Workflows</a></li>
+              </ul>
+            </div>
+
+            <div className={styles.col}>
+              <span className={styles.colH}>Apps</span>
+              <ul>
+                <li><a href={`${BASE}/apps/video-translate`} target="_blank" rel="noopener noreferrer">Video Translate</a></li>
+                <li><a href={`${BASE}/apps/heygen-avatar`} target="_blank" rel="noopener noreferrer">HeyGen Avatar</a></li>
               </ul>
             </div>
 
             <div className={styles.col}>
               <span className={styles.colH}>Contact Us</span>
               <ul>
-                <li><a href={`${BASE}/teams-plan/contact-us`}>Contact Sales</a></li>
-                <li><a href="https://calendly.com/d/cr9s-6pt-mr3/one-on-one-demo-with-an-imagineart-expert" target="_blank" rel="noopener noreferrer">Book a demo</a></li>
+                <li><a href={`${BASE}/teams-plan/contact-us`} target="_blank" rel="noopener noreferrer">Contact Sales</a></li>
+                <li><a href="https://calendly.com/d/cr9s-6pt-mr3/one-on-one-demo-with-an-imagineart-expert" target="_blank" rel="noopener noreferrer">Book a Demo</a></li>
               </ul>
             </div>
 
@@ -65,32 +75,16 @@ export default function Footer() {
               <span className={styles.colH}>Community</span>
               <ul>
                 <li><a href="https://discord.com/invite/z7kjUyvAbv" target="_blank" rel="noopener noreferrer">Discord</a></li>
-                <li><a href="https://x.com/ImagineArt_X" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                <li><a href="https://x.com/ImagineArt_X" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
                 <li><a href="https://www.instagram.com/imagineartofficial" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               </ul>
             </div>
 
             <div className={styles.col}>
-              <span className={styles.colH}>Trust and Reviews</span>
-              <div className={styles.trust}>
-                <a href="https://trust.imagine.art" target="_blank" rel="noopener noreferrer" className={styles.soc2}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L4 6v5c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V6z"/></svg>
-                  SOC 2 Compliant
-                </a>
-                <a href="https://www.trustpilot.com/review/www.imagine.art" target="_blank" rel="noopener noreferrer" className={styles.tp}>
-                  <span className={styles.tpName}>
-                    <svg viewBox="0 0 24 24" fill="#219653" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-                    Trustpilot
-                  </span>
-                  <span className={styles.tpStars}>
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className={styles.tpStar}>
-                        <svg viewBox="0 0 12 12"><path d="M6 1l1.2 3.6H11L8.1 6.9l1.1 3.6L6 8.4l-3.2 2.1 1.1-3.6L1 4.6h3.8z" fill="white"/></svg>
-                      </span>
-                    ))}
-                  </span>
-                </a>
-              </div>
+              <span className={styles.colH}>Pricing Plans</span>
+              <ul>
+                <li><a href={`${BASE}/subscription`} target="_blank" rel="noopener noreferrer">See Plans</a></li>
+              </ul>
             </div>
 
           </div>

@@ -32,7 +32,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className={styles.navLinks}>
-            <a href="#" className={styles.navLink}>Tools</a>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Tools</a>
             <div className={styles.navDropdown}>
               <button className={`${styles.navLink} ${styles.navDropdownTrigger}`}>
                 Features
@@ -42,21 +42,21 @@ export default function Navbar() {
               </button>
               <div className={styles.navDropdownMenu}>
                 <a href="/text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>Text to Speech</a>
-                <a href="#" className={styles.navDropdownItem}>Voice Isolator</a>
-                <a href="#" className={styles.navDropdownItem}>Voice Cloning</a>
-                <a href="#" className={styles.navDropdownItem}>AI Podcast Generator</a>
-                <a href="#" className={styles.navDropdownItem}>AI Sound Effects</a>
+                <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>Voice Isolator</a>
+                <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>Voice Cloning</a>
+                <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Podcast Generator</a>
+                <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Sound Effects</a>
               </div>
             </div>
-            <a href="#" className={styles.navLink}>Pricing</a>
+            <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Pricing</a>
           </nav>
 
           {/* Desktop CTA buttons */}
           <div className={styles.navActions}>
-            <a href="https://www.imagine.art/voice-studio/contact" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnGhost}`}>
+            <a href="https://www.imagine.art/teams-plan/contact-us" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnGhost}`}>
               Contact Sales
             </a>
-            <a href="https://www.imagine.art/voice-studio" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnDark}`}>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnDark}`}>
               Get Started for free
             </a>
           </div>
@@ -91,23 +91,23 @@ export default function Navbar() {
         </div>
         <div className={styles.navMobileBody}>
           <div className={styles.navMobileInner}>
-            <a href="#" className={styles.navMobileLink} onClick={closeMobile}>Tools</a>
-            <a href="#" className={styles.navMobileLink} onClick={closeMobile}>Features</a>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Tools</a>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Features</a>
             <div className={styles.navMobileSub}>
               <a href="/text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Text to Speech</a>
-              <a href="#" className={styles.navMobileSubLink} onClick={closeMobile}>Voice Isolator</a>
-              <a href="#" className={styles.navMobileSubLink} onClick={closeMobile}>Voice Cloning</a>
-              <a href="#" className={styles.navMobileSubLink} onClick={closeMobile}>AI Podcast Generator</a>
-              <a href="#" className={styles.navMobileSubLink} onClick={closeMobile}>AI Sound Effects</a>
+              <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Voice Isolator</a>
+              <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>Voice Cloning</a>
+              <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>AI Podcast Generator</a>
+              <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileSubLink} onClick={closeMobile}>AI Sound Effects</a>
             </div>
-            <a href="#" className={styles.navMobileLink} onClick={closeMobile}>Pricing</a>
+            <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Pricing</a>
           </div>
           <div className={styles.navMobileDivider} />
           <div className={styles.navMobileActions}>
-            <a href="https://www.imagine.art/voice-studio/contact" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnAlt}`} onClick={closeMobile}>
+            <a href="https://www.imagine.art/teams-plan/contact-us" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnAlt}`} onClick={closeMobile}>
               Contact Sales
             </a>
-            <a href="https://www.imagine.art/voice-studio" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnDark}`} onClick={closeMobile}>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={`${styles.navbarBtn} ${styles.navbarBtnDark}`} onClick={closeMobile}>
               Get Started for free
             </a>
           </div>

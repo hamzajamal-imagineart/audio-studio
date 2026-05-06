@@ -3,40 +3,13 @@
 }
 
 .section {
-  background: #ffffff;
+  background: #f5f5f7;
   padding: 120px var(--px) 100px;
 }
 
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.cardIcon {
-  width: 64px;
-  height: 64px;
-  background: #000;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.4s ease;
-  margin-bottom: 0;
-}
-
-.cardIcon svg {
-  width: 44px;
-  height: 44px;
-}
-
-.card:hover .cardIcon {
-  transform: scale(1.1) rotate(-3deg);
-}
-
-.cardBottom {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .header {
@@ -72,18 +45,21 @@
 
 .grid {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: stretch;
-  height: 500px;
 }
 
+/* Card */
 .card {
   flex: 1;
   min-width: 0;
   border-radius: 24px;
-  background: #111;
   overflow: hidden;
   position: relative;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
 }
@@ -92,47 +68,81 @@
   flex: 2;
 }
 
+/* Image */
 .cardBg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
   transition: transform 0.6s ease;
-  filter: brightness(0.8);
 }
 
 .card:hover .cardBg {
   transform: scale(1.05);
-  filter: brightness(0.6);
 }
 
+/* Gradient overlay */
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
-  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.55) 55%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
 }
 
+/* Content area */
 .cardContent {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  padding: 40px 32px;
+  position: relative;
+  z-index: 1;
+  padding: 28px 28px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+.cardIcon {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+.cardIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .cardTitle {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -1.2px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
   color: #fff;
   margin: 0;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .revealContent {
@@ -145,15 +155,15 @@
 .card:hover .revealContent {
   max-height: 400px;
   opacity: 1;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .cardOneLiner {
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 24px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 20px;
 }
 
 .bulletList {
@@ -188,27 +198,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 0 24px;
-  border-radius: 12px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: 600;
   background: #fff;
   color: #0f0f0f;
   text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
+  transition: opacity 0.18s, transform 0.18s;
   width: fit-content;
 }
 
 .ctaButton:hover {
-  transform: scale(1.02);
-  background: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .card {
+    height: 340px;
   }
 }

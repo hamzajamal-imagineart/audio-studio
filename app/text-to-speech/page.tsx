@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Faq from '@/components/Faq'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -12,6 +13,15 @@ const FEATURES = [
   { label: 'Emotion Controls', sub: '9 voice styles' },
   { label: 'Online & Instant', sub: 'No software download' },
   { label: 'All-in-One Studio', sub: 'Image · Video · Audio' },
+]
+
+const QUALITY_GRADIENTS = [
+  'linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #f39c12 100%)',
+  'linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)',
+  'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
+  'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+  'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+  'linear-gradient(135deg, #141e30 0%, #243b55 100%)',
 ]
 
 const QUALITY = [
@@ -35,9 +45,9 @@ const USECASES = [
 ]
 
 const STEPS = [
-  { n: '1', title: 'Paste Your Text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.' },
-  { n: '2', title: 'Choose Voice, Language & Emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.' },
-  { n: '3', title: 'Generate, Preview & Download', body: 'Click Generate. Your AI voice is ready in seconds. Preview it directly in the browser, then download as MP3 or WAV to use in your video, podcast, or project.' },
+  { n: '1', title: 'Paste Your Text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.', video: '/assets/tts-step-1.webm' },
+  { n: '2', title: 'Choose Voice, Language & Emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.', video: '/assets/tts-step-2.webm' },
+  { n: '3', title: 'Generate, Preview & Download', body: 'Click Generate. Your AI voice is ready in seconds. Preview it directly in the browser, then download as MP3 or WAV to use in your video, podcast, or project.', video: '/assets/tts-step-3.webm' },
 ]
 
 const FAQS = [
@@ -79,64 +89,68 @@ export default function TextToSpeechPage() {
 
       {/* Voice quality */}
       <section className={styles.section}>
-        <p className={styles.eyebrow}>Voice Quality</p>
-        <h2 className={styles.heading}>Realistic Text to Speech with Natural AI Voices</h2>
-        <p className={styles.sub}>ImagineArt uses MiniMax Speech 2.8 HD, one of the highest-ranked models on independent TTS benchmarks, to produce natural, expressive voice output that sounds human.</p>
-        <div className={styles.grid}>
-          {QUALITY.map((q, i) => (
-            <div key={i} className={styles.card}>
-              <span className={styles.cardTag}>{q.tag}</span>
-              <h3 className={styles.cardTitle}>{q.title}</h3>
-              <p className={styles.cardBody}>{q.body}</p>
-            </div>
-          ))}
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>Voice Quality</p>
+          <h2 className={styles.heading}>Realistic Text to Speech with Natural AI Voices</h2>
+          <p className={styles.sub}>ImagineArt uses MiniMax Speech 2.8 HD, one of the highest-ranked models on independent TTS benchmarks, to produce natural, expressive voice output that sounds human.</p>
+          <div className={styles.bentoGrid}>
+            {QUALITY.map((q, i) => (
+              <div key={i} className={styles.bentoCard} style={{ background: QUALITY_GRADIENTS[i] } as React.CSSProperties}>
+                <div className={styles.bentoOverlay} />
+                <div className={styles.bentoContent}>
+                  <span className={styles.bentoTag}>{q.tag}</span>
+                  <h3 className={styles.bentoTitle}>{q.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Use cases */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <p className={styles.eyebrow}>AI Voice Generator</p>
-        <h2 className={styles.heading}>Built for Creators, Teams, and Everyday Use</h2>
-        <p className={styles.sub}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
-        <div className={styles.grid}>
-          {USECASES.map((u, i) => (
-            <div key={i} className={styles.card}>
-              <h3 className={styles.cardTitle}>{u.title}</h3>
-              <p className={styles.cardBody}>{u.body}</p>
-            </div>
-          ))}
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>AI Voice Generator</p>
+          <h2 className={styles.heading}>Built for Creators, Teams, and Everyday Use</h2>
+          <p className={styles.sub}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
+          <div className={styles.grid}>
+            {USECASES.map((u, i) => (
+              <div key={i} className={styles.card}>
+                <h3 className={styles.cardTitle}>{u.title}</h3>
+                <p className={styles.cardBody}>{u.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* How it works */}
       <section className={styles.section}>
-        <p className={styles.eyebrow}>How It Works</p>
-        <h2 className={styles.heading}>Convert Text to Speech in 3 Simple Steps</h2>
-        <p className={styles.sub}>No technical setup. No software. Turn written text into audio online in under a minute.</p>
-        <div className={styles.steps}>
-          {STEPS.map((s, i) => (
-            <div key={i} className={styles.step}>
-              <span className={styles.stepNum}>{s.n}</span>
-              <h3 className={styles.cardTitle}>{s.title}</h3>
-              <p className={styles.cardBody}>{s.body}</p>
-            </div>
-          ))}
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>How It Works</p>
+          <h2 className={styles.heading}>Convert Text to Speech in 3 Simple Steps</h2>
+          <p className={styles.sub}>No technical setup. No software. Turn written text into audio online in under a minute.</p>
+          <div className={styles.steps}>
+            {STEPS.map((s, i) => (
+              <div key={i} className={styles.step}>
+                <div className={styles.stepVideo}>
+                  <video src={s.video} autoPlay loop muted playsInline />
+                </div>
+                <span className={styles.stepNum}>{s.n}</span>
+                <h3 className={styles.cardTitle}>{s.title}</h3>
+                <p className={styles.cardBody}>{s.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <p className={styles.eyebrow}>FAQ</p>
-        <h2 className={styles.heading}>Text to Speech FAQs</h2>
-        <div className={styles.faqs}>
-          {FAQS.map((f, i) => (
-            <div key={i} className={styles.faq}>
-              <h3 className={styles.faqQ}>{f.q}</h3>
-              <p className={styles.faqA}>{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Faq
+        faqs={FAQS}
+        heading="Text to Speech FAQs"
+        sub="Common questions about ImagineArt AI text to speech"
+      />
 
       {/* CTA */}
       <section className={`${styles.section} ${styles.ctaSection}`}>
