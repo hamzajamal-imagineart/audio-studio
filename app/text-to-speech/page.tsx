@@ -16,22 +16,14 @@ const FEATURES = [
   { label: 'All-in-One Studio', sub: 'Image · Video · Audio' },
 ]
 
-const QUALITY_GRADIENTS = [
-  'linear-gradient(145deg, #100d20 0%, #1e1442 100%)',
-  'linear-gradient(145deg, #0c1520 0%, #0f2235 100%)',
-  'linear-gradient(145deg, #190d28 0%, #2c1850 100%)',
-  'linear-gradient(145deg, #0d1a16 0%, #0f2a22 100%)',
-  'linear-gradient(145deg, #1c0e18 0%, #2c1428 100%)',
-  'linear-gradient(145deg, #0f0f18 0%, #181828 100%)',
-]
 
 const QUALITY = [
-  { title: 'Text to Speech with Emotion', body: 'Choose from 9 emotional styles: natural, expressive, friendly, professional, calm, energetic, sad, angry, or whisper. The AI adjusts pitch, pace, and tone to match.', tag: '9 emotion styles' },
-  { title: 'Natural Text to Speech Pacing', body: "MiniMax Speech delivers human-like rhythm and cadence. Sentences breathe naturally. Pauses land where they should. The output doesn't sound mechanical or rushed.", tag: 'MiniMax Speech 2.8 HD' },
-  { title: 'Clear Pronunciation Across Accents', body: 'Whether you\'re generating English text to speech in US, UK, Australian or Irish accents, or working in Spanish, French, or Arabic, pronunciation is accurate and clean.', tag: '20+ language variants' },
-  { title: 'Speed and Pitch Control', body: 'Adjust playback speed from 0.5× to 2.0× without distorting voice quality. Useful for e-learning content, fast-paced social video, or slow, deliberate narration.', tag: '0.5× to 2.0× speed' },
-  { title: '50+ Distinct AI Voices', body: 'Male, female, and gender-neutral AI voices across age ranges and regional styles. Each voice is trained individually, not just pitch-shifted variants of the same model.', tag: '50+ voices' },
-  { title: 'Benchmark-Leading TTS Model', body: 'MiniMax Speech 2.8 HD ranks at the top of independent TTS quality evaluations. You\'re not using a legacy voice engine; this is the same generation of AI voice technology used by production audio teams.', tag: 'Top benchmark score' },
+  { title: 'Text to Speech with Emotion', tag: '9 emotion styles', image: '/assets/usecase-podcasters.jpg' },
+  { title: 'Natural Text to Speech Pacing', tag: 'MiniMax Speech 2.8 HD', image: '/assets/Rectangle 499863.jpg' },
+  { title: 'Clear Pronunciation Across Accents', tag: '20+ language variants', image: '/assets/usecase-marketers.jpg' },
+  { title: 'Speed and Pitch Control', tag: '0.5× to 2.0× speed', image: '/assets/Rectangle 499862.jpg' },
+  { title: '50+ Distinct AI Voices', tag: '50+ voices', image: '/assets/usecase-youtubers.jpg' },
+  { title: 'Benchmark-Leading TTS Model', tag: 'Top benchmark score', image: '/assets/Rectangle 499865.jpg' },
 ]
 
 const USECASES = [
@@ -93,7 +85,9 @@ export default function TextToSpeechPage() {
           </div>
           <div className={styles.bentoGrid}>
             {QUALITY.map((q, i) => (
-              <div key={i} className={styles.bentoCard} style={{ background: QUALITY_GRADIENTS[i] } as React.CSSProperties} data-animate data-d={String(i + 1)}>
+              <div key={i} className={styles.bentoCard} data-animate data-d={String(i + 1)}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={q.image} alt="" className={styles.bentoImg} />
                 <div className={styles.bentoOverlay} />
                 <div className={styles.bentoContent}>
                   <span className={styles.bentoTag}>{q.tag}</span>
