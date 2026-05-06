@@ -140,6 +140,14 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 80px var(--px) 60px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }

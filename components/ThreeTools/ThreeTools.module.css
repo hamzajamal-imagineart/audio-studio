@@ -216,11 +216,26 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 80px var(--px) 60px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
   .grid {
     flex-direction: column;
   }
 
   .card {
-    height: 340px;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .revealContent {
+    max-height: none;
+    opacity: 1;
+    margin-top: 16px;
   }
 }

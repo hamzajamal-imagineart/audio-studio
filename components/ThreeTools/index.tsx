@@ -97,7 +97,7 @@ const cards: Card[] = [
       "Free to start",
     ],
     ctaText: "Try Text to Speech",
-    ctaHref: "https://www.imagine.art/ai-audio-studio/ai-text-to-speech",
+    ctaHref: "https://www.imagine.art/audio/text-to-speech/",
   },
   {
     icon: <CloneIcon />,
@@ -111,7 +111,7 @@ const cards: Card[] = [
       "No studio needed",
     ],
     ctaText: "Try Voice Cloning",
-    ctaHref: "https://www.imagine.art/audio",
+    ctaHref: "https://www.imagine.art/audio/voice-cloning",
   },
   {
     icon: <MusicIcon />,
@@ -125,7 +125,7 @@ const cards: Card[] = [
       "Export MP3",
     ],
     ctaText: "Try AI Music",
-    ctaHref: "https://www.imagine.art/ai-audio-studio/ai-music-generator",
+    ctaHref: "https://www.imagine.art/audio/music/elevenlabs-music",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function ThreeTools() {
         </div>
         <div className={styles.grid}>
           {cards.map((card, i) => (
-            <div key={card.title} className={styles.card} data-animate data-d={String(i + 1)}>
+            <a key={card.title} href={card.ctaHref} target="_blank" rel="noopener noreferrer" className={styles.card} data-animate data-d={String(i + 1)}>
               <video src={card.video} autoPlay loop muted playsInline className={styles.cardBg} />
               <div className={styles.overlay} />
 
@@ -159,13 +159,11 @@ export default function ThreeTools() {
                         <li key={b} className={styles.bulletItem}>{b}</li>
                       ))}
                     </ul>
-                    <a href={card.ctaHref} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
-                      {card.ctaText}
-                    </a>
+                    <span className={styles.ctaButton}>{card.ctaText}</span>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

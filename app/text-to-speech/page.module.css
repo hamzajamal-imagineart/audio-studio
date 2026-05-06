@@ -553,8 +553,47 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px var(--px) 80px;
+  }
+
+  .section {
+    padding: 80px var(--px) 60px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 36px;
+  }
+
+  .ctaSection {
+    padding: 80px var(--px);
+  }
+}
+
 @media (max-width: 600px) {
+  .hero {
+    padding: 80px var(--px) 60px;
+  }
+
+  .heroHeading {
+    letter-spacing: -0.8px;
+  }
+
   .grid { grid-template-columns: 1fr; }
   .chips { gap: 8px; }
+  .chip { min-width: 0; flex: 1 1 calc(50% - 8px); }
   .bentoGrid { grid-template-columns: 1fr; }
+
+  .steps { max-width: 100%; }
+
+  .stackCard {
+    grid-template-rows: auto 200px;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -1,132 +1,161 @@
-import styles from './Pricing.module.css'
+import PricingClient, { type Plan } from './PricingClient'
 
-type Plan = {
-  name: string
-  subtitle: string
-  originalPrice: string
-  price: string
-  badge?: string
-  features: string[]
-  ctaHref: string
-  accent: string
-  cardBg: string
-  ctaVariant: 'white' | 'accent'
+const API_URL =
+  'https://dev-payment-gateway.vyro.ai/apis/v1/stripe/subscription/recurring?country=US&product=imagine'
+
+const PLAN_ORDER = ['basic', 'standard', 'ultimate', 'creator']
+
+type PlanMeta = Omit<Plan, 'id' | 'name' | 'credits' | 'prices' | 'totals'>
+
+const PLAN_META: Record<string, PlanMeta> = {
+  basic: {
+    subtitle: 'For newcomers taking their first step',
+    topBanner: null,
+    bannerStyle: null,
+    discountBadge: '-30%',
+    ctaStyle: 'ghost',
+    features: [
+      { text: 'Up to ~600 Image Generations/month', available: true },
+      { text: 'Up to ~97 Video Generations/month', available: true },
+      { text: 'General Commercial Terms', available: true },
+      { text: 'Image Generation Visibility: Public', available: true },
+      { text: '4 Concurrent Image Generations', available: true },
+      { text: '2 concurrent Video Generations', available: true },
+      { text: 'Priority Support', available: true },
+      { text: '1 Personalize Element', available: true },
+      { text: 'Higher priority in generation queue', available: false },
+    ],
+    complementary: ['All GPT Models', 'All Gemini Models', 'All Claude Models'],
+    unlimited: [
+      { name: 'ImagineArt 2.0', available: false, badge: null },
+      { name: 'ImagineArt 1.5 PRO', available: false, badge: null },
+      { name: 'Nano Banana 2', available: 'partial', badge: null },
+    ],
+    seedance: false,
+  },
+  standard: {
+    subtitle: 'For rising creators to level up their game',
+    topBanner: null,
+    bannerStyle: null,
+    discountBadge: '-30%',
+    ctaStyle: 'ghost',
+    features: [
+      { text: 'Up to ~1.6k Image Generations/month', available: true },
+      { text: 'Up to ~260 Video Generations/month', available: true },
+      { text: 'General Commercial Terms', available: true },
+      { text: 'Image Generation Visibility: Private', available: true },
+      { text: '8 Concurrent Image Generations', available: true },
+      { text: '3 concurrent Video Generations', available: true },
+      { text: 'Priority Support', available: true },
+      { text: 'Higher priority in generation queue', available: true },
+      { text: 'Upto 5 Personalize Elements', available: true },
+      { text: '3 users included', available: true },
+    ],
+    complementary: ['All GPT Models', 'All Gemini Models', 'All Claude Models'],
+    unlimited: [
+      { name: 'ImagineArt 2.0', available: false, badge: null },
+      { name: 'ImagineArt 1.5 PRO', available: false, badge: null },
+      { name: 'Nano Banana 2', available: 'partial', badge: null },
+    ],
+    seedance: false,
+  },
+  ultimate: {
+    subtitle: 'Peak performance for pros',
+    topBanner: '♥ MOST POPULAR',
+    bannerStyle: 'orange',
+    discountBadge: '-38%',
+    ctaStyle: 'white',
+    features: [
+      { text: 'Up to ~3.2k Image Generations/month', available: true },
+      { text: 'Up to ~530 Video Generations/month', available: true },
+      { text: 'All styles and models', available: true },
+      { text: 'General Commercial Terms', available: true },
+      { text: 'Image Generation Visibility: Private', available: true },
+      { text: '12 Concurrent Image Generations', available: true },
+      { text: '4 concurrent Video Generations', available: true },
+      { text: 'Priority Support', available: true },
+      { text: 'Higher priority in generation queue', available: true },
+      { text: 'Upto 30 Personalize Elements', available: true },
+      { text: '6 users included', available: true },
+    ],
+    complementary: ['All GPT Models', 'All Gemini Models', 'All Claude Models'],
+    unlimited: [
+      { name: 'ImagineArt 2.0', available: true, badge: 'UNLIMITED' },
+      { name: 'ImagineArt 1.5 PRO', available: true, badge: 'UNLIMITED' },
+      { name: 'Nano Banana 2', available: 'partial', badge: null },
+    ],
+    seedance: true,
+  },
+  creator: {
+    subtitle: 'A full production engine for powerhouses',
+    topBanner: '✦ SPECIAL OFFER',
+    bannerStyle: 'pink',
+    discountBadge: '-50%',
+    badgeExtra: 'LIMITED OFFER',
+    ctaStyle: 'pink',
+    features: [
+      { text: 'Up to ~20K Image Generations/month', available: true },
+      { text: 'Up to ~3.4K Video Generations/month', available: true },
+      { text: 'All styles and models', available: true },
+      { text: 'General Commercial Terms', available: true },
+      { text: 'Image Generation Visibility: Private', available: true },
+      { text: '16 Concurrent Image Generations', available: true },
+      { text: '5 concurrent Video Generations', available: true },
+      { text: 'Priority Support', available: true },
+      { text: 'Higher priority in generation queue', available: true },
+      { text: '20 users included', available: true },
+    ],
+    complementary: ['All GPT Models', 'All Gemini Models', 'All Claude Models'],
+    unlimited: [
+      { name: 'ImagineArt 2.0', available: true, badge: 'UNLIMITED' },
+      { name: 'ImagineArt 1.5 PRO', available: true, badge: 'UNLIMITED' },
+      { name: 'Nano Banana 2', available: true, badge: 'UNLIMITED' },
+    ],
+    seedance: true,
+  },
 }
 
-const plans: Plan[] = [
-  {
-    name: 'Free',
-    subtitle: 'Get started with AI audio at no cost',
-    originalPrice: '$49',
-    price: '$0',
-    features: [
-      '10,000 chars TTS',
-      '1 voice clone',
-      'Limited music gen',
-      'Personal use only',
-    ],
-    ctaHref: 'https://www.imagine.art/subscription',
-    accent: '#3A86FF',
-    cardBg: '#0a1428',
-    ctaVariant: 'white',
-  },
-  {
-    name: 'Standard',
-    subtitle: 'The smart choice for professionals creating daily',
-    originalPrice: '$79',
-    price: '$50',
-    badge: '✦  BEST VALUE',
-    features: [
-      '100,000 chars TTS',
-      '5 voice clones',
-      'Unlimited music gen',
-      'Commercial license',
-    ],
-    ctaHref: 'https://www.imagine.art/subscription',
-    accent: '#FB5607',
-    cardBg: '#1c0800',
-    ctaVariant: 'white',
-  },
-  {
-    name: 'Pro',
-    subtitle: 'Maximum power for studios and agencies',
-    originalPrice: '$580',
-    price: '$250',
-    badge: '◈  MOST POPULAR',
-    features: [
-      'Unlimited TTS',
-      'Unlimited cloning',
-      'Priority generation',
-      'API access',
-      'Dedicated support',
-    ],
-    ctaHref: 'https://www.imagine.art/subscription',
-    accent: '#FF006E',
-    cardBg: '#1f0015',
-    ctaVariant: 'accent',
-  },
-]
+function formatTokens(n: number): string {
+  if (n >= 1_000_000) return `${n / 1_000_000}M`
+  if (n >= 1_000) return `${Math.round(n / 1_000)}K`
+  return `${n}`
+}
 
-export default function Pricing() {
-  return (
-    <section className={styles.section} id="pricing">
-      <div className={styles.inner}>
+async function fetchPlans(): Promise<Plan[]> {
+  const res = await fetch(API_URL, { next: { revalidate: 3600 } })
+  const data = await res.json()
 
-        <div className={styles.header}>
-          <h2 className={styles.h2}>Start free. Upgrade when you need more.</h2>
-          <p className={styles.sub}>All paid plans include commercial usage rights. Cancel anytime.</p>
-        </div>
+  const mapped: Plan[] = []
 
-        <div className={styles.grid}>
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={styles.card}
-              style={{ '--accent': plan.accent, '--card-bg': plan.cardBg } as React.CSSProperties}
-            >
-              <div className={plan.badge ? styles.badge : styles.badgePlaceholder}>
-                {plan.badge ?? ''}
-              </div>
-              <div className={styles.cardBody}>
-                <h3 className={styles.planName}>{plan.name}</h3>
-                <p className={styles.subtitle}>{plan.subtitle}</p>
+  for (const apiPlan of data.result) {
+    const id = apiPlan.name.toLowerCase()
+    const meta = PLAN_META[id]
+    if (!meta) continue
 
-                <div className={styles.priceRow}>
-                  <span className={styles.originalPrice}>{plan.originalPrice}</span>
-                  <span className={styles.price}>{plan.price}</span>
-                  <span className={styles.priceSuffix}>/month</span>
-                </div>
-                <p className={styles.perMonth}>per month</p>
+    const prices = { monthly: 0, quarterly: 0, yearly: 0 }
+    const totals = { quarterly: 0, yearly: 0 }
+    let credits = ''
 
-                <a
-                  href={plan.ctaHref}
-                  className={`${styles.cta} ${plan.ctaVariant === 'accent' ? styles.ctaAccent : styles.ctaWhite}`}
-                >
-                  Select Plan
-                </a>
+    for (const p of apiPlan.StripePrice) {
+      if (p.billingInterval === 'monthly') {
+        prices.monthly = p.price
+        credits = formatTokens(p.tokens)
+      } else if (p.billingInterval === 'quarterly') {
+        totals.quarterly = p.price
+        prices.quarterly = Math.round(p.price / 3)
+      } else if (p.billingInterval === 'yearly') {
+        totals.yearly = p.price
+        prices.yearly = Math.round(p.price / 12)
+      }
+    }
 
-                <hr className={styles.divider} />
+    mapped.push({ id, name: apiPlan.name, credits, prices, totals, ...meta })
+  }
 
-                <ul className={styles.featureList}>
-                  {plan.features.map((f) => (
-                    <li key={f} className={styles.featureItem}>
-                      <span className={styles.check}>&#x2713;</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+  return PLAN_ORDER.map(id => mapped.find(p => p.id === id)!).filter(Boolean)
+}
 
-        <div className={styles.footer}>
-          <a href="#pricing-compare" className={styles.compareBtn}>
-            Compare all features &nbsp;&#x2192;
-          </a>
-        </div>
-
-      </div>
-    </section>
-  )
+export default async function Pricing() {
+  const plans = await fetchPlans()
+  return <PricingClient plans={plans} />
 }

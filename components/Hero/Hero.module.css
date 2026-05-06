@@ -371,7 +371,7 @@
 
 .promptActions {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -431,8 +431,15 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .heroContent { padding: 100px var(--px) 80px; }
   .headline { font-size: clamp(36px, 10vw, 52px); white-space: normal; }
   .headlineRow { flex-wrap: wrap; justify-content: center; gap: 12px; }
   .promptBox { width: 100%; }
   .vidCard { display: none; }
+}
+
+@media (max-width: 480px) {
+  .heroContent { padding: 80px var(--px) 60px; }
+  .heroCtas { flex-direction: column; align-items: center; gap: 10px; }
+  .heroCta { width: 100%; max-width: 300px; justify-content: center; }
 }

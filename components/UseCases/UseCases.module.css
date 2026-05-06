@@ -129,12 +129,25 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 80px var(--px) 60px;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
   .item,
   .reverse {
     flex-direction: column;
     gap: 24px;
   }
 
+  .imageWrap {
+    flex: none;
+    width: 100%;
+    height: clamp(200px, 55vw, 320px);
+  }
 
   .body {
     max-width: 100%;
