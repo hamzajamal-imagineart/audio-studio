@@ -67,12 +67,11 @@ export default function TextToSpeechPage() {
 
       {/* Hero */}
       <section className={styles.hero}>
-        <p className={styles.eyebrow}>AI Text to Speech</p>
-        <h1 className={styles.heroHeading}>Turn Text into Natural<br />AI Speech: Free & Online</h1>
-        <p className={styles.heroSub}>Paste your text, choose a voice, preview the audio, and create realistic voice output: no complex setup, no software to download.</p>
+        <h1 className={styles.heroHeading}>Turn Text into Natural<br />AI Speech</h1>
+        <p className={styles.heroSub}>Paste your text, choose a voice, preview the audio, and create realistic voice output. No complex setup, no software to download.</p>
         <div className={styles.heroCtas}>
-          <a href="https://www.imagine.art/voice-studio" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
-          <a href="https://www.imagine.art/voice-studio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore AI Voice Generator</a>
+          <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
+          <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
         </div>
         <p className={styles.heroMeta}>Free to start · No signup needed · 20+ languages · Download MP3</p>
       </section>
@@ -88,14 +87,15 @@ export default function TextToSpeechPage() {
       </section>
 
       {/* Voice quality */}
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionDark}`}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>Voice Quality</p>
-          <h2 className={styles.heading}>Realistic Text to Speech with Natural AI Voices</h2>
-          <p className={styles.sub}>ImagineArt uses MiniMax Speech 2.8 HD, one of the highest-ranked models on independent TTS benchmarks, to produce natural, expressive voice output that sounds human.</p>
+          <div className={styles.sectionHeader} data-animate>
+            <h2 className={styles.headingLight}>Realistic AI Voices, Powered by MiniMax Speech 2.8 HD</h2>
+            <p className={styles.subLight}>One of the highest-ranked models on independent TTS benchmarks. Natural, expressive voice output that sounds human.</p>
+          </div>
           <div className={styles.bentoGrid}>
             {QUALITY.map((q, i) => (
-              <div key={i} className={styles.bentoCard} style={{ background: QUALITY_GRADIENTS[i] } as React.CSSProperties}>
+              <div key={i} className={styles.bentoCard} style={{ background: QUALITY_GRADIENTS[i] } as React.CSSProperties} data-animate data-d={String(i + 1)}>
                 <div className={styles.bentoOverlay} />
                 <div className={styles.bentoContent}>
                   <span className={styles.bentoTag}>{q.tag}</span>
@@ -110,12 +110,14 @@ export default function TextToSpeechPage() {
       {/* Use cases */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>AI Voice Generator</p>
-          <h2 className={styles.heading}>Built for Creators, Teams, and Everyday Use</h2>
-          <p className={styles.sub}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
+          <div className={styles.sectionHeader} data-animate>
+            <h2 className={styles.heading}>Built for Creators, Teams, and Everyday Use</h2>
+            <p className={styles.sub}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
+          </div>
           <div className={styles.grid}>
             {USECASES.map((u, i) => (
-              <div key={i} className={styles.card}>
+              <div key={i} className={styles.card} data-animate data-d={String((i % 3) + 1)}>
+                <span className={styles.cardIndex}>{String(i + 1).padStart(2, '0')}</span>
                 <h3 className={styles.cardTitle}>{u.title}</h3>
                 <p className={styles.cardBody}>{u.body}</p>
               </div>
@@ -125,20 +127,23 @@ export default function TextToSpeechPage() {
       </section>
 
       {/* How it works */}
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionDark}`}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>How It Works</p>
-          <h2 className={styles.heading}>Convert Text to Speech in 3 Simple Steps</h2>
-          <p className={styles.sub}>No technical setup. No software. Turn written text into audio online in under a minute.</p>
+          <div className={styles.sectionHeader} data-animate>
+            <h2 className={styles.headingLight}>From Text to Audio in 3 Steps</h2>
+            <p className={styles.subLight}>No technical setup. No software. Under a minute.</p>
+          </div>
           <div className={styles.steps}>
             {STEPS.map((s, i) => (
-              <div key={i} className={styles.step}>
+              <div key={i} className={styles.step} data-animate data-d={String(i + 1)}>
                 <div className={styles.stepVideo}>
                   <video src={s.video} autoPlay loop muted playsInline />
                 </div>
-                <span className={styles.stepNum}>{s.n}</span>
-                <h3 className={styles.cardTitle}>{s.title}</h3>
-                <p className={styles.cardBody}>{s.body}</p>
+                <div className={styles.stepMeta}>
+                  <span className={styles.stepNum}>{s.n}</span>
+                  <h3 className={styles.stepTitle}>{s.title}</h3>
+                </div>
+                <p className={styles.stepBody}>{s.body}</p>
               </div>
             ))}
           </div>
@@ -154,12 +159,11 @@ export default function TextToSpeechPage() {
 
       {/* CTA */}
       <section className={`${styles.section} ${styles.ctaSection}`}>
-        <p className={styles.eyebrow}>Get Started</p>
         <h2 className={styles.heading}>Start Creating Natural AI Voiceovers Today</h2>
-        <p className={styles.sub}>Free text to speech: no credit card, no download, no setup. Powered by MiniMax Speech 2.8 HD.</p>
+        <p className={styles.sub}>Free text to speech. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 HD.</p>
         <div className={styles.heroCtas}>
-          <a href="https://www.imagine.art/voice-studio" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
-          <a href="https://www.imagine.art/voice-studio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
+          <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
+          <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
         </div>
       </section>
 
