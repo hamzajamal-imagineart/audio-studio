@@ -158,12 +158,16 @@ export default function TextToSpeechPage() {
       />
 
       {/* CTA */}
-      <section className={`${styles.section} ${styles.ctaSection}`}>
-        <h2 className={styles.heading}>Start Creating Natural AI Voiceovers Today</h2>
-        <p className={styles.sub}>Free text to speech. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 HD.</p>
-        <div className={styles.heroCtas}>
-          <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
-          <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaInner}>
+          <div className={styles.ctaLeft} data-animate>
+            <h2 className={styles.ctaHeading}>Your voice,<br />everywhere.</h2>
+            <p className={styles.ctaSub}>Free to start. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 HD.</p>
+          </div>
+          <div className={styles.ctaRight} data-animate data-d="1">
+            <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
+          </div>
         </div>
       </section>
 
