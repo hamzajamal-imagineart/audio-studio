@@ -29,12 +29,12 @@ export default function PromptBox() {
       </div>
       <div className={styles.promptActions}>
         <div className={styles.promptLeft}>
-          <button className={styles.iconBtn} aria-label="Add">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
           <button className={styles.pillBtn}>
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="6" y1="18" x2="18" y2="18"/></svg>
-            Advanced
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l2.4 7.6H22l-6.4 4.6 2.4 7.8L12 17.4l-6 4.6 2.4-7.8L2 9.6h7.6L12 2z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
+              <path d="M19 2l.8 2.4L22 5.2l-2.2.8L19 8.6l-.8-2.6L16 5.2l2.2-.8L19 2z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" fill="none"/>
+            </svg>
+            AI Writer
           </button>
         </div>
         <a
