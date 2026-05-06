@@ -18,12 +18,12 @@ const FEATURES = [
 
 
 const QUALITY = [
-  { title: 'Text to Speech with Emotion', tag: '9 emotion styles', image: '/assets/usecase-podcasters.jpg' },
-  { title: 'Natural Text to Speech Pacing', tag: 'MiniMax Speech 2.8 HD', image: '/assets/Rectangle 499863.jpg' },
-  { title: 'Clear Pronunciation Across Accents', tag: '20+ language variants', image: '/assets/usecase-marketers.jpg' },
-  { title: 'Speed and Pitch Control', tag: '0.5× to 2.0× speed', image: '/assets/Rectangle 499862.jpg' },
-  { title: '50+ Distinct AI Voices', tag: '50+ voices', image: '/assets/usecase-youtubers.jpg' },
-  { title: 'Benchmark-Leading TTS Model', tag: 'Top benchmark score', image: '/assets/Rectangle 499865.jpg' },
+  { title: 'Text to Speech with Emotion', tag: 'Emotion styles', stat: '9' },
+  { title: 'Natural Text to Speech Pacing', tag: 'TTS model', stat: '2.8 HD' },
+  { title: 'Clear Pronunciation Across Accents', tag: 'Language variants', stat: '20+' },
+  { title: 'Speed and Pitch Control', tag: 'Speed range', stat: '2×' },
+  { title: '50+ Distinct AI Voices', tag: 'Unique AI voices', stat: '50+' },
+  { title: 'Benchmark-Leading Model', tag: 'Quality ranking', stat: '#1' },
 ]
 
 const USECASES = [
@@ -86,9 +86,7 @@ export default function TextToSpeechPage() {
           <div className={styles.bentoGrid}>
             {QUALITY.map((q, i) => (
               <div key={i} className={styles.bentoCard} data-animate data-d={String(i + 1)}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={q.image} alt="" className={styles.bentoImg} />
-                <div className={styles.bentoOverlay} />
+                <span className={styles.bentoStat}>{q.stat}</span>
                 <div className={styles.bentoContent}>
                   <span className={styles.bentoTag}>{q.tag}</span>
                   <h3 className={styles.bentoTitle}>{q.title}</h3>
