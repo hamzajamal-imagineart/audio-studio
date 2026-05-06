@@ -32,17 +32,87 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className={styles.navLinks}>
-            <div className={styles.navDropdown}>
+            <div className={styles.navDropdownFull}>
               <button className={`${styles.navLink} ${styles.navDropdownTrigger}`}>
                 Tools
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                   <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <div className={styles.navDropdownMenu}>
-                <a href="https://www.imagine.art/ai-image-generator" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Image Generator</a>
-                <a href="https://www.imagine.art/ai-video-generator" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Video Generator</a>
-                <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navDropdownItem}>AI Audio Studio</a>
+              <div className={styles.megaMenu}>
+                <div className={styles.megaMenuInner}>
+                  <div className={styles.megaCategory}>
+                    <h4 className={styles.megaTitle}>Image Generation</h4>
+                    <div className={styles.megaList}>
+                      <a href="https://www.imagine.art/ai-image-generator" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Image Generator</span>
+                        <span className={styles.megaItemDesc}>Create art from text prompts</span>
+                      </a>
+                      <a href="https://www.imagine.art/features/ai-anime-generator" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Anime Generator</span>
+                        <span className={styles.megaItemDesc}>Specialized anime styles</span>
+                      </a>
+                      <a href="https://www.imagine.art/apps/image-combiner" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Image Combiner</span>
+                        <span className={styles.megaItemDesc}>Blend two images together</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className={styles.megaCategory}>
+                    <h4 className={styles.megaTitle}>Video & Motion</h4>
+                    <div className={styles.megaList}>
+                      <a href="https://www.imagine.art/ai-video-generator" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Video Generator</span>
+                        <span className={styles.megaItemDesc}>Turn text into cinematic clips</span>
+                      </a>
+                      <a href="https://www.imagine.art/features/ai-animation-generator" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Animation Generator</span>
+                        <span className={styles.megaItemTitle}>Animate static visuals</span>
+                      </a>
+                      <a href="https://www.imagine.art/shorts/ai-story-generator" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Story Generator</span>
+                        <span className={styles.megaItemDesc}>Create shorts and stories</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className={styles.megaCategory}>
+                    <h4 className={styles.megaTitle}>Advanced Editing</h4>
+                    <div className={styles.megaList}>
+                      <a href="https://www.imagine.art/apps/ai-image-editor" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Image Editor</span>
+                        <span className={styles.megaItemDesc}>Precision pixel control</span>
+                      </a>
+                      <a href="https://www.imagine.art/bg-remover" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>BG Remover</span>
+                        <span className={styles.megaItemDesc}>Instant background removal</span>
+                      </a>
+                      <a href="https://www.imagine.art/apps/face-swap" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Image Face Swap</span>
+                        <span className={styles.megaItemDesc}>Realistic identity swap</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className={styles.megaCategory}>
+                    <h4 className={styles.megaTitle}>Studio Suite</h4>
+                    <div className={styles.megaList}>
+                      <a href="https://www.imagine.art/audio" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>AI Audio Studio</span>
+                        <span className={styles.megaItemDesc}>Voice, cloning, and music</span>
+                      </a>
+                      <a href="https://www.imagine.art/workflow" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>Workflows</span>
+                        <span className={styles.megaItemDesc}>End-to-end AI pipelines</span>
+                      </a>
+                      <a href="https://www.imagine.art/features" className={styles.megaItem}>
+                        <span className={styles.megaItemTitle}>Explore All Tools</span>
+                        <span className={styles.megaItemDesc}>Discover our full suite</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className={styles.navDropdown}>
