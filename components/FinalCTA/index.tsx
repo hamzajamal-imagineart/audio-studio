@@ -1,36 +1,24 @@
 import styles from "./FinalCTA.module.css";
 
-function WaveformDecoration() {
-  // Wide, low-amplitude sine wave path
-  const width = 1400;
-  const height = 120;
-  const amplitude = 28;
-  const midY = height / 2;
-  const periods = 3;
+function Background() {
+  const W = 2800, H = 500;
 
-  // Build a smooth sine wave path
-  const points: string[] = [];
-  const steps = 200;
-  for (let i = 0; i <= steps; i++) {
-    const x = (i / steps) * width;
-    const y = midY + amplitude * Math.sin((i / steps) * periods * 2 * Math.PI);
-    points.push(`${i === 0 ? "M" : "L"} ${x.toFixed(2)} ${y.toFixed(2)}`);
+  function wave(amp: number, phase: number, periods: number, y: number) {
+    return Array.from({ length: 601 }, (_, i) => {
+      const x = (i / 600) * W;
+      const wy = y + amp * Math.sin((i / 600) * periods * 2 * Math.PI + phase);
+      return `${i === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${wy.toFixed(1)}`;
+    }).join(' ');
   }
 
   return (
-    <svg
-      className={styles.waveDecoration}
-      viewBox={`0 0 ${width} ${height}`}
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d={points.join(" ")}
-        fill="none"
-        stroke="rgba(0,0,0,0.06)"
-        strokeWidth="1"
-      />
+    <svg className={styles.bg} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true">
+      <path d={wave(60, 0,    2.2, 140)} fill="none" stroke="rgba(0,0,0,0.06)" strokeWidth="1.5" />
+      <path d={wave(40, 1.0, 3.0, 180)} fill="none" stroke="rgba(0,0,0,0.04)" strokeWidth="1" />
+      <path d={wave(80, 0.5, 1.8, 250)} fill="none" stroke="rgba(0,0,0,0.05)" strokeWidth="2" />
+      <path d={wave(28, 2.1, 4.0, 300)} fill="none" stroke="rgba(0,0,0,0.03)" strokeWidth="1" />
+      <path d={wave(50, 3.3, 2.5, 350)} fill="none" stroke="rgba(0,0,0,0.045)" strokeWidth="1.5" />
+      <path d={wave(18, 1.7, 5.5, 220)} fill="none" stroke="rgba(0,0,0,0.025)" strokeWidth="1" />
     </svg>
   );
 }
@@ -38,9 +26,10 @@ function WaveformDecoration() {
 export default function FinalCTA() {
   return (
     <section className={styles.section}>
-      <WaveformDecoration />
+      <Background />
+      <div className={styles.vignette} aria-hidden="true" />
       <div className={styles.inner}>
-        <h2 className={styles.headline}>Your Audio Studio Is Ready. Free To Start.</h2>
+        <h2 className={styles.headline}>Your Audio Studio Is Ready.</h2>
         <p className={styles.subheadline}>
           Generate your first voiceover in 30 seconds. No credit card. No download. No catch.
         </p>
@@ -48,10 +37,8 @@ export default function FinalCTA() {
           <a href="/audio" className={styles.primaryButton}>
             Try Free AI Voice Generator
           </a>
-          <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.secondaryLink}>
-            Pricing plan
-          </a>
         </div>
+        <p className={styles.trust}>Trusted by 2M+ creators &nbsp;·&nbsp; 70+ languages &nbsp;·&nbsp; No setup needed</p>
       </div>
     </section>
   );
