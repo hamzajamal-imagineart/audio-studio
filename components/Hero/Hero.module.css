@@ -69,10 +69,15 @@
   overflow: hidden;
   opacity: 0.8;
   background: #0c0b14;
+  pointer-events: auto;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease, box-shadow 0.35s ease;
 }
 
 .vidCard.left  { left: clamp(-80px, -3vw, -20px);  transform: rotate(-15deg); }
 .vidCard.right { right: clamp(-80px, -3vw, -20px); transform: rotate(15deg); }
+
+.vidCard.left:hover  { transform: rotate(-11deg) translateY(-14px) scale(1.06); opacity: 1; box-shadow: 0 24px 64px rgba(0,0,0,0.55); }
+.vidCard.right:hover { transform: rotate(11deg)  translateY(-14px) scale(1.06); opacity: 1; box-shadow: 0 24px 64px rgba(0,0,0,0.55); }
 
 .vidCard::before {
   content: '';

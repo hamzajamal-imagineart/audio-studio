@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
 
       {/* Hero cards */}
-      <div className={styles.heroCards} aria-hidden="true">
+      <div className={styles.heroCards}>
         <HeroCard side="left" image="/assets/Rectangle 49986.jpg" />
         <HeroCard side="right" image="/assets/Rectangle 499861.jpg" />
       </div>
