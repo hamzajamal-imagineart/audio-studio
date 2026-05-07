@@ -49,7 +49,7 @@ export default function FinalCTA() {
             Try Free AI Voice Generator
           </a>
           <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.secondaryLink}>
-            Or see pricing
+            Pricing plan
           </a>
         </div>
       </div>
