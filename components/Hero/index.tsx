@@ -43,7 +43,7 @@ export default function Hero() {
 
         {/* Announcement chip */}
         <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.chip}>
-          <span>Muze4.5 is out now on ImagineArt!</span>
+          <span>ElevenLabs v3 is out now on ImagineArt!</span>
           <span className={styles.chipCta}>Try now →</span>
         </a>
 
