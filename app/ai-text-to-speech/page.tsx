@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Faq from '@/components/Faq'
 import PromptBox from '@/components/Hero/PromptBox'
+import StackCards from './StackCards'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -106,26 +107,7 @@ export default function TextToSpeechPage() {
             <h2 className={styles.headingLight}>Built for Creators, Teams, and Everyday Use</h2>
             <p className={styles.subLight}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
           </div>
-          <div className={styles.stack}>
-            {USECASES.map((u, i) => (
-              <div
-                key={i}
-                className={styles.stackCard}
-                style={{ top: `calc(80px + ${i * 14}px)`, zIndex: i + 1 }}
-              >
-                <div className={styles.stackLeft}>
-                  <h3 className={styles.stackTitle}>{u.title}</h3>
-                  <p className={styles.stackBody}>{u.body}</p>
-                </div>
-                <div className={styles.stackRight}>
-                  <div className={styles.stackImgWrap} style={{ background: u.bg }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={u.image} alt="" className={styles.stackImg} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <StackCards usecases={USECASES} />
         </div>
       </section>
 
