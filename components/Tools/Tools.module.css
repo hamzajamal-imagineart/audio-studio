@@ -60,7 +60,7 @@
   padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  background: rgba(0, 0, 0, 0.02);
+  background: transparent;
 }
 
 /* ── Thumbnail ───────────────────────────────────────── */
@@ -71,7 +71,7 @@
   height: 80px;
   border-radius: 12px;
   overflow: hidden;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .thumb img,
