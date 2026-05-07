@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './Testimonials.module.css'
 
 const stats = [
@@ -99,6 +99,36 @@ function TrustpilotMark() {
 
 export default function Testimonials() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set())
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [pageCount, setPageCount] = useState(reviews.length)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+
+    function calcPages() {
+      const card = track!.children[0] as HTMLElement | undefined
+      if (!card) return
+      const cardWidth = card.offsetWidth + 16
+      const pages = Math.ceil(reviews.length / Math.max(1, Math.floor(track!.clientWidth / cardWidth)))
+      setPageCount(pages)
+    }
+
+    function onScroll() {
+      const maxScroll = track!.scrollWidth - track!.clientWidth
+      const progress = maxScroll > 0 ? track!.scrollLeft / maxScroll : 0
+      setActiveIndex(Math.round(progress * (pageCount - 1)))
+    }
+
+    calcPages()
+    track.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', calcPages)
+    return () => {
+      track.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', calcPages)
+    }
+  }, [pageCount])
 
   function toggle(i: number) {
     setExpanded(prev => {
@@ -125,7 +155,7 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className={styles.track}>
+      <div className={styles.track} ref={trackRef}>
         {reviews.map((r, i) => {
           const isExpanded = expanded.has(i)
           return (
@@ -160,6 +190,22 @@ export default function Testimonials() {
             </div>
           )
         })}
+      </div>
+
+      <div className={styles.dots}>
+        {Array.from({ length: pageCount }, (_, i) => (
+          <button
+            key={i}
+            className={`${styles.dot} ${i === activeIndex ? styles.dotActive : ''}`}
+            onClick={() => {
+              const track = trackRef.current
+              if (!track) return
+              const maxScroll = track.scrollWidth - track.clientWidth
+              track.scrollTo({ left: (i / (pageCount - 1)) * maxScroll, behavior: 'smooth' })
+            }}
+            aria-label={`Go to page ${i + 1}`}
+          />
+        ))}
       </div>
     </section>
   )
