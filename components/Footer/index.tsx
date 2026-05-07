@@ -48,8 +48,8 @@ export default function Footer() {
                 <li><a href={`${BASE}/ai-image-generator`} target="_blank" rel="noopener noreferrer">AI Image Generator</a></li>
                 <li><a href={`${BASE}/ai-video-generator`} target="_blank" rel="noopener noreferrer">AI Video Generator</a></li>
                 <li><span className={styles.currentPage}>AI Audio Generator</span></li>
-                <li><a href={`${BASE}/ai-audio-studio/ai-text-to-speech`} target="_blank" rel="noopener noreferrer">AI Text-to-Speech</a></li>
-                <li><a href={`${BASE}/ai-audio-studio/ai-music-generator`} target="_blank" rel="noopener noreferrer">AI Music Generator</a></li>
+                <li><a href="/ai-text-to-speech" rel="noopener noreferrer">AI Text-to-Speech</a></li>
+                <li><a href={`${BASE}/audio/music/elevenlabs-music`} target="_blank" rel="noopener noreferrer">AI Music Generator</a></li>
                 <li><a href={`${BASE}/ai-film-studio`} target="_blank" rel="noopener noreferrer">AI Film Studio</a></li>
                 <li><a href={`${BASE}/workflow`} target="_blank" rel="noopener noreferrer">AI Workflows</a></li>
               </ul>

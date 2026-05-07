@@ -68,9 +68,9 @@ export default function Hero() {
 
         {/* Product chips */}
         <div className={styles.productChips}>
-          <a href="/text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.productChip}>Text to Speech</a>
+          <a href="/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.productChip}>Text to Speech</a>
           <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.productChip}>Voice Cloning</a>
-          <a href="https://www.imagine.art/ai-audio-studio/ai-music-generator" target="_blank" rel="noopener noreferrer" className={styles.productChip}>AI Music</a>
+          <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener noreferrer" className={styles.productChip}>AI Music</a>
         </div>
 
       </div>

@@ -33,9 +33,9 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className={styles.navLinks}>
-            <Link href="/text-to-speech" className={styles.navLink}>Text to Speech</Link>
+            <Link href="/ai-text-to-speech" className={styles.navLink}>Text to Speech</Link>
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Voice Cloning</a>
-            <a href="https://www.imagine.art/ai-audio-studio/ai-music-generator" target="_blank" rel="noopener noreferrer" className={styles.navLink}>AI Music</a>
+            <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener noreferrer" className={styles.navLink}>AI Music</a>
             <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Pricing</a>
           </nav>
 
@@ -79,9 +79,9 @@ export default function Navbar() {
         </div>
         <div className={styles.navMobileBody}>
           <div className={styles.navMobileInner}>
-            <Link href="/text-to-speech" className={styles.navMobileLink} onClick={closeMobile}>Text to Speech</Link>
+            <Link href="/ai-text-to-speech" className={styles.navMobileLink} onClick={closeMobile}>Text to Speech</Link>
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Voice Cloning</a>
-            <a href="https://www.imagine.art/ai-audio-studio/ai-music-generator" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>AI Music</a>
+            <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>AI Music</a>
             <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Pricing</a>
           </div>
           <div className={styles.navMobileDivider} />

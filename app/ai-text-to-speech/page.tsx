@@ -166,7 +166,7 @@ export default function TextToSpeechPage() {
             <p className={styles.ctaSub}>Free to start. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 HD.</p>
           </div>
           <div className={styles.ctaRight} data-animate data-d="1">
-            <a href="https://www.imagine.art/ai-audio-studio/ai-text-to-speech" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
+            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>Explore Audio Studio</a>
           </div>
         </div>
