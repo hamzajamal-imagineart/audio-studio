@@ -9,6 +9,14 @@ const stats = [
   { value: '4.8/5', label: 'Rating' },
 ]
 
+const AVATAR_COLORS = [
+  { bg: 'rgba(138,63,252,0.1)',  color: '#7c3aed' },
+  { bg: 'rgba(37,99,235,0.1)',   color: '#2563eb' },
+  { bg: 'rgba(5,150,105,0.1)',   color: '#059669' },
+  { bg: 'rgba(234,88,12,0.1)',   color: '#ea580c' },
+  { bg: 'rgba(219,39,119,0.1)',  color: '#db2777' },
+]
+
 type Review = {
   name: string
   initials: string
@@ -158,12 +166,15 @@ export default function Testimonials() {
       <div className={styles.track} ref={trackRef}>
         {reviews.map((r, i) => {
           const isExpanded = expanded.has(i)
+          const avatarColor = AVATAR_COLORS[i % AVATAR_COLORS.length]
           return (
             <div key={i} className={styles.card}>
               <div className={styles.cardTop}>
                 <Stars count={r.stars} />
                 <TrustpilotMark />
               </div>
+
+              <span className={styles.quote}>&ldquo;</span>
 
               <p className={isExpanded ? styles.bodyExpanded : styles.body}>
                 {r.body}
@@ -173,15 +184,15 @@ export default function Testimonials() {
                 {isExpanded ? 'Read less ↑' : 'Read more ↓'}
               </button>
 
-              <div className={styles.divider} />
-
               <a
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.author}
               >
-                <div className={styles.avatar}>{r.initials}</div>
+                <div className={styles.avatar} style={{ background: avatarColor.bg, color: avatarColor.color }}>
+                  {r.initials}
+                </div>
                 <div className={styles.authorInfo}>
                   <span className={styles.authorName}>{r.name}</span>
                   <span className={styles.authorDate}>{r.date}</span>
