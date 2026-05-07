@@ -69,8 +69,8 @@ const ACCENTS = [
 ]
 
 const STEPS = [
-  { n: '1', title: 'Paste Your Text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.', video: '/assets/tts-step-2-light.webm' },
-  { n: '2', title: 'Choose Voice, Language & Emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.', video: '/assets/tts-step-1-light.webm' },
+  { n: '1', title: 'Paste Your Text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.', video: '/assets/tts-step-1-light.webm' },
+  { n: '2', title: 'Choose Voice, Language & Emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.', video: '/assets/tts-step-2-light.webm' },
   { n: '3', title: 'Generate, Preview & Download', body: 'Click Generate. Your AI voice is ready in seconds. Preview it directly in the browser, then download as MP3 or WAV to use in your video, podcast, or project.', video: '/assets/tts-step-3-light.webm' },
 ]
 
@@ -212,7 +212,7 @@ export default function TextToSpeechPage() {
         <div className={styles.ctaInner}>
           <div className={styles.ctaLeft} data-animate>
             <h2 className={styles.ctaHeading}>Your voice,<br />everywhere.</h2>
-            <p className={styles.ctaSub}>Free to start. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 HD.</p>
+            <p className={styles.ctaSub}>Free to start. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 and ElevenLabs v3.</p>
           </div>
           <div className={styles.ctaRight} data-animate data-d="1">
             <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Try Free Text to Speech</a>
