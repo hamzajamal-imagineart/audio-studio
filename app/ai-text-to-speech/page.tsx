@@ -18,23 +18,23 @@ const FEATURES = [
 
 
 const QUALITY = [
-  { title: 'Text to Speech with Emotion', tag: '9 emotion styles', image: '/assets/usecase-podcasters.jpg' },
+  { title: 'Text to Speech with Emotion', tag: '9 emotion styles', image: '/assets/usecase-podcasters-new.jpg' },
   { title: 'Natural Text to Speech Pacing', tag: 'MiniMax Speech 2.8 HD', image: '/assets/Rectangle 499863.jpg' },
-  { title: 'Clear Pronunciation Across Accents', tag: '20+ language variants', image: '/assets/usecase-marketers.jpg' },
+  { title: 'Clear Pronunciation Across Accents', tag: '20+ language variants', image: '/assets/Rectangle 499861.jpg' },
   { title: 'Speed and Pitch Control', tag: '0.5× to 2.0× speed', image: '/assets/Rectangle 499862.jpg' },
-  { title: '50+ Distinct AI Voices', tag: '50+ voices', image: '/assets/usecase-youtubers.jpg' },
+  { title: '50+ Distinct AI Voices', tag: '50+ voices', image: '/assets/Rectangle 49986.jpg' },
   { title: 'Benchmark-Leading TTS Model', tag: 'Top benchmark score', image: '/assets/Rectangle 499865.jpg' },
 ]
 
 const USECASES = [
-  { title: 'YouTube & Short-Form Video', body: 'Generate AI voiceovers for YouTube videos, Reels, TikToks, and Shorts. No mic, no setup.', image: '/assets/usecase-youtubers.jpg' },
-  { title: 'Podcasts & Audio Content', body: 'Produce broadcast-quality narration for podcast intros, sponsor reads, or full AI-voiced episodes.', image: '/assets/usecase-podcasters.jpg' },
-  { title: 'E-Learning & Training', body: 'Turn course scripts into consistent AI narration. No reshoots, no re-recording.', image: '/assets/Rectangle 499866.jpg' },
-  { title: 'Audiobooks & Long-Form', body: 'Convert written content into audio ready for Spotify, Audible, or your own platform.', image: '/assets/Rectangle 499863.jpg' },
-  { title: 'Screen Reader & Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/Rectangle 499867.jpg' },
-  { title: 'Presentations & Demos', body: 'Add professional narration to slide decks and product demos. Faster and more consistent than recording.', image: '/assets/usecase-marketers.jpg' },
-  { title: 'Games & Interactive Media', body: 'Prototype NPC dialogue and interactive story narration without hiring a voice actor for every draft.', image: '/assets/usecase-developers.jpg' },
-  { title: 'Multilingual Content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/Rectangle 499864.jpg' },
+  { title: 'YouTube & Short-Form Video', body: 'Generate AI voiceovers for YouTube videos, Reels, TikToks, and Shorts. No mic, no setup.', image: '/assets/tts-usecase-56.jpg', bg: 'linear-gradient(135deg, #f9fafa 0%, #ede8e0 100%)' },
+  { title: 'Podcasts & Audio Content', body: 'Produce broadcast-quality narration for podcast intros, sponsor reads, or full AI-voiced episodes.', image: '/assets/tts-usecase-57.jpg', bg: 'linear-gradient(135deg, #6e7c7e 0%, #9bb4b8 100%)' },
+  { title: 'E-Learning & Training', body: 'Turn course scripts into consistent AI narration. No reshoots, no re-recording.', image: '/assets/tts-usecase-58.jpg', bg: 'linear-gradient(135deg, #f8f8f9 0%, #e4ecff 100%)' },
+  { title: 'Audiobooks & Long-Form', body: 'Convert written content into audio ready for Spotify, Audible, or your own platform.', image: '/assets/tts-usecase-59.jpg', bg: 'linear-gradient(135deg, #f6ede6 0%, #e8ddd0 100%)' },
+  { title: 'Screen Reader & Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/tts-usecase-60.jpg', bg: 'linear-gradient(135deg, #fefffe 0%, #f0ece2 100%)' },
+  { title: 'Presentations & Demos', body: 'Add professional narration to slide decks and product demos. Faster and more consistent than recording.', image: '/assets/tts-usecase-61.jpg', bg: 'linear-gradient(135deg, #f3f4f8 0%, #e4e6f2 100%)' },
+  { title: 'Games & Interactive Media', body: 'Prototype NPC dialogue and interactive story narration without hiring a voice actor for every draft.', image: '/assets/tts-usecase-62.jpg', bg: 'linear-gradient(135deg, #f6f9fe 0%, #dfe4f0 100%)' },
+  { title: 'Multilingual Content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/tts-usecase-63.jpg', bg: 'linear-gradient(135deg, #f4fafc 0%, #ddeef8 100%)' },
 ]
 
 const STEPS = [
@@ -118,8 +118,10 @@ export default function TextToSpeechPage() {
                   <p className={styles.stackBody}>{u.body}</p>
                 </div>
                 <div className={styles.stackRight}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={u.image} alt="" className={styles.stackImg} />
+                  <div className={styles.stackImgWrap} style={{ background: u.bg }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={u.image} alt="" className={styles.stackImg} />
+                  </div>
                 </div>
               </div>
             ))}
