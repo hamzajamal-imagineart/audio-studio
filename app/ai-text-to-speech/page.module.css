@@ -410,6 +410,115 @@
   mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
 }
 
+/* ── Languages Grid ─────────────────────────────────────── */
+.langGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 60px;
+}
+
+.langChip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.62);
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.langChip:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.langFlag {
+  font-size: 17px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Accent Subsection ──────────────────────────────────── */
+.accentDivider {
+  padding-top: 52px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 32px;
+}
+
+.accentHeading {
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 10px;
+}
+
+.accentSub {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+  max-width: 500px;
+}
+
+.accentGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.accentCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 28px 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.18s, border-color 0.18s, transform 0.2s;
+}
+
+.accentCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.13);
+  transform: translateY(-3px);
+}
+
+.accentFlag {
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.accentName {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+  display: block;
+}
+
+.accentCode {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.28);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.accentDesc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.42);
+  margin: 6px 0 0;
+}
+
 /* ── Steps ──────────────────────────────────────────────── */
 .steps {
   display: grid;
@@ -574,6 +683,8 @@
   .stackBody {
     max-width: 100%;
   }
+  .langGrid { grid-template-columns: repeat(4, 1fr); }
+  .accentGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -607,6 +718,8 @@
   .chips { gap: 8px; }
   .chip { min-width: 0; flex: 1 1 calc(50% - 8px); }
   .bentoGrid { grid-template-columns: 1fr; }
+  .langGrid { grid-template-columns: repeat(2, 1fr); }
+  .accentGrid { grid-template-columns: repeat(2, 1fr); }
 
   .steps { max-width: 100%; }
 

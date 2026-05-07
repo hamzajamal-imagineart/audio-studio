@@ -10,16 +10,16 @@ export const metadata: Metadata = {
 }
 
 const FEATURES = [
-  { label: 'MiniMax Speech 2.8 HD', sub: 'Top-ranked TTS model' },
+  { label: 'Top Ranked TTS Models', sub: 'MiniMax 2.8 & ElevenLabs v3' },
   { label: '20+ Languages', sub: 'Global accent support' },
-  { label: 'Emotion Controls', sub: '9 voice styles' },
+  { label: 'Emotion Controls', sub: '15+ voice styles' },
   { label: 'Online & Instant', sub: 'No software download' },
   { label: 'All-in-One Studio', sub: 'Image · Video · Audio' },
 ]
 
 
 const QUALITY = [
-  { title: 'Text to Speech with Emotion', tag: '9 emotion styles', image: '/assets/usecase-podcasters-new.jpg' },
+  { title: 'Text to Speech with Emotion', tag: '15+ emotion styles', image: '/assets/usecase-podcasters-new.jpg' },
   { title: 'Natural Text to Speech Pacing', tag: 'MiniMax Speech 2.8 HD', image: '/assets/Rectangle 499863.jpg' },
   { title: 'Clear Pronunciation Across Accents', tag: '20+ language variants', image: '/assets/Rectangle 499861.jpg' },
   { title: 'Speed and Pitch Control', tag: '0.5× to 2.0× speed', image: '/assets/Rectangle 499862.jpg' },
@@ -38,6 +38,36 @@ const USECASES = [
   { title: 'Multilingual Content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/tts-usecase-63.jpg', bg: 'linear-gradient(135deg, #f4fafc 0%, #ddeef8 100%)' },
 ]
 
+const LANGUAGES = [
+  { flag: '🇺🇸', name: 'English US' },
+  { flag: '🇬🇧', name: 'English UK' },
+  { flag: '🇦🇺', name: 'English AU' },
+  { flag: '🇮🇪', name: 'English IE' },
+  { flag: '🇪🇸', name: 'Spanish' },
+  { flag: '🇫🇷', name: 'French' },
+  { flag: '🇩🇪', name: 'German' },
+  { flag: '🇮🇹', name: 'Italian' },
+  { flag: '🇧🇷', name: 'Portuguese' },
+  { flag: '🇯🇵', name: 'Japanese' },
+  { flag: '🇰🇷', name: 'Korean' },
+  { flag: '🇨🇳', name: 'Chinese' },
+  { flag: '🇸🇦', name: 'Arabic' },
+  { flag: '🇮🇳', name: 'Hindi' },
+  { flag: '🇳🇱', name: 'Dutch' },
+  { flag: '🇷🇺', name: 'Russian' },
+  { flag: '🇸🇪', name: 'Swedish' },
+  { flag: '🇹🇷', name: 'Turkish' },
+  { flag: '🇵🇱', name: 'Polish' },
+  { flag: '🇻🇳', name: 'Vietnamese' },
+]
+
+const ACCENTS = [
+  { flag: '🇺🇸', name: 'American', code: 'US English', desc: 'Neutral, broadcast standard' },
+  { flag: '🇬🇧', name: 'British', code: 'UK English', desc: 'RP, crisp and authoritative' },
+  { flag: '🇦🇺', name: 'Australian', code: 'AU English', desc: 'Friendly, approachable' },
+  { flag: '🇮🇪', name: 'Irish', code: 'IE English', desc: 'Warm, natural cadence' },
+]
+
 const STEPS = [
   { n: '1', title: 'Paste Your Text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.', video: '/assets/tts-step-2-light.webm' },
   { n: '2', title: 'Choose Voice, Language & Emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.', video: '/assets/tts-step-1-light.webm' },
@@ -45,14 +75,17 @@ const STEPS = [
 ]
 
 const FAQS = [
+  { q: 'What is text to speech?', a: 'Text to speech (TTS) is a technology that converts written text into spoken audio using an AI-generated voice. ImagineArt text to speech produces natural, human-like voices rather than robotic-sounding output, and supports multiple languages, accents, and emotional styles.' },
   { q: 'Is ImagineArt text to speech free?', a: 'Yes. ImagineArt offers free text to speech access for all users. You can generate AI voices online and download the output as MP3 without a paid subscription. The free plan includes a monthly character allowance, enough for scripts, social content, and short-form voiceovers.' },
-  { q: 'How do I convert text to speech online?', a: 'Paste your text into the input field, choose a voice, language, accent, and emotion style, then click Generate. Your audio will be ready to preview and download in seconds: no software installation required.' },
-  { q: 'Can I download the generated voice?', a: 'Yes. After generating your AI voice, you can download the audio as an MP3 file directly from the tool. MP3 download is available on the free plan. Premium plans also support WAV format.' },
-  { q: 'Can I use text to speech for YouTube videos?', a: 'Yes. ImagineArt AI text to speech is widely used for YouTube voiceovers, explainer videos, tutorials, and short-form content. You own the audio you generate and can use it commercially on supported plans.' },
-  { q: 'Can AI read text with emotion?', a: 'Yes. ImagineArt supports 9 emotion and speaking style controls: natural, expressive, friendly, professional, calm, energetic, sad, angry, and whisper.' },
-  { q: 'Does ImagineArt support different text to speech accents?', a: 'Yes. ImagineArt supports 20+ languages including English (US, UK, Australian, Irish), Spanish, French, German, Italian, Japanese, Arabic, Hindi, and more.' },
-  { q: 'Can I use text to speech on mobile?', a: 'Yes. ImagineArt text to speech works fully in mobile browsers on iOS and Android. No app download is required. Open the page in your browser and start generating.' },
-  { q: 'What is the difference between text to speech and an AI voice generator?', a: 'Text to speech converts written text into audio using a pre-built AI voice. An AI voice generator can also create or clone custom voices and produce audio at scale. ImagineArt combines both.' },
+  { q: 'How do I convert text to speech online?', a: 'Paste your text into the input field, choose a voice, language, accent, and emotion style, then click Generate. Your audio will be ready to preview and download in seconds, no software installation required.' },
+  { q: 'Can I download the generated voice?', a: 'Yes. After generating your AI voice, you can download the audio as an MP3 file directly from the tool. MP3 download is available on the free plan. Premium plans also support WAV format for higher-quality audio output.' },
+  { q: 'Can I use text to speech for YouTube videos?', a: 'Yes. ImagineArt AI text to speech is widely used for YouTube voiceovers, explainer videos, tutorials, and short-form content. The natural AI voices sound clear and engaging in video productions. You own the audio you generate and can use it commercially on supported plans.' },
+  { q: 'What is the best free text to speech tool?', a: 'ImagineArt offers one of the best free text to speech tools available online. It combines realistic AI voices powered by MiniMax Speech 2.8 HD, 20+ languages, emotion and style controls, and a clean browser-based interface, all available free with no software download required.' },
+  { q: 'Can AI read text with emotion?', a: 'Yes. ImagineArt AI text to speech supports emotion and speaking style controls, including natural, expressive, friendly, professional, calm, energetic, sad, angry, and whisper. This makes the generated voice sound contextually appropriate rather than flat or robotic.' },
+  { q: 'Does ImagineArt support different text to speech accents?', a: 'Yes. ImagineArt supports text to speech in 20+ languages including English (US, UK, Australian, Irish), Spanish, French, German, Italian, Japanese, Arabic, Hindi, and more. You can select the language and accent to match your target audience.' },
+  { q: 'What is the most realistic text to speech available?', a: 'ImagineArt uses MiniMax Speech 2.8 HD, a top-ranked model on industry TTS benchmarks, to deliver some of the most realistic text to speech audio available online. The model produces natural pacing, clear pronunciation, and expressive voice output that closely mimics human speech patterns.' },
+  { q: 'Can I use text to speech on mobile?', a: 'Yes. ImagineArt text to speech works fully in mobile browsers on iOS and Android. The interface is responsive and optimized for phone and tablet use. No app download is required, open the page in your browser and start generating.' },
+  { q: 'What is the difference between text to speech and an AI voice generator?', a: 'Text to speech converts written text into audio using a pre-built AI voice. An AI voice generator can also create or clone custom voices, adjust vocal characteristics, and produce audio at scale. ImagineArt combines both, it offers standard text to speech alongside AI voice cloning and a full audio studio.' },
 ]
 
 export default function TextToSpeechPage() {
@@ -81,8 +114,8 @@ export default function TextToSpeechPage() {
       <section className={`${styles.section} ${styles.sectionDark}`}>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.headingLight}>Realistic AI Voices, Powered by MiniMax Speech 2.8 HD</h2>
-            <p className={styles.subLight}>One of the highest-ranked models on independent TTS benchmarks. Natural, expressive voice output that sounds human.</p>
+            <h2 className={styles.headingLight}>Realistic Text to Speech with Natural AI Voices</h2>
+            <p className={styles.subLight}>ImagineArt leverages the leading TTS models from MiniMax Speech 2.8 to ElevenLabs v3, to produce natural, expressive voice output that sounds human.</p>
           </div>
           <div className={styles.bentoGrid}>
             {QUALITY.map((q, i) => (
@@ -108,6 +141,38 @@ export default function TextToSpeechPage() {
             <p className={styles.subLight}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
           </div>
           <StackCards usecases={USECASES} />
+        </div>
+      </section>
+
+      {/* Languages & Accents */}
+      <section className={`${styles.section} ${styles.sectionDark}`}>
+        <div className={styles.inner}>
+          <div className={styles.sectionHeader} data-animate>
+            <h2 className={styles.headingLight}>Generate AI Speech in 20+ Languages</h2>
+            <p className={styles.subLight}>Voices are native to each language, not translated or pitch-shifted.</p>
+          </div>
+          <div className={styles.langGrid}>
+            {LANGUAGES.map((l, i) => (
+              <div key={i} className={styles.langChip}>
+                <span className={styles.langFlag}>{l.flag}</span>
+                <span>{l.name}</span>
+              </div>
+            ))}
+          </div>
+          <div className={styles.accentDivider}>
+            <h3 className={styles.accentHeading}>English Text to Speech Accents</h3>
+            <p className={styles.accentSub}>Creating content for a specific English-speaking audience? Choose the accent that matches your market.</p>
+          </div>
+          <div className={styles.accentGrid}>
+            {ACCENTS.map((a, i) => (
+              <div key={i} className={styles.accentCard} data-animate data-d={String(i + 1)}>
+                <span className={styles.accentFlag}>{a.flag}</span>
+                <span className={styles.accentName}>{a.name}</span>
+                <span className={styles.accentCode}>{a.code}</span>
+                <p className={styles.accentDesc}>{a.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -139,7 +204,7 @@ export default function TextToSpeechPage() {
       <Faq
         faqs={FAQS}
         heading="Text to Speech FAQs"
-        sub="Common questions about ImagineArt AI text to speech"
+        sub="Everything you want to know about AI text to speech on ImagineArt"
       />
 
       {/* CTA */}
