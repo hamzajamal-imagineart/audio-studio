@@ -87,7 +87,7 @@ type Card = {
 const cards: Card[] = [
   {
     icon: <TtsIcon />,
-    title: "AI Text to Speech",
+    title: "AI text to speech",
     oneLiner: "Turn any text into lifelike voiceovers in 70+ languages.",
     video: "/assets/tts-tool.mp4",
     bullets: [
@@ -101,7 +101,7 @@ const cards: Card[] = [
   },
   {
     icon: <CloneIcon />,
-    title: "AI Voice Cloning",
+    title: "AI voice cloning",
     oneLiner: "Clone any voice from just 10 seconds of audio.",
     video: "/assets/voice-cloning-tool.mp4",
     bullets: [
@@ -115,7 +115,7 @@ const cards: Card[] = [
   },
   {
     icon: <MusicIcon />,
-    title: "AI Music Generator",
+    title: "AI music generator",
     oneLiner: "Compose original songs and instrumentals from a text prompt.",
     video: "/assets/music-generator-tool.mp4",
     bullets: [

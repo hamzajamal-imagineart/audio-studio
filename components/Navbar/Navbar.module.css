@@ -84,13 +84,25 @@
 }
 .navLink:hover { color: #0f0f0f; background: rgba(15, 15, 15, 0.05); }
 
-/* Unscrolled: white text */
+/* Unscrolled: white text (default, for dark-hero pages) */
 .navbar:not(.scrolled) .navLink       { color: rgba(255, 255, 255, 0.75); }
 .navbar:not(.scrolled) .navLink:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
 
 /* Scrolled: dark text */
 .navbar.scrolled .navLink       { color: rgba(15, 15, 15, 0.75); }
 .navbar.scrolled .navLink:hover { color: #0f0f0f; background: rgba(15, 15, 15, 0.05); }
+
+/* ── Light hero override (homepage) ──────────────────── */
+.navbar.lightHero .logoWhite { display: none; }
+.navbar.lightHero .logoDark  { display: block; }
+.navbar.lightHero .navLink       { color: rgba(15, 15, 15, 0.75); }
+.navbar.lightHero .navLink:hover { color: #0f0f0f; background: rgba(15, 15, 15, 0.05); }
+.navbar.lightHero .navbarBtnGhost       { color: rgba(15, 15, 15, 0.7); }
+.navbar.lightHero .navbarBtnGhost:hover { color: #0f0f0f; background: rgba(15, 15, 15, 0.06); }
+.navbar.lightHero .navbarBtnDark       { background: #111; border-color: transparent; color: #fff; }
+.navbar.lightHero .navbarBtnDark:hover { background: #222; }
+.navbar.lightHero .navHamburger       { color: #0f0f0f; }
+.navbar.lightHero .navHamburger:hover { background: rgba(0, 0, 0, 0.06); }
 
 /* ── Dropdown ─────────────────────────────────────────── */
 .navDropdown { position: relative; }

@@ -77,23 +77,23 @@ const ICONS: Record<string, React.FC> = {
 
 const TOOLS = [
   {
-    title: 'Voice Isolator',
+    title: 'Voice isolator',
     desc: 'Remove background noise instantly. Get studio-quality vocals from any recording.',
   },
   {
-    title: 'AI Sound Effects',
+    title: 'AI sound effects',
     desc: 'Add built-in effects and ambient layers. Complete your audio without leaving the studio.',
   },
   {
-    title: 'Audio Editor',
+    title: 'Audio editor',
     desc: 'Trim, cut, and arrange audio tracks with precision. No software download required.',
   },
   {
-    title: 'Speech Enhancer',
+    title: 'Speech enhancer',
     desc: 'Improve clarity and presence of any voice recording in one click.',
   },
   {
-    title: 'AI Remaster',
+    title: 'AI remaster',
     desc: 'Restore and upgrade old recordings to broadcast quality using AI.',
   },
 ]

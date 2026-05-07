@@ -175,17 +175,35 @@
 }
 
 .sectionAlt {
-  background: #f5f5f7;
+  background: #F7FBFF;
 }
 
 .sectionDark {
+  position: relative;
   background-color: #0b0b0b;
   background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
+.sectionDark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(circle 220px at var(--mouse-x, -9999px) var(--mouse-y, -9999px), black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 220px at var(--mouse-x, -9999px) var(--mouse-y, -9999px), black 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sectionDark .inner {
+  position: relative;
+  z-index: 1;
+}
+
 .sectionLight {
-  background: #f5f5f7;
+  background: #F7FBFF;
 }
 
 .ctaSection {
@@ -235,6 +253,7 @@
   gap: 12px;
   flex-shrink: 0;
 }
+
 
 @media (max-width: 768px) {
   .ctaInner {
@@ -424,17 +443,17 @@
   gap: 9px;
   padding: 12px 16px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(0, 0, 0, 0.62);
   transition: background 0.18s, border-color 0.18s;
 }
 
 .langChip:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.13);
 }
 
 .langFlag {
@@ -446,7 +465,7 @@
 /* ── Accent Subsection ──────────────────────────────────── */
 .accentDivider {
   padding-top: 52px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   margin-bottom: 32px;
 }
 
@@ -454,14 +473,14 @@
   font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 600;
   letter-spacing: -0.3px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #0f0f0f;
   margin: 0 0 10px;
 }
 
 .accentSub {
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(0, 0, 0, 0.42);
   margin: 0;
   max-width: 500px;
 }
@@ -478,14 +497,14 @@
   gap: 5px;
   padding: 28px 24px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   transition: background 0.18s, border-color 0.18s, transform 0.2s;
 }
 
 .accentCard:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.13);
   transform: translateY(-3px);
 }
 
@@ -499,14 +518,14 @@
 .accentName {
   font-size: 16px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.78);
+  color: #0f0f0f;
   display: block;
 }
 
 .accentCode {
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(0, 0, 0, 0.28);
   text-transform: uppercase;
   letter-spacing: 1px;
   display: block;
@@ -515,7 +534,7 @@
 .accentDesc {
   font-size: 13px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(0, 0, 0, 0.42);
   margin: 6px 0 0;
 }
 
@@ -599,9 +618,9 @@
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   transition: border-color 0.2s;
-  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background: linear-gradient(90deg, #ebebeb 25%, #d8d8d8 50%, #ebebeb 75%);
   background-size: 200% 100%;
   animation: shimmer 1.6s infinite linear;
 }
@@ -619,7 +638,7 @@
 .bentoCard:hover .bentoImg { transform: scale(1.04); }
 
 .bentoCard:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .bentoOverlay {

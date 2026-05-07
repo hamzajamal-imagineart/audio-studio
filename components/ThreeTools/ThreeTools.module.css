@@ -3,7 +3,7 @@
 }
 
 .section {
-  background: #f5f5f7;
+  background: #F7FBFF;
   padding: 120px var(--px) 100px;
 }
 
@@ -62,7 +62,7 @@
   justify-content: flex-end;
   transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
-  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background: linear-gradient(90deg, #ebebeb 25%, #d8d8d8 50%, #ebebeb 75%);
   background-size: 200% 100%;
   animation: shimmer 1.6s infinite linear;
 }

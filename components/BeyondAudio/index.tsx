@@ -13,7 +13,7 @@ type BeyondCard = {
 const cards: BeyondCard[] = [
   {
     tag: "You are here",
-    title: "AI Audio Studio",
+    title: "AI audio studio",
     body: "Voice, cloning, music. The complete audio platform.",
     href: "https://www.imagine.art/audio",
     image: "/assets/Rectangle 499868.jpg",
@@ -21,7 +21,7 @@ const cards: BeyondCard[] = [
   },
   {
     tag: "Images",
-    title: "AI Image Generator",
+    title: "AI image generator",
     body: "Create stunning visuals from text prompts.",
     href: "https://www.imagine.art/ai-image-generator",
     image: "/assets/Rectangle 499866.jpg",
@@ -29,7 +29,7 @@ const cards: BeyondCard[] = [
   },
   {
     tag: "Video",
-    title: "AI Video Generator",
+    title: "AI video generator",
     body: "Turn text or images into video clips.",
     href: "https://www.imagine.art/ai-video-generator",
     image: "/assets/Rectangle 499867.jpg",

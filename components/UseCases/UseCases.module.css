@@ -4,7 +4,7 @@
 
 
 .section {
-  background: #0b0b0b;
+  background: #F7FBFF;
   padding: 120px var(--px) 120px;
 }
 
@@ -22,7 +22,7 @@
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.28);
   margin: 0 0 16px;
 }
 
@@ -31,7 +31,7 @@
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.5px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #0f0f0f;
   margin: 0 0 20px;
 }
 
@@ -39,7 +39,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(0, 0, 0, 0.42);
   max-width: 600px;
   margin: 0;
 }
@@ -66,7 +66,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  background: linear-gradient(90deg, #1c1c1c 25%, #282828 50%, #1c1c1c 75%);
+  background: linear-gradient(90deg, #ebebeb 25%, #d8d8d8 50%, #ebebeb 75%);
   background-size: 200% 100%;
   animation: shimmer 1.6s infinite linear;
 }
@@ -89,7 +89,7 @@
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.28);
   margin: 0;
 }
 
@@ -98,7 +98,7 @@
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.5px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #0f0f0f;
   margin: 0;
 }
 
@@ -106,7 +106,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.72;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(0, 0, 0, 0.42);
   margin: 0 0 28px;
   max-width: 480px;
 }
@@ -128,7 +128,7 @@
 
 .cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 768px) {

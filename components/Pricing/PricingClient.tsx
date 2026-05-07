@@ -124,7 +124,7 @@ export default function PricingClient({ plans }: { plans: Plan[] }) {
   }
 
   return (
-    <section className={styles.section}>
+    <section id="pricing" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header}>
           <h2 className={styles.title}>Choose a plan that fits your needs</h2>

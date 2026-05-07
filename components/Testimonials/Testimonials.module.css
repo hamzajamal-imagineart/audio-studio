@@ -12,6 +12,7 @@
 /* Header */
 .header {
   margin-bottom: 48px;
+  text-align: center;
 }
 
 .h2 {
@@ -36,6 +37,7 @@
 .stat {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
   padding: 0 24px;
   border-right: 1px solid rgba(0, 0, 0, 0.06);
@@ -50,6 +52,7 @@
   line-height: 1;
   letter-spacing: -0.2px;
   color: #0f0f0f;
+  text-align: center;
 }
 
 .statLabel {
@@ -57,6 +60,7 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.42);
   line-height: 1.4;
+  text-align: center;
 }
 
 /* Horizontal scroll track */
