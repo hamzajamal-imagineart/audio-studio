@@ -12,6 +12,11 @@ function HeroCard({ side, image }: { side: 'left' | 'right', image: string }) {
     <div className={`${styles.vidCard} ${styles[side]}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt="" className={styles.vidThumb} />
+      <div className={styles.vidPlayBtn} aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M5 3L15 9L5 15V3Z" fill="white"/>
+        </svg>
+      </div>
     </div>
   )
 }
