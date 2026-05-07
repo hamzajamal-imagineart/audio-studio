@@ -17,9 +17,10 @@
   --text-inverse-disabled: rgba(255, 255, 255, 0.25);
 
   /* Text on light */
-  --text-primary:  #0f0f0f;
-  --text-muted:    rgba(0, 0, 0, 0.42);
-  --text-eyebrow:  rgba(0, 0, 0, 0.28);
+  --text-primary:   #0f0f0f;
+  --text-secondary: #525252;
+  --text-muted:     #525252;
+  --text-eyebrow:  rgba(15, 15, 15, 0.5);
   --text-disabled: rgba(0, 0, 0, 0.22);
 
   /* Borders */
@@ -39,7 +40,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font);
   background: #ffffff;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

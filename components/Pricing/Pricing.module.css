@@ -27,7 +27,7 @@
 .sub {
   font-size: 14px;
   font-weight: 400;
-  color: rgba(15, 15, 15, 0.5);
+  color: #525252;
   letter-spacing: 0.28px;
   margin: 0;
 }
@@ -453,7 +453,7 @@
 .footerText {
   font-size: 14px;
   font-weight: 400;
-  color: rgba(15, 15, 15, 0.5);
+  color: #525252;
   letter-spacing: 0.28px;
 }
 
