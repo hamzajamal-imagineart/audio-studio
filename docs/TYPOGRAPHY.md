@@ -117,9 +117,16 @@ line-height: 1.6;
 
 1. **Negative tracking on large type** – apply `-0.5px` to `-1.5px` letter-spacing on anything above 28px. Makes display type feel controlled, not bloated.
 
-2. **Muted secondary text** – never use full `#000` or `#fff` for supporting copy. Use opacity variants:
-   - Light bg: `rgba(0,0,0,0.42)` muted · `rgba(0,0,0,0.22)` disabled
-   - Dark bg: `rgba(255,255,255,0.42)` muted · `rgba(255,255,255,0.25)` disabled
+2. **Color tokens for text** – use the defined palette, never arbitrary rgba values on light backgrounds:
+
+   | Role | Token | Value | Usage |
+   |------|-------|-------|-------|
+   | Primary | `--text-primary` | `#0F0F0F` | Headings, strong labels |
+   | Secondary | `--text-secondary` | `#525252` | Body copy, card descriptions, subtitles |
+   | Tertiary | `--text-eyebrow` | `rgba(15,15,15,0.5)` | Eyebrows, dates, stat labels, meta text |
+   | Disabled | `--text-disabled` | `rgba(0,0,0,0.22)` | Inactive states |
+
+   - Dark bg: `rgba(255,255,255,0.75)` body · `rgba(255,255,255,0.42)` muted · `rgba(255,255,255,0.25)` disabled
 
 3. **Consistent line-height** – `1.05–1.1` for headings, `1.65–1.7` for body. Never use default browser line-height on display text.
 
