@@ -13,7 +13,7 @@ type BeyondCard = {
 const cards: BeyondCard[] = [
   {
     tag: "You are here",
-    title: "AI audio studio",
+    title: "AI Audio Studio",
     body: "Voice, cloning, music. The complete audio platform.",
     href: "https://www.imagine.art/audio",
     image: "/assets/Rectangle 499868.jpg",
@@ -21,7 +21,7 @@ const cards: BeyondCard[] = [
   },
   {
     tag: "Images",
-    title: "AI image generator",
+    title: "AI Image Generator",
     body: "Create stunning visuals from text prompts.",
     href: "https://www.imagine.art/ai-image-generator",
     image: "/assets/Rectangle 499866.jpg",
@@ -29,7 +29,7 @@ const cards: BeyondCard[] = [
   },
   {
     tag: "Video",
-    title: "AI video generator",
+    title: "AI Video Generator",
     body: "Turn text or images into video clips.",
     href: "https://www.imagine.art/ai-video-generator",
     image: "/assets/Rectangle 499867.jpg",
@@ -42,7 +42,7 @@ export default function BeyondAudio() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header} data-animate>
-<h2 className={styles.h2}>More than just audio.</h2>
+<h2 className={styles.h2}>More Than Just Audio.</h2>
           <p className={styles.sub}>
             Pair your voiceovers with AI-generated images and videos, all from the same workspace.
           </p>

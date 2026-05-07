@@ -448,17 +448,20 @@
 .navMobileActions {
   padding: 0 24px;
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 .navMobileActions .navbarBtn {
-  height: 44px;
+  height: 48px;
   padding: 0 24px;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 14px;
+  width: 100%;
+  justify-content: center;
 }
-.navMobileActions .navbarBtnDark { background: #fff; color: #0f0f0f; border: none; }
-.navMobileActions .navbarBtnDark:hover { background: #e8e8e8; }
+.navMobileActions .navbarBtnDark { background: rgba(255,255,255,0.92); color: #0f0f0f; border: none; }
+.navMobileActions .navbarBtnDark:hover { background: #fff; }
 
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 820px) {

@@ -127,7 +127,7 @@ export default function PricingClient({ plans }: { plans: Plan[] }) {
     <section id="pricing" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Choose a plan that fits your needs</h2>
+          <h2 className={styles.title}>Choose A Plan That Fits Your Needs</h2>
           <p className={styles.sub}>Upgrade to get access to pro features and generate more and better</p>
         </div>
 

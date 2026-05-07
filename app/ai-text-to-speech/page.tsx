@@ -20,23 +20,23 @@ const FEATURES = [
 
 
 const QUALITY = [
-  { title: 'Text to speech with emotion', tag: '15+ emotion styles', image: '/assets/usecase-podcasters-new.jpg' },
-  { title: 'Natural text to speech pacing', tag: 'MiniMax Speech 2.8 HD', image: '/assets/Rectangle 499863.jpg' },
-  { title: 'Clear pronunciation across accents', tag: '20+ language variants', image: '/assets/Rectangle 499861.jpg' },
-  { title: 'Speed and pitch control', tag: '0.5× to 2.0× speed', image: '/assets/Rectangle 499862.jpg' },
-  { title: '50+ distinct AI voices', tag: '50+ voices', image: '/assets/Rectangle 49986.jpg' },
-  { title: 'Benchmark-leading TTS model', tag: 'Top benchmark score', image: '/assets/Rectangle 499865.jpg' },
+  { title: 'Text To Speech With Emotion', tag: '15+ emotion styles', image: '/assets/usecase-podcasters-new.jpg' },
+  { title: 'Natural Text To Speech Pacing', tag: 'MiniMax Speech 2.8 HD', image: '/assets/Rectangle 499863.jpg' },
+  { title: 'Clear Pronunciation Across Accents', tag: '20+ language variants', image: '/assets/Rectangle 499861.jpg' },
+  { title: 'Speed And Pitch Control', tag: '0.5× to 2.0× speed', image: '/assets/Rectangle 499862.jpg' },
+  { title: '50+ Distinct AI Voices', tag: '50+ voices', image: '/assets/Rectangle 49986.jpg' },
+  { title: 'Benchmark-Leading TTS Model', tag: 'Top benchmark score', image: '/assets/Rectangle 499865.jpg' },
 ]
 
 const USECASES = [
-  { title: 'YouTube & short-form video', body: 'Generate AI voiceovers for YouTube videos, Reels, TikToks, and Shorts. No mic, no setup.', image: '/assets/tts-usecase-56.jpg', bg: 'linear-gradient(135deg, #f9fafa 0%, #ede8e0 100%)' },
-  { title: 'Podcasts & audio content', body: 'Produce broadcast-quality narration for podcast intros, sponsor reads, or full AI-voiced episodes.', image: '/assets/tts-usecase-57.jpg', bg: 'linear-gradient(135deg, #6e7c7e 0%, #9bb4b8 100%)' },
-  { title: 'E-learning & training', body: 'Turn course scripts into consistent AI narration. No reshoots, no re-recording.', image: '/assets/tts-usecase-58.jpg', bg: 'linear-gradient(135deg, #f8f8f9 0%, #e4ecff 100%)' },
-  { title: 'Audiobooks & long-form', body: 'Convert written content into audio ready for Spotify, Audible, or your own platform.', image: '/assets/tts-usecase-59.jpg', bg: 'linear-gradient(135deg, #f6ede6 0%, #e8ddd0 100%)' },
-  { title: 'Screen reader & accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/tts-usecase-60.jpg', bg: 'linear-gradient(135deg, #fefffe 0%, #f0ece2 100%)' },
-  { title: 'Presentations & demos', body: 'Add professional narration to slide decks and product demos. Faster and more consistent than recording.', image: '/assets/tts-usecase-61.jpg', bg: 'linear-gradient(135deg, #f3f4f8 0%, #e4e6f2 100%)' },
-  { title: 'Games & interactive media', body: 'Prototype NPC dialogue and interactive story narration without hiring a voice actor for every draft.', image: '/assets/tts-usecase-62.jpg', bg: 'linear-gradient(135deg, #f6f9fe 0%, #dfe4f0 100%)' },
-  { title: 'Multilingual content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/tts-usecase-63.jpg', bg: 'linear-gradient(135deg, #f4fafc 0%, #ddeef8 100%)' },
+  { title: 'YouTube & Short-Form Video', body: 'Generate AI voiceovers for YouTube videos, Reels, TikToks, and Shorts. No mic, no setup.', image: '/assets/tts-usecase-56.jpg', bg: 'linear-gradient(135deg, #f9fafa 0%, #ede8e0 100%)' },
+  { title: 'Podcasts & Audio Content', body: 'Produce broadcast-quality narration for podcast intros, sponsor reads, or full AI-voiced episodes.', image: '/assets/tts-usecase-57.jpg', bg: 'linear-gradient(135deg, #6e7c7e 0%, #9bb4b8 100%)' },
+  { title: 'E-Learning & Training', body: 'Turn course scripts into consistent AI narration. No reshoots, no re-recording.', image: '/assets/tts-usecase-58.jpg', bg: 'linear-gradient(135deg, #f8f8f9 0%, #e4ecff 100%)' },
+  { title: 'Audiobooks & Long-Form', body: 'Convert written content into audio ready for Spotify, Audible, or your own platform.', image: '/assets/tts-usecase-59.jpg', bg: 'linear-gradient(135deg, #f6ede6 0%, #e8ddd0 100%)' },
+  { title: 'Screen Reader & Accessibility', body: 'Make written content available to users with visual impairments or reading difficulties.', image: '/assets/tts-usecase-60.jpg', bg: 'linear-gradient(135deg, #fefffe 0%, #f0ece2 100%)' },
+  { title: 'Presentations & Demos', body: 'Add professional narration to slide decks and product demos. Faster and more consistent than recording.', image: '/assets/tts-usecase-61.jpg', bg: 'linear-gradient(135deg, #f3f4f8 0%, #e4e6f2 100%)' },
+  { title: 'Games & Interactive Media', body: 'Prototype NPC dialogue and interactive story narration without hiring a voice actor for every draft.', image: '/assets/tts-usecase-62.jpg', bg: 'linear-gradient(135deg, #f6f9fe 0%, #dfe4f0 100%)' },
+  { title: 'Multilingual Content', body: 'Localize into 20+ languages instantly. Same script in English, Spanish, French, Arabic, one tool.', image: '/assets/tts-usecase-63.jpg', bg: 'linear-gradient(135deg, #f4fafc 0%, #ddeef8 100%)' },
 ]
 
 const LANGUAGES = [
@@ -70,9 +70,9 @@ const ACCENTS = [
 ]
 
 const STEPS = [
-  { n: '1', title: 'Paste your text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.', video: '/assets/tts-step-2-light.webm' },
-  { n: '2', title: 'Choose voice, language & emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.', video: '/assets/tts-step-1-light.webm' },
-  { n: '3', title: 'Generate, preview & download', body: 'Click Generate. Your AI voice is ready in seconds. Preview it directly in the browser, then download as MP3 or WAV to use in your video, podcast, or project.', video: '/assets/tts-step-3-light.webm' },
+  { n: '1', title: 'Paste Your Text', body: 'Type or paste any text into the input box: a script, article, product description, or anything you want converted to speech. Up to 5,000 characters per generation.', video: '/assets/tts-step-2-light.webm' },
+  { n: '2', title: 'Choose Voice, Language & Emotion', body: 'Select your voice persona, target language, regional accent, and speaking style. Adjust speed between 0.5× and 2.0×. Every setting is available free online.', video: '/assets/tts-step-1-light.webm' },
+  { n: '3', title: 'Generate, Preview & Download', body: 'Click Generate. Your AI voice is ready in seconds. Preview it directly in the browser, then download as MP3 or WAV to use in your video, podcast, or project.', video: '/assets/tts-step-3-light.webm' },
 ]
 
 const FAQS = [
@@ -95,7 +95,7 @@ export default function TextToSpeechPage() {
 
       {/* Hero */}
       <section className={styles.hero}>
-        <h1 className={styles.heroHeading}>Turn text into natural<br />AI speech</h1>
+        <h1 className={styles.heroHeading}>Turn Text Into Natural<br />AI Speech</h1>
         <p className={styles.heroSub}>Paste your text, choose a voice, preview the audio, and create realistic voice output. No complex setup, no software to download.</p>
         <PromptBox />
         <p className={styles.heroMeta}>Free to start · No signup needed · 20+ languages · Download MP3</p>
@@ -115,7 +115,7 @@ export default function TextToSpeechPage() {
       <section className={`${styles.section} ${styles.sectionLight}`}>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.heading}>Realistic text to speech with natural AI voices</h2>
+            <h2 className={styles.heading}>Realistic Text To Speech With Natural AI Voices</h2>
             <p className={styles.sub}>ImagineArt leverages the leading TTS models from MiniMax Speech 2.8 to ElevenLabs v3, to produce natural, expressive voice output that sounds human.</p>
           </div>
           <div className={styles.bentoGrid}>
@@ -138,7 +138,7 @@ export default function TextToSpeechPage() {
       <section className={`${styles.section} ${styles.sectionDark}`} data-dot-grid>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.headingLight}>Built for creators, teams, and everyday use</h2>
+            <h2 className={styles.headingLight}>Built For Creators, Teams, And Everyday Use</h2>
             <p className={styles.subLight}>From YouTube voiceovers to audiobooks to accessibility tools, ImagineArt text to speech fits any workflow that needs natural AI audio.</p>
           </div>
           <StackCards usecases={USECASES} />
@@ -149,7 +149,7 @@ export default function TextToSpeechPage() {
       <section className={`${styles.section} ${styles.sectionLight}`}>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.heading}>Generate AI speech in 20+ languages</h2>
+            <h2 className={styles.heading}>Generate AI Speech In 20+ Languages</h2>
             <p className={styles.sub}>Voices are native to each language, not translated or pitch-shifted.</p>
           </div>
           <div className={styles.langGrid}>
@@ -161,7 +161,7 @@ export default function TextToSpeechPage() {
             ))}
           </div>
           <div className={styles.accentDivider}>
-            <h3 className={styles.accentHeading}>English text to speech accents</h3>
+            <h3 className={styles.accentHeading}>English Text To Speech Accents</h3>
             <p className={styles.accentSub}>Creating content for a specific English-speaking audience? Choose the accent that matches your market.</p>
           </div>
           <div className={styles.accentGrid}>
@@ -181,7 +181,7 @@ export default function TextToSpeechPage() {
       <section className={`${styles.section} ${styles.sectionDark}`} data-dot-grid>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.headingLight}>From text to audio in 3 steps</h2>
+            <h2 className={styles.headingLight}>From Text To Audio In 3 Steps</h2>
             <p className={styles.subLight}>No technical setup. No software. Under a minute.</p>
           </div>
           <div className={styles.steps}>
@@ -212,7 +212,7 @@ export default function TextToSpeechPage() {
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
           <div className={styles.ctaLeft} data-animate>
-            <h2 className={styles.ctaHeading}>Your voice,<br />everywhere.</h2>
+            <h2 className={styles.ctaHeading}>Your Voice,<br />Everywhere.</h2>
             <p className={styles.ctaSub}>Free to start. No credit card, no download, no setup. Powered by MiniMax Speech 2.8 and ElevenLabs v3.</p>
           </div>
           <div className={styles.ctaRight} data-animate data-d="1">

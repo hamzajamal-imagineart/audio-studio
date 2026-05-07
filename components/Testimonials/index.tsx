@@ -112,7 +112,7 @@ export default function Testimonials() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <h2 className={styles.h2}>Trusted by creators worldwide.</h2>
+          <h2 className={styles.h2}>Trusted By Creators Worldwide.</h2>
         </div>
 
         <div className={styles.statsStrip}>

@@ -76,6 +76,33 @@
   height: 100%;
   object-fit: cover;
 }
+
+.videoControls {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.controlBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s;
+}
+
+.controlBtn:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
 .textCol {
   flex: 1;
   min-width: 0;
@@ -118,7 +145,7 @@
   height: 48px;
   padding: 0 24px;
   border-radius: 9px;
-  background: #fff;
+  background: #ebebeb;
   color: #0f0f0f;
   font-size: 14px;
   font-weight: 600;
@@ -128,7 +155,7 @@
 
 .cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

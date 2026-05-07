@@ -87,7 +87,7 @@ type Card = {
 const cards: Card[] = [
   {
     icon: <TtsIcon />,
-    title: "AI text to speech",
+    title: "AI Text To Speech",
     oneLiner: "Turn any text into lifelike voiceovers in 70+ languages.",
     video: "/assets/tts-tool.mp4",
     bullets: [
@@ -101,7 +101,7 @@ const cards: Card[] = [
   },
   {
     icon: <CloneIcon />,
-    title: "AI voice cloning",
+    title: "AI Voice Cloning",
     oneLiner: "Clone any voice from just 10 seconds of audio.",
     video: "/assets/voice-cloning-tool.mp4",
     bullets: [
@@ -115,7 +115,7 @@ const cards: Card[] = [
   },
   {
     icon: <MusicIcon />,
-    title: "AI music generator",
+    title: "AI Music Generator",
     oneLiner: "Compose original songs and instrumentals from a text prompt.",
     video: "/assets/music-generator-tool.mp4",
     bullets: [
@@ -134,7 +134,7 @@ export default function ThreeTools() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header} data-animate>
-<h2 className={styles.h2}>Three powerful audio tools. One unified studio.</h2>
+<h2 className={styles.h2}>Three Powerful Audio Tools. One Unified Studio.</h2>
           <p className={styles.sub}>
             From podcast narration to voice cloning to custom soundtracks, AI Audio Studio provides
             everything you need to sound professional.

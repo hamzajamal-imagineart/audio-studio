@@ -40,7 +40,7 @@ export default function FinalCTA() {
     <section className={styles.section}>
       <WaveformDecoration />
       <div className={styles.inner}>
-        <h2 className={styles.headline}>Your audio studio is ready. Free to start.</h2>
+        <h2 className={styles.headline}>Your Audio Studio Is Ready. Free To Start.</h2>
         <p className={styles.subheadline}>
           Generate your first voiceover in 30 seconds. No credit card. No download. No catch.
         </p>
