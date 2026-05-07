@@ -4,7 +4,7 @@ type UseCase = {
   tag: string;
   title: string;
   body: string;
-  image: string;
+  video: string;
   ctaLabel: string;
   ctaHref: string;
 };
@@ -14,7 +14,7 @@ const useCases: UseCase[] = [
     tag: "For YouTubers",
     title: "Ship videos faster. Sound like a pro.",
     body: "No more re-recording takes. Generate voiceovers in your own voice or any voice, in any language. Drop in custom background music, copyright-free and ready for monetization.",
-    image: "/assets/usecase-youtubers-new.jpg",
+    video: "/assets/usecase-for-youtubers.mp4",
     ctaLabel: "Try AI Voiceover",
     ctaHref: "https://www.imagine.art/audio",
   },
@@ -22,7 +22,7 @@ const useCases: UseCase[] = [
     tag: "For Podcasters",
     title: "From script to studio sound, instantly.",
     body: "Whether correcting a mispronounced name or producing a full episode, generate broadcast-quality narration without re-recording. Clone your voice once, use it forever.",
-    image: "/assets/usecase-podcasters-new.jpg",
+    video: "/assets/usecase-for-podcast.mp4",
     ctaLabel: "Clone Your Voice",
     ctaHref: "https://www.imagine.art/audio",
   },
@@ -30,7 +30,7 @@ const useCases: UseCase[] = [
     tag: "For Marketers",
     title: "Scale audio content without scaling headcount.",
     body: "Generate voiceovers, ads, training videos, and explainers in 70+ languages at a fraction of the cost of traditional voice actors.",
-    image: "/assets/usecase-marketers-new.jpg",
+    video: "/assets/usecase-for-marketers.mp4",
     ctaLabel: "Start for Free",
     ctaHref: "https://www.imagine.art/audio",
   },
@@ -38,7 +38,7 @@ const useCases: UseCase[] = [
     tag: "For Developers",
     title: "Production-grade audio. Drop-in API.",
     body: "Power conversational AI, NPC dialogue, audiobooks, and interactive experiences. Sub-second latency. SDKs available.",
-    image: "/assets/usecase-developers-new.jpg",
+    video: "/assets/usecase-for-developers.mp4",
     ctaLabel: "Explore the API",
     ctaHref: "https://www.imagine.art/audio",
   },
@@ -59,8 +59,7 @@ export default function UseCases() {
           {useCases.map((uc, i) => (
             <div key={uc.tag} className={`${styles.item} ${i % 2 === 1 ? styles.reverse : ''}`} data-animate data-d={String(i + 1)}>
               <div className={styles.imageWrap}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={uc.image} alt="" className={styles.image} />
+                <video src={uc.video} autoPlay loop muted playsInline className={styles.image} />
               </div>
               <div className={styles.textCol}>
                 <p className={styles.tag}>{uc.tag}</p>
