@@ -48,7 +48,7 @@ export default function FinalCTA() {
           <a href="/audio" className={styles.primaryButton}>
             Try Free AI Voice Generator
           </a>
-          <a href="#pricing" className={styles.secondaryLink}>
+          <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.secondaryLink}>
             Or see pricing
           </a>
         </div>
