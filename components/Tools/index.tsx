@@ -68,11 +68,11 @@ const RemasterIcon = () => (
 )
 
 const ICONS: Record<string, React.FC> = {
-  'Voice Isolator': VoiceIsolatorIcon,
-  'AI Sound Effects': SoundEffectsIcon,
-  'Audio Editor': AudioEditorIcon,
-  'Speech Enhancer': SpeechEnhancerIcon,
-  'AI Remaster': RemasterIcon,
+  'Voice isolator': VoiceIsolatorIcon,
+  'AI sound effects': SoundEffectsIcon,
+  'Audio editor': AudioEditorIcon,
+  'Speech enhancer': SpeechEnhancerIcon,
+  'AI remaster': RemasterIcon,
 }
 
 const TOOLS = [
