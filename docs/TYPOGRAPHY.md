@@ -36,9 +36,9 @@ letter-spacing: -1.5px;
 Primary section titles. Used to open content blocks.
 
 ```css
-font-size: clamp(28px, 3.2vw, 40px);
+font-size: clamp(28px, 3.2vw, 40px); /* larger accent sections: clamp(32px, 4vw, 52px) */
 font-weight: 600;
-line-height: 1.05;
+line-height: 1.05; /* use 1.15–1.2 when heading wraps to 2+ lines */
 letter-spacing: -0.5px;
 ```
 
@@ -115,9 +115,11 @@ line-height: 1.6;
 
 ## Rules
 
-1. **Negative tracking on large type** – apply `-0.5px` to `-1.5px` letter-spacing on anything above 28px. Makes display type feel controlled, not bloated.
+1. **Heading case** – all headings use Capitalize Case (every word capitalized). Acronyms and proper nouns retain their standard casing (e.g. "AI", "ElevenLabs", "MiniMax").
 
-2. **Color tokens for text** – use the defined palette, never arbitrary rgba values on light backgrounds:
+2. **Negative tracking on large type** – apply `-0.5px` to `-1.5px` letter-spacing on anything above 28px. Makes display type feel controlled, not bloated.
+
+3. **Color tokens for text** – use the defined palette, never arbitrary rgba values on light backgrounds:
 
    | Role | Token | Value | Usage |
    |------|-------|-------|-------|
@@ -128,8 +130,8 @@ line-height: 1.6;
 
    - Dark bg: `rgba(255,255,255,0.75)` body · `rgba(255,255,255,0.42)` muted · `rgba(255,255,255,0.25)` disabled
 
-3. **Consistent line-height** – `1.05–1.1` for headings, `1.65–1.7` for body. Never use default browser line-height on display text.
+4. **Consistent line-height** – `1.05–1.1` for headings, `1.65–1.7` for body. Never use default browser line-height on display text.
 
-4. **Eyebrow contrast** – keep eyebrow labels small and uppercase. The size contrast against the heading below it makes the heading feel larger.
+5. **Eyebrow contrast** – keep eyebrow labels small and uppercase. The size contrast against the heading below it makes the heading feel larger.
 
-5. **Italic for emphasis** – use italic at `font-weight: 600` (not a lighter weight) for stylistic em elements within headings. Color it at `rgba(255,255,255,0.38)` on dark or `rgba(0,0,0,0.32)` on light.
+6. **Italic for emphasis** – use italic at `font-weight: 600` (not a lighter weight) for stylistic em elements within headings. Color it at `rgba(255,255,255,0.38)` on dark or `rgba(0,0,0,0.32)` on light.

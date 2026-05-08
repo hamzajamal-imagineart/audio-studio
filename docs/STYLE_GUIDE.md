@@ -18,12 +18,14 @@
 
 ### Text on Light Backgrounds
 
-```css
-color: #0f0f0f;                  /* primary */
-color: rgba(0, 0, 0, 0.42);     /* muted body / secondary */
-color: rgba(0, 0, 0, 0.28);     /* eyebrow labels */
-color: rgba(0, 0, 0, 0.22);     /* placeholder / disabled */
-```
+| Role | Value | Usage |
+|------|-------|-------|
+| Primary | `#0F0F0F` | Headings, strong labels |
+| Secondary | `#525252` | Body copy, card descriptions, subtitles |
+| Tertiary | `rgba(15,15,15,0.5)` | Eyebrows, dates, stat labels, meta text |
+| Disabled | `rgba(0,0,0,0.22)` | Placeholders, inactive states |
+
+> See `TYPOGRAPHY.md` for the full CSS variable reference.
 
 ### Text on Dark Backgrounds
 
@@ -173,7 +175,6 @@ Transparent with a subtle border.
 .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
 }
 ```
 
@@ -194,7 +195,26 @@ Used inline in heroes, tighter footprint.
 .btn-sm:hover { transform: translateY(-1px); }
 ```
 
-> **Rule:** "Book a demo" is always Primary. "Get Started" is always Secondary/Ghost.
+### Grey Buttons (on light backgrounds)
+
+```css
+.btn-grey {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #ebebeb;
+  color: #0f0f0f;
+  transition: background 0.18s;
+}
+
+.btn-grey:hover {
+  background: #d8d8d8; /* darken only — no shadow, no lift */
+}
+```
+
+> **Rule:** Grey buttons never lift or cast a shadow on hover. Darken the background only.
 
 ---
 
@@ -207,9 +227,9 @@ Prefer borders over shadows for layering on light surfaces. Shadows are reserved
 border: 1px solid rgba(0, 0, 0, 0.08);
 
 /* Floating element (navbar on scroll, modal, dropdown) */
-background: rgba(0, 0, 0, 0.45);
-backdrop-filter: blur(14px);
-border: 1px solid rgba(255, 255, 255, 0.08);
+background: rgba(255, 255, 255, 0.92);
+backdrop-filter: saturate(180%) blur(72px);
+border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
 /* Card on hover */
 box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);

@@ -42,9 +42,9 @@
     max-width: 1240px;
     margin: 0 auto;
     padding: 8px 12px;
-    background: rgba(255,255,255,0.82);
-    backdrop-filter: saturate(200%) blur(24px);
-    -webkit-backdrop-filter: saturate(200%) blur(24px);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(72px);
+    -webkit-backdrop-filter: saturate(180%) blur(72px);
     border-color: rgba(255,255,255,0.9);
     box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 6px rgba(0,0,0,0.03), 0 12px 48px rgba(0,0,0,0.1);
   }
@@ -77,7 +77,7 @@
   .navbar-btn-dark { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.25); box-shadow: none; }
   .navbar-btn-dark:hover { background: rgba(255,255,255,0.18); }
   .navbar.scrolled .navbar-btn-dark { background: #111; border-color: transparent; color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.15); }
-  .navbar.scrolled .navbar-btn-dark:hover { background: #222; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  .navbar.scrolled .navbar-btn-dark:hover { background: #222; }
   .navbar:not(.scrolled) .nav-link { color: rgba(255,255,255,0.75); }
   .navbar:not(.scrolled) .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
   .navbar.scrolled .nav-link { color: rgba(15,15,15,0.75); }
@@ -113,7 +113,7 @@
   var isArch = path.indexOf('architecture') !== -1;
   var isEcom = path.indexOf('ecommerce') !== -1;
   var isMkt  = path.indexOf('marketing') !== -1;
-  var logoHref = (isArch || isEcom || isMkt) ? './index.html' : '/';
+  var logoHref = 'https://www.imagine.art/';
   var archCurrent = isArch ? ' current' : '';
   var ecomCurrent = isEcom ? ' current' : '';
   var mktCurrent  = isMkt  ? ' current' : '';
@@ -126,39 +126,14 @@
         <img class="logo-dark" src="./assets/logo-imagine-black.svg" alt="ImagineArt Workflows" width="158" height="39">
       </a>
       <nav class="nav-links">
-        ${isMkt ? `
-        <a href="#sec-hiw" class="nav-link">How it Works</a>
-        <a href="#sec-templates" class="nav-link">Templates</a>
-        <a href="#sec-features" class="nav-link">Features</a>
-        <a href="#sec-showcase" class="nav-link">Showcase</a>
-        <a href="#sec-gallery" class="nav-link">Gallery</a>
-        ` : isEcom ? `
-        <a href="#sec-statement" class="nav-link">Overview</a>
-        <a href="#sec-showcase" class="nav-link">Showcase</a>
-        <a href="#sec-templates" class="nav-link">Templates</a>
-        <a href="#sec-caps" class="nav-link">Capabilities</a>
-        <a href="#sec-gallery" class="nav-link">Gallery</a>
-        ` : `
-        <a href="#" class="nav-link">Platform</a>
-        <a href="#" class="nav-link">Pricing</a>
-        <a href="#" class="nav-link">Resources</a>
-        <a href="#" class="nav-link">APIs</a>
-        <a href="#" class="nav-link">Community</a>
-        <div class="nav-dropdown">
-          <button class="nav-link nav-dropdown-trigger">Usecases <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="#" class="nav-dropdown-item">Fashion</a>
-            <a href="./ecommerce.html" class="nav-dropdown-item${ecomCurrent}">E-commerce</a>
-            <a href="./marketing.html" class="nav-dropdown-item${mktCurrent}">Marketing Agencies</a>
-            <a href="#" class="nav-dropdown-item">Beauty</a>
-            <a href="./architecture.html" class="nav-dropdown-item${archCurrent}">Architecture</a>
-          </div>
-        </div>
-        `}
+        <a href="https://www.imagine.art/audio/text-to-speech/" target="_blank" rel="noopener" class="nav-link">Text to Speech</a>
+        <a href="https://www.imagine.art/audio/voice-cloning" target="_blank" rel="noopener" class="nav-link">Voice Cloning</a>
+        <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener" class="nav-link">AI Music</a>
+        <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener" class="nav-link">Pricing</a>
       </nav>
       <div class="nav-actions">
-        <a href="https://www.imagine.art/flow" target="_blank" rel="noopener" class="navbar-btn navbar-btn-ghost">Get Started</a>
-        <a href="https://calendly.com/d/cr9s-6pt-mr3/one-on-one-demo-with-an-imagineart-expert" target="_blank" rel="noopener" class="navbar-btn navbar-btn-dark">Book a demo</a>
+        <a href="https://www.imagine.art/teams-plan/contact-us" target="_blank" rel="noopener" class="navbar-btn navbar-btn-ghost">Contact Sales</a>
+        <a href="https://www.imagine.art/audio" target="_blank" rel="noopener" class="navbar-btn navbar-btn-dark">Get Started for free</a>
       </div>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
         <span class="bars"><span class="bar"></span><span class="bar"></span></span>
@@ -176,16 +151,15 @@
     </div>
     <div class="nav-mobile-body">
       <div class="nav-mobile-inner" id="nav-mobile-inner">
-        <a href="#" class="nav-mobile-link">Platform</a>
-        <a href="#" class="nav-mobile-link">Pricing</a>
-        <a href="#" class="nav-mobile-link">Resources</a>
-        <a href="#" class="nav-mobile-link">APIs</a>
-        <a href="#" class="nav-mobile-link">Community</a>
+        <a href="https://www.imagine.art/audio/text-to-speech/" target="_blank" rel="noopener" class="nav-mobile-link">Text to Speech</a>
+        <a href="https://www.imagine.art/audio/voice-cloning" target="_blank" rel="noopener" class="nav-mobile-link">Voice Cloning</a>
+        <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener" class="nav-mobile-link">AI Music</a>
+        <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener" class="nav-mobile-link">Pricing</a>
       </div>
       <div class="nav-mobile-divider"></div>
       <div class="nav-mobile-actions" style="gap:10px;">
-        <a href="https://calendly.com/d/cr9s-6pt-mr3/one-on-one-demo-with-an-imagineart-expert" target="_blank" rel="noopener" class="navbar-btn navbar-btn-dark">Book a demo</a>
-        <a href="https://www.imagine.art/flow" target="_blank" rel="noopener" class="navbar-btn navbar-btn-dark" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);">Get Started</a>
+        <a href="https://www.imagine.art/teams-plan/contact-us" target="_blank" rel="noopener" class="navbar-btn navbar-btn-dark" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);">Contact Sales</a>
+        <a href="https://www.imagine.art/audio" target="_blank" rel="noopener" class="navbar-btn navbar-btn-dark">Get Started for free</a>
       </div>
     </div>
   </div>`;
