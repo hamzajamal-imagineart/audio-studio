@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Faq from '@/components/Faq'
+import Pricing from '@/components/Pricing'
 import PromptBox from '@/components/Hero/PromptBox'
 import StackCards from './StackCards'
 import DotCursorEffect from './DotCursorEffect'
@@ -200,6 +201,9 @@ export default function TextToSpeechPage() {
           </div>
         </div>
       </section>
+
+      {/* Pricing */}
+      <Pricing />
 
       {/* FAQ */}
       <Faq
