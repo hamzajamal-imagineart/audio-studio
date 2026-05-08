@@ -1,15 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
-  const pathname = usePathname()
-  const isHomepage = pathname === '/'
-  const isTTSPage = pathname === '/ai-text-to-speech'
-  const pricingHref = (isHomepage || isTTSPage) ? '#pricing' : 'https://www.imagine.art/subscription'
-
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -39,10 +32,10 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className={styles.navLinks}>
-            <Link href="/ai-text-to-speech" className={styles.navLink}>Text to Speech</Link>
-            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Voice Cloning</a>
-            <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener noreferrer" className={styles.navLink}>AI Music</a>
-            <a href={pricingHref} {...(!isHomepage && !isTTSPage ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={styles.navLink}>Pricing</a>
+            <a href="https://www.imagine.art/audio/text-to-speech/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Text to Speech</a>
+            <a href="https://www.imagine.art/audio/voice-cloning/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Voice Cloning</a>
+            <a href="https://www.imagine.art/audio/music/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>AI Music</a>
+            <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Pricing</a>
           </nav>
 
           {/* Desktop CTA buttons */}
@@ -85,10 +78,10 @@ export default function Navbar() {
         </div>
         <div className={styles.navMobileBody}>
           <div className={styles.navMobileInner}>
-            <Link href="/ai-text-to-speech" className={styles.navMobileLink} onClick={closeMobile}>Text to Speech</Link>
-            <a href="https://www.imagine.art/audio" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Voice Cloning</a>
-            <a href="https://www.imagine.art/audio/music/elevenlabs-music" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>AI Music</a>
-            <a href={pricingHref} {...(!isHomepage && !isTTSPage ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={styles.navMobileLink} onClick={closeMobile}>Pricing</a>
+            <a href="https://www.imagine.art/audio/text-to-speech/" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Text to Speech</a>
+            <a href="https://www.imagine.art/audio/voice-cloning/" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Voice Cloning</a>
+            <a href="https://www.imagine.art/audio/music/" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>AI Music</a>
+            <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.navMobileLink} onClick={closeMobile}>Pricing</a>
           </div>
           <div className={styles.navMobileDivider} />
           <div className={styles.navMobileActions}>
