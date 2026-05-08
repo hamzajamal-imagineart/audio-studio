@@ -36,9 +36,9 @@
 .navbar.scrolled .navbarInner {
   max-width: 1240px;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: saturate(200%) blur(24px);
-  -webkit-backdrop-filter: saturate(200%) blur(24px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(72px);
+  -webkit-backdrop-filter: saturate(180%) blur(72px);
   border-color: rgba(255, 255, 255, 0.9);
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.04),
