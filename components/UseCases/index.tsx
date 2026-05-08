@@ -26,7 +26,7 @@ const useCases: UseCase[] = [
     body: "Whether correcting a mispronounced name or producing a full episode, generate broadcast-quality narration without re-recording. Clone your voice once, use it forever.",
     video: "/assets/usecase-for-podcast.mp4",
     ctaLabel: "Clone Your Voice",
-    ctaHref: "https://www.imagine.art/audio",
+    ctaHref: "https://www.imagine.art/audio/voice-cloning",
   },
   {
     tag: "For Marketers",

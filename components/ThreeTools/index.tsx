@@ -134,7 +134,7 @@ export default function ThreeTools() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header} data-animate>
-<h2 className={styles.h2}>Three Powerful Audio Tools. One Unified Studio.</h2>
+<h2 className={styles.h2}>Three Powerful Audio Tools.<br /><span className={styles.h2Muted}>One Unified Studio.</span></h2>
           <p className={styles.sub}>
             From podcast narration to voice cloning to custom soundtracks, AI Audio Studio provides
             everything you need to sound professional.

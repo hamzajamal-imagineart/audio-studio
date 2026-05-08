@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className={styles.navbarInner}>
 
           {/* Logo: TODO: add logo SVGs to /public/assets/ */}
-          <a href="/" className={styles.logo}>
+          <a href="https://www.imagine.art/" target="_blank" rel="noopener noreferrer" className={styles.logo}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className={styles.logoWhite} src="/assets/logo-imagine-white.svg" alt="ImagineArt Audio Studio" width={158} height={39} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -72,7 +72,7 @@ export default function Navbar() {
       {/* Mobile full-screen overlay */}
       <div className={`${styles.navMobileMenu}${mobileOpen ? ` ${styles.open}` : ''}`} aria-hidden={!mobileOpen}>
         <div className={styles.navMobileTopbar}>
-          <a href="/" className={styles.logo}>
+          <a href="https://www.imagine.art/" target="_blank" rel="noopener noreferrer" className={styles.logo}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/logo-imagine-white.svg" alt="ImagineArt Audio Studio" width={130} height={32} style={{ display: 'block' }} />
           </a>
