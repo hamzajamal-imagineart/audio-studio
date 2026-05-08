@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import styles from "./UseCases.module.css";
 
 type UseCase = {
@@ -46,23 +46,24 @@ const useCases: UseCase[] = [
   },
 ];
 
-function VideoCard({ uc, reverse }: { uc: UseCase; reverse: boolean }) {
+function VideoCard({ uc, reverse, isActive, onPlay }: { uc: UseCase; reverse: boolean; isActive: boolean; onPlay: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
-  const [muted, setMuted] = useState(true)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    if (!isActive && !v.paused) {
+      v.pause()
+      setPlaying(false)
+    }
+  }, [isActive])
 
   function togglePlay() {
     const v = videoRef.current
     if (!v) return
-    if (v.paused) { v.play(); setPlaying(true) }
+    if (v.paused) { v.play(); setPlaying(true); onPlay() }
     else { v.pause(); setPlaying(false) }
-  }
-
-  function toggleMute() {
-    const v = videoRef.current
-    if (!v) return
-    v.muted = !v.muted
-    setMuted(v.muted)
   }
 
   return (
@@ -72,7 +73,6 @@ function VideoCard({ uc, reverse }: { uc: UseCase; reverse: boolean }) {
           ref={videoRef}
           src={uc.video}
           loop
-          muted
           playsInline
           className={styles.image}
           onEnded={() => setPlaying(false)}
@@ -90,19 +90,6 @@ function VideoCard({ uc, reverse }: { uc: UseCase; reverse: boolean }) {
               </svg>
             )}
           </button>
-          <button className={styles.controlBtn} onClick={toggleMute} aria-label={muted ? 'Unmute' : 'Mute'}>
-            {muted ? (
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 2L4.5 5H2v6h2.5L8 14V2Z" fill="currentColor"/>
-                <path d="M11 6l2.5 2.5M13.5 6L11 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-            ) : (
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 2L4.5 5H2v6h2.5L8 14V2Z" fill="currentColor"/>
-                <path d="M10.5 5.5a4 4 0 010 5M12.5 3.5a7 7 0 010 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-            )}
-          </button>
         </div>
       </div>
       <div className={styles.textCol}>
@@ -116,6 +103,8 @@ function VideoCard({ uc, reverse }: { uc: UseCase; reverse: boolean }) {
 }
 
 export default function UseCases() {
+  const [playingId, setPlayingId] = useState<string | null>(null)
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -128,7 +117,13 @@ export default function UseCases() {
         </div>
         <div className={styles.list}>
           {useCases.map((uc, i) => (
-            <VideoCard key={uc.tag} uc={uc} reverse={i % 2 === 1} />
+            <VideoCard
+              key={uc.tag}
+              uc={uc}
+              reverse={i % 2 === 1}
+              isActive={playingId === uc.tag}
+              onPlay={() => setPlayingId(uc.tag)}
+            />
           ))}
         </div>
       </div>
