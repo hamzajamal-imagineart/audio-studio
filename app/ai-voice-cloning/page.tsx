@@ -119,6 +119,9 @@ export default function VoiceCloningPage() {
 
       {/* ── Hero ────────────────────────────────────────────── */}
       <section className={styles.hero}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/voice-cloning-hero.png" alt="" className={styles.heroBg} aria-hidden="true" />
+        <div className={styles.heroBgOverlay} aria-hidden="true" />
         <h1 className={styles.heroHeading}>AI Voice Cloning: Clone Any Voice In 10 Seconds</h1>
         <p className={styles.heroSub}>Upload a 10-second voice sample to clone tone, pace, and accent with stunning realism. Generate lifelike speech in 70+ languages from one seamless workspace.</p>
 
