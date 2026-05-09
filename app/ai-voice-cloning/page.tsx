@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Faq from '@/components/Faq'
 import Pricing from '@/components/Pricing'
 import Testimonials from '@/components/Testimonials'
+import PromptBox from '@/components/Hero/PromptBox'
 import DotCursorEffect from './DotCursorEffect'
 import styles from './page.module.css'
 
@@ -125,25 +126,7 @@ export default function VoiceCloningPage() {
         <h1 className={styles.heroHeading}>AI Voice Cloning: Clone Any Voice In 10 Seconds</h1>
         <p className={styles.heroSub}>Upload a 10-second voice sample to clone tone, pace, and accent with stunning realism. Generate lifelike speech in 70+ languages from one seamless workspace.</p>
 
-        <div className={styles.cloneBox}>
-          <textarea
-            className={styles.cloneTextarea}
-            placeholder="Type what you want the cloned voice to say…"
-            rows={2}
-          />
-          <div className={styles.cloneActions}>
-            <label className={styles.uploadZone}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Drop a 10-second clip · MP3, WAV, or M4A</span>
-              <input type="file" accept=".mp3,.wav,.m4a,audio/*" className={styles.uploadInput} />
-            </label>
-            <a href="https://www.imagine.art/audio/voice-cloning" target="_blank" rel="noopener noreferrer" className={styles.cloneBtn}>
-              Clone Your Voice Free →
-            </a>
-          </div>
-        </div>
+        <PromptBox />
 
         <p className={styles.heroMeta}>Free voice clone · No credit card · 70+ languages</p>
       </section>
@@ -218,7 +201,7 @@ export default function VoiceCloningPage() {
       <section className={`${styles.section} ${styles.sectionLight}`}>
         <div className={styles.inner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.heading}>Two Ways to Clone a Voice</h2>
+            <h2 className={styles.heading}>Two Ways To Clone A Voice</h2>
             <p className={styles.sub}>Fast and flexible for content creation, or studio-grade for commercial work.</p>
           </div>
 

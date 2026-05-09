@@ -115,90 +115,6 @@
   margin-top: 20px;
 }
 
-/* ── Clone box ──────────────────────────────────────────── */
-.cloneBox {
-  width: 100%;
-  max-width: 620px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.cloneTextarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 20px 22px 16px;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: inherit;
-  color: rgba(255, 255, 255, 0.75);
-  resize: none;
-  line-height: 1.6;
-}
-
-.cloneTextarea::placeholder {
-  color: rgba(255, 255, 255, 0.25);
-}
-
-.cloneActions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 10px 10px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.uploadZone {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 36px;
-  padding: 0 12px;
-  border-radius: 9px;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: inherit;
-  color: rgba(255, 255, 255, 0.38);
-  transition: background 0.15s, border-color 0.15s;
-  white-space: nowrap;
-  overflow: hidden;
-  min-width: 0;
-}
-
-.uploadZone:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.uploadInput { display: none; }
-
-.cloneBtn {
-  flex-shrink: 0;
-  height: 36px;
-  padding: 0 18px;
-  border-radius: 9px;
-  font-size: 13.5px;
-  font-weight: 600;
-  font-family: inherit;
-  background: #fff;
-  color: #0f0f0f;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  transition: background 0.15s, transform 0.15s;
-}
-
-.cloneBtn:hover {
-  background: #e8e8e8;
-  transform: translateY(-1px);
-}
 
 /* ── Feature chips ──────────────────────────────────────── */
 .chips {
@@ -313,7 +229,7 @@
 }
 
 .stepBody {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.42);
@@ -367,7 +283,7 @@
 }
 
 .suiteBody {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.72;
   color: #525252;
@@ -423,7 +339,7 @@
 .compareLabel {
   font-size: 13px;
   font-weight: 500;
-  color: rgba(15, 15, 15, 0.42);
+  color: rgba(15, 15, 15, 0.5);
 }
 
 .compareCell {
@@ -465,7 +381,7 @@
 }
 
 .featureBody {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.72;
   color: #525252;
@@ -508,7 +424,7 @@
 }
 
 .useCaseBody {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.72;
   color: rgba(255, 255, 255, 0.42);
@@ -745,9 +661,6 @@
 @media (max-width: 600px) {
   .hero { padding: 80px var(--px) 60px; }
   .heroHeading { letter-spacing: -0.8px; }
-  .cloneActions { flex-direction: column; align-items: stretch; gap: 8px; }
-  .uploadZone { height: 44px; }
-  .cloneBtn { height: 44px; justify-content: center; }
   .chips { gap: 8px; }
   .chip { min-width: 0; flex: 1 1 calc(50% - 8px); }
   .stepRow { grid-template-columns: 1fr; gap: 12px; }
