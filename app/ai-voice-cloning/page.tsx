@@ -119,9 +119,6 @@ export default function VoiceCloningPage() {
 
       {/* ── Hero ────────────────────────────────────────────── */}
       <section className={styles.hero}>
-        <video className={styles.heroBgVideo} src="/assets/voice-cloning-tool.mp4" autoPlay loop muted playsInline />
-        <div className={styles.heroBgOverlay} />
-        <div className={styles.heroContent}>
         <h1 className={styles.heroHeading}>AI Voice Cloning: Clone Any Voice In 10 Seconds</h1>
         <p className={styles.heroSub}>Upload a 10-second voice sample to clone tone, pace, and accent with stunning realism. Generate lifelike speech in 70+ languages from one seamless workspace.</p>
 
@@ -146,7 +143,6 @@ export default function VoiceCloningPage() {
         </div>
 
         <p className={styles.heroMeta}>Free voice clone · No credit card · 70+ languages</p>
-        </div>
       </section>
 
       {/* ── Feature chips ────────────────────────────────────── */}
@@ -322,13 +318,15 @@ export default function VoiceCloningPage() {
       {/* ── Final CTA ────────────────────────────────────────── */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
-          <div className={styles.ctaLeft} data-animate>
-            <h2 className={styles.ctaHeading}>Start Cloning Voices Free.</h2>
-            <p className={styles.ctaSub}>Your voice. Any language. Any content. No credit card, no commitment, no learning curve.</p>
-          </div>
-          <div className={styles.ctaRight} data-animate data-d="1">
-            <a href="https://www.imagine.art/audio/voice-cloning" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>Clone Your Voice Free →</a>
-            <a href="https://www.imagine.art/subscription" target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>See Pricing Plans →</a>
+          <div className={styles.ctaCard}>
+            <video src="/assets/voice-cloning-tool.mp4" autoPlay loop muted playsInline className={styles.ctaVideo} />
+            <div className={styles.ctaOverlay} aria-hidden="true" />
+            <div className={styles.ctaContent} data-animate>
+              <h2 className={styles.ctaHeading}>Start Cloning Voices Free.</h2>
+              <p className={styles.ctaSub}>Your voice. Any language. Any content. No credit card, no commitment, no learning curve.</p>
+              <a href="https://www.imagine.art/audio/voice-cloning" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>Clone Your Voice Free →</a>
+              <p className={styles.ctaTrust}>Free voice clone · No credit card · 70+ languages</p>
+            </div>
           </div>
         </div>
       </section>
