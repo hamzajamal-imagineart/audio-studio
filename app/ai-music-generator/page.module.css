@@ -57,34 +57,117 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 160px var(--px) 120px;
-  text-align: center;
-  background: #080810;
+  min-height: 640px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  padding: 0 var(--px);
+  background: #0a0a0e;
 }
 
-.heroGlow {
+.heroBg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 60, 220, 0.28) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(60, 100, 220, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(180, 40, 180, 0.12) 0%, transparent 60%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   pointer-events: none;
 }
 
-.heroHeading {
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 600;
-  line-height: 1.06;
-  letter-spacing: -1.5px;
-  color: #fff;
-  margin: 0 0 22px;
-  max-width: 840px;
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.52);
+  pointer-events: none;
+}
+
+.heroPurple {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(243deg, rgba(0, 0, 0, 0) 5%, rgba(160, 0, 223, 0.18) 80%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.heroInner {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 60px;
+  align-items: center;
+  padding: 120px 0 100px;
+}
+
+/* Left column */
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.heroChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 4px 4px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 4px 14px rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.heroChip > span:first-child {
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.heroChipCta {
+  background: #fff;
+  color: #7678ed;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.heroHeading {
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #fff;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heroHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.heroWordBordered {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 32px;
+  padding: 4px 18px;
+  line-height: inherit;
+}
+
+.heroHeadingMuted {
+  color: #bdbdbd;
+  display: block;
 }
 
 .heroSub {
@@ -92,20 +175,121 @@
   font-weight: 400;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.62);
-  max-width: 520px;
-  margin: 0 0 40px;
-  position: relative;
-  z-index: 1;
+  max-width: 480px;
+  margin: 0 0 36px;
 }
 
 .heroMeta {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.42);
   letter-spacing: 0.5px;
-  margin-top: 20px;
+  margin-top: 18px;
+}
+
+/* Right column — tilted cards */
+.heroCards {
+  position: relative;
+  height: 400px;
+  flex-shrink: 0;
+}
+
+.heroCardBack {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  transform: rotate(-15deg);
+  transform-origin: center bottom;
+}
+
+.heroCardFront {
+  position: absolute;
+  left: 170px;
+  top: 40px;
+  transform: rotate(15deg);
+  transform-origin: center bottom;
+  opacity: 0.88;
+}
+
+.heroCardGlow {
+  position: absolute;
+  inset: -20px;
+  background: rgba(0, 0, 0, 0.85);
+  filter: blur(40px);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.heroCard {
   position: relative;
   z-index: 1;
+  width: 220px;
+  height: 276px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.heroCardImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroCardInfo {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.heroCardTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.heroCardMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heroCardAvatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.heroCardAuthor {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.2px;
+}
+
+.heroCardPlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
 /* ── Feature chips ──────────────────────────────────────── */
@@ -528,8 +712,14 @@
   .stepRow { grid-template-columns: 72px 1fr; gap: 24px; }
 }
 
+@media (max-width: 1024px) {
+  .heroInner { grid-template-columns: 1fr 380px; gap: 40px; }
+  .heroCardFront { left: 130px; }
+}
+
 @media (max-width: 768px) {
-  .hero { padding: 100px var(--px) 80px; }
+  .heroInner { grid-template-columns: 1fr; padding: 80px 0 60px; }
+  .heroCards { display: none; }
   .section { padding: 80px var(--px) 60px; }
   .sectionHeader { margin-bottom: 40px; }
   .genreGrid { grid-template-columns: repeat(2, 1fr); }
@@ -543,7 +733,6 @@
 }
 
 @media (max-width: 600px) {
-  .hero { padding: 80px var(--px) 60px; }
   .heroHeading { letter-spacing: -0.8px; }
   .chips { gap: 8px; }
   .chip { min-width: 0; flex: 1 1 calc(50% - 8px); }

@@ -133,11 +133,77 @@ export default function AIMusicGeneratorPage() {
 
       {/* ── Hero ────────────────────────────────────────────── */}
       <section className={styles.hero}>
-        <div className={styles.heroGlow} aria-hidden="true" />
-        <h1 className={styles.heroHeading}>AI Music Generator: Create Original Songs from Text</h1>
-        <p className={styles.heroSub}>Describe a mood, genre, or vibe and generate original music in seconds. Create royalty-free songs and instrumentals with AI, no musical skills, no software to download, no signup required.</p>
-        <PromptBox />
-        <p className={styles.heroMeta}>Free to start · No credit card · No signup · Royalty-free output</p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/music-hero-bg.jpg" alt="" className={styles.heroBg} aria-hidden="true" />
+        <div className={styles.heroOverlay} aria-hidden="true" />
+        <div className={styles.heroPurple} aria-hidden="true" />
+
+        <div className={styles.heroInner}>
+
+          {/* Left column */}
+          <div className={styles.heroLeft}>
+            <a href="https://www.imagine.art/audio/music/" target="_blank" rel="noopener noreferrer" className={styles.heroChip}>
+              <span>ElevenLabs v3 is out now on ImagineArt!</span>
+              <span className={styles.heroChipCta}>Try now →</span>
+            </a>
+
+            <h1 className={styles.heroHeading}>
+              <span className={styles.heroHeadingRow}>
+                <span className={styles.heroWordBordered}>Music</span>
+                <span>that vibes</span>
+              </span>
+              <span className={styles.heroHeadingMuted}>— pure</span>
+            </h1>
+
+            <p className={styles.heroSub}>Describe a mood, genre, or vibe and generate original music in seconds. Create royalty-free songs and instrumentals with AI, no musical skills required.</p>
+
+            <PromptBox />
+
+            <p className={styles.heroMeta}>Free to start · No credit card · No signup · Royalty-free output</p>
+          </div>
+
+          {/* Right column — tilted cards */}
+          <div className={styles.heroCards} aria-hidden="true">
+            <div className={styles.heroCardBack}>
+              <div className={styles.heroCardGlow} />
+              <div className={styles.heroCard}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/music-card-1.jpg" alt="" className={styles.heroCardImg} />
+                <div className={styles.heroCardInfo}>
+                  <span className={styles.heroCardTitle}>Liquid Gold</span>
+                  <div className={styles.heroCardMeta}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/assets/music-avatar.jpg" alt="" className={styles.heroCardAvatar} />
+                    <span className={styles.heroCardAuthor}>by Tayyab Abbas</span>
+                  </div>
+                </div>
+                <div className={styles.heroCardPlay}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2L12 7L3 12V2Z" fill="white"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.heroCardFront}>
+              <div className={styles.heroCardGlow} />
+              <div className={styles.heroCard}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/music-card-2.jpg" alt="" className={styles.heroCardImg} />
+                <div className={styles.heroCardInfo}>
+                  <span className={styles.heroCardTitle}>Liquid Gold</span>
+                  <div className={styles.heroCardMeta}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/assets/music-avatar.jpg" alt="" className={styles.heroCardAvatar} />
+                    <span className={styles.heroCardAuthor}>by Tayyab Abbas</span>
+                  </div>
+                </div>
+                <div className={styles.heroCardPlay}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2L12 7L3 12V2Z" fill="white"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </section>
 
       {/* ── Feature chips ────────────────────────────────────── */}
