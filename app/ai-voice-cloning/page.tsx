@@ -3,6 +3,8 @@ import Faq from '@/components/Faq'
 import Pricing from '@/components/Pricing'
 import Testimonials from '@/components/Testimonials'
 import PromptBox from '@/components/Hero/PromptBox'
+import UseCases, { type UseCase } from '@/components/UseCases'
+import ThreeTools, { type Card, TtsIcon, CloneIcon, MusicIcon } from '@/components/ThreeTools'
 import DotCursorEffect from './DotCursorEffect'
 import styles from './page.module.css'
 
@@ -10,6 +12,43 @@ export const metadata: Metadata = {
   title: 'AI Voice Cloning | Clone Any Voice Free | ImagineArt',
   description: 'Clone any voice from a 10-second sample. Generate lifelike speech in 70+ languages with ImagineArt\'s AI voice cloning. Free to start, no credit card.',
 }
+
+const SUITE_CARDS: Card[] = [
+  {
+    icon: <CloneIcon />,
+    title: 'AI Audio Studio',
+    oneLiner: 'Voice cloning, text-to-speech, and AI music in one connected workspace. One subscription, every audio tool.',
+    bullets: ['All three tools in one plan', 'No extra subscriptions', 'Commercial license on paid plans', 'Free to start'],
+    ctaText: 'Explore the Audio Studio',
+    ctaHref: 'https://www.imagine.art/audio',
+    video: '/assets/voice-cloning-tool.mp4',
+  },
+  {
+    icon: <TtsIcon />,
+    title: 'AI Text to Speech',
+    oneLiner: '200+ voices across 70+ languages. Adjust pace, pitch, and emotion. Perfect for videos, podcasts, and e-learning.',
+    bullets: ['200+ ultra-realistic AI voices', 'Adjust tone, pace, and emotion', 'MP3, WAV, FLAC export', 'Free to start'],
+    ctaText: 'Try Text to Speech',
+    ctaHref: '/ai-text-to-speech',
+    video: '/assets/tts-tool.mp4',
+  },
+  {
+    icon: <MusicIcon />,
+    title: 'AI Music Generator',
+    oneLiner: 'Describe the mood, genre, and length, get original royalty-free music in seconds. Ideal for video backgrounds and ad campaigns.',
+    bullets: ['Any genre, any mood', 'Up to 4-minute tracks', 'Royalty-free license', 'Export MP3'],
+    ctaText: 'Generate Music',
+    ctaHref: 'https://www.imagine.art/audio/music/',
+    video: '/assets/music-generator-tool.mp4',
+  },
+]
+
+const WHO_USES: UseCase[] = [
+  { tag: 'For YouTubers', title: 'Narrate Every Video In Your Own Voice.', body: 'Narrate every video in your own voice without recording. Scale from two videos a week to ten without losing your signature sound or hiring voice talent.', video: '/assets/usecase-for-youtubers.mp4', ctaLabel: 'Try Voice Cloning', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For Podcasters', title: 'Produce Episodes When Recording Is Not Possible.', body: 'Produce intros, sponsor reads, and full episodes when recording isn\'t possible. Localize your show into Spanish, Hindi, or Mandarin to reach new audiences.', video: '/assets/usecase-for-podcast.mp4', ctaLabel: 'Clone Your Voice', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For Marketers', title: 'Localize One Ad Into 70+ Languages.', body: 'Localize one ad script into 70+ languages using a single brand voice. Ship global campaigns in days, not months, without re-booking voice actors.', video: '/assets/usecase-for-marketers.mp4', ctaLabel: 'Start for Free', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For Game Studios', title: 'Generate NPC Dialogue At Scale.', body: 'Generate NPC dialogue at scale. Test voice direction with cloned actor samples before booking final recording sessions.', video: '/assets/usecase-for-developers.mp4', ctaLabel: 'Try Voice Cloning', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+]
 
 const CHIPS = [
   { label: '10-Second Sample', sub: 'Instant voice clone' },
@@ -37,32 +76,6 @@ const STEPS = [
   },
 ]
 
-const SUITE_ROWS = [
-  {
-    tag: 'All-In-One',
-    title: 'AI Audio Studio',
-    body: 'Voice cloning, text-to-speech, and AI music in one connected workspace. One subscription, every audio tool.',
-    link: 'Explore the Audio Studio',
-    href: 'https://www.imagine.art/audio',
-    external: true,
-  },
-  {
-    tag: 'Text To Speech',
-    title: 'AI Text to Speech',
-    body: '200+ voices across 70+ languages. Adjust pace, pitch, and emotion. Perfect for videos, podcasts, and e-learning.',
-    link: 'Try Text to Speech',
-    href: '/ai-text-to-speech',
-    external: false,
-  },
-  {
-    tag: 'AI Music',
-    title: 'AI Music Generator',
-    body: 'Describe the mood, genre, and length, get original royalty-free music in seconds. Ideal for video backgrounds and ad campaigns.',
-    link: 'Generate Music',
-    href: 'https://www.imagine.art/audio/music/',
-    external: true,
-  },
-]
 
 const COMPARE_ROWS = [
   { label: 'Sample needed',  instant: '10 seconds',                 pro: '3–5 minutes of clean audio' },
@@ -81,13 +94,6 @@ const FEATURES = [
   { title: 'Commercial License Included',   body: 'Use cloned voices in monetized YouTube videos, ads, podcasts, and client work on Pro and Enterprise plans.' },
 ]
 
-const USE_CASES = [
-  { audience: 'YouTubers & Content Creators', body: 'Narrate every video in your own voice without recording. Scale from two videos a week to ten without losing your signature sound or hiring voice talent.' },
-  { audience: 'Podcasters',                   body: 'Produce intros, sponsor reads, and full episodes when recording isn\'t possible. Localize your show into Spanish, Hindi, or Mandarin to reach new audiences.' },
-  { audience: 'Marketers & Ad Teams',         body: 'Localize one ad script into 70+ languages using a single brand voice. Ship global campaigns in days, not months, without re-booking voice actors.' },
-  { audience: 'Audiobook Creators',           body: 'Maintain perfect voice consistency across 8–12 hours of narration. Edit and re-generate any line without re-booking studio time.' },
-  { audience: 'Game Studios',                 body: 'Generate NPC dialogue at scale. Test voice direction with cloned actor samples before booking final recording sessions.' },
-]
 
 const LANGUAGES = [
   { flag: '🇺🇸', name: 'English US' }, { flag: '🇬🇧', name: 'English UK' },
@@ -168,34 +174,11 @@ export default function VoiceCloningPage() {
       </section>
 
       {/* ── Audio Suite ──────────────────────────────────────── */}
-      <section className={`${styles.section} ${styles.sectionWhite}`}>
-        <div className={styles.inner}>
-          <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.heading}>ImagineArt AI Audio Workspace</h2>
-            <p className={styles.sub}>Voice cloning is one of three AI audio tools in your plan. All in one workspace, one subscription.</p>
-          </div>
-
-          <div className={styles.suiteList}>
-            {SUITE_ROWS.map((c, i) => (
-              <a
-                key={i}
-                href={c.href}
-                {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className={styles.suiteRow}
-                data-animate
-                data-d={String(i + 1)}
-              >
-                <div className={styles.suiteRowLeft}>
-                  <span className={styles.suiteTag}>{c.tag}</span>
-                  <h3 className={styles.suiteTitle}>{c.title}</h3>
-                </div>
-                <p className={styles.suiteBody}>{c.body}</p>
-                <span className={styles.suiteLink}>{c.link} →</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ThreeTools
+        heading="ImagineArt AI Audio Workspace"
+        sub="Voice cloning is one of three AI audio tools in your plan. All in one workspace, one subscription."
+        cards={SUITE_CARDS}
+      />
 
       {/* ── Two Ways to Clone ────────────────────────────────── */}
       <section className={`${styles.section} ${styles.sectionLight}`}>
@@ -246,24 +229,11 @@ export default function VoiceCloningPage() {
       </section>
 
       {/* ── Use Cases ────────────────────────────────────────── */}
-      <section className={`${styles.section} ${styles.sectionDark}`} data-dot-grid>
-        <div className={styles.inner}>
-          <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.headingLight}>Who Uses ImagineArt Voice Cloning</h2>
-            <p className={styles.subLight}>From solo creators to global brands, voice cloning unlocks faster production and wider reach across every audio-driven channel.</p>
-          </div>
-
-          <div className={styles.useCaseList}>
-            {USE_CASES.map((u, i) => (
-              <div key={i} className={styles.useCaseRow} data-animate data-d={String(i + 1)}>
-                <span className={styles.useCaseNum}>{String(i + 1).padStart(2, '0')}</span>
-                <h3 className={styles.useCaseAudience}>{u.audience}</h3>
-                <p className={styles.useCaseBody}>{u.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <UseCases
+        heading="Who Uses ImagineArt Voice Cloning"
+        sub="From solo creators to global brands, voice cloning unlocks faster production and wider reach across every audio-driven channel."
+        useCases={WHO_USES}
+      />
 
       {/* ── Languages ────────────────────────────────────────── */}
       <section className={`${styles.section} ${styles.sectionLight}`}>

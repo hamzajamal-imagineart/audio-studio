@@ -1,6 +1,7 @@
 import styles from "./ThreeTools.module.css";
+import React from 'react';
 
-function TtsIcon() {
+export function TtsIcon() {
   return (
     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Text lines */}
@@ -18,7 +19,7 @@ function TtsIcon() {
   );
 }
 
-function CloneIcon() {
+export function CloneIcon() {
   return (
     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Top waveform - solid */}
@@ -47,7 +48,7 @@ function CloneIcon() {
   );
 }
 
-function MusicIcon() {
+export function MusicIcon() {
   return (
     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Abstract Music Circle */}
@@ -129,20 +130,28 @@ const cards: Card[] = [
   },
 ];
 
-export default function ThreeTools() {
+export type { Card }
+
+type Props = {
+  heading?: React.ReactNode
+  sub?: string
+  cards?: Card[]
+}
+
+export default function ThreeTools({ heading, sub, cards: cardsProp }: Props = {}) {
+  const items = cardsProp ?? cards
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header} data-animate>
-<h2 className={styles.h2}>Three Powerful Audio Tools.<br /><span className={styles.h2Muted}>One Unified Studio.</span></h2>
+          <h2 className={styles.h2}>{heading ?? <>Three Powerful Audio Tools.<br /><span className={styles.h2Muted}>One Unified Studio.</span></>}</h2>
           <p className={styles.sub}>
-            From podcast narration to voice cloning to custom soundtracks, AI Audio Studio provides
-            everything you need to sound professional.
+            {sub ?? 'From podcast narration to voice cloning to custom soundtracks, AI Audio Studio provides everything you need to sound professional.'}
           </p>
         </div>
         <div className={styles.grid}>
-          {cards.map((card, i) => (
-            <a key={card.title} href={card.ctaHref} target="_blank" rel="noopener noreferrer" className={styles.card} data-animate data-d={String(i + 1)}>
+          {items.map((card, i) => (
+            <a key={card.title} href={card.ctaHref} target={card.ctaHref.startsWith('http') ? '_blank' : undefined} rel={card.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined} className={styles.card} data-animate data-d={String(i + 1)}>
               <video src={card.video} autoPlay loop muted playsInline className={styles.cardBg} />
               <div className={styles.overlay} />
 

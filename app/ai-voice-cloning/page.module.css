@@ -79,7 +79,7 @@
 .heroBgOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.52) 100%);
   pointer-events: none;
 }
 
@@ -102,7 +102,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.62);
   max-width: 520px;
   margin: 0 0 40px;
 }
@@ -110,7 +110,7 @@
 .heroMeta {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
@@ -148,7 +148,7 @@
 .chipSub {
   font-size: 11.5px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.42);
 }
 
 /* ── Sections ───────────────────────────────────────────── */
@@ -232,71 +232,11 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.55);
   margin: 0;
   max-width: 540px;
 }
 
-/* ── Audio Suite: horizontal rows ───────────────────────── */
-.suiteList {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-}
-
-.suiteRow {
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
-  gap: 48px;
-  padding: 40px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.18s;
-}
-
-.suiteRow:hover { opacity: 0.65; }
-
-.suiteRowLeft {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-shrink: 0;
-}
-
-.suiteTag {
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: rgba(15, 15, 15, 0.5);
-}
-
-.suiteTitle {
-  font-size: clamp(18px, 1.8vw, 22px);
-  font-weight: 600;
-  letter-spacing: -0.3px;
-  color: #0f0f0f;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.suiteBody {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.72;
-  color: #525252;
-  margin: 0;
-}
-
-.suiteLink {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #0f0f0f;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
 
 /* ── Comparison table ───────────────────────────────────── */
 .compareWrap {
@@ -388,48 +328,6 @@
   margin: 0;
 }
 
-/* ── Use Cases: numbered editorial list ─────────────────── */
-.useCaseList {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.useCaseRow {
-  display: grid;
-  grid-template-columns: 64px 240px 1fr;
-  gap: 40px;
-  padding: 40px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  align-items: start;
-}
-
-.useCaseNum {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.18);
-  line-height: 1.6;
-  padding-top: 2px;
-  font-variant-numeric: tabular-nums;
-}
-
-.useCaseAudience {
-  font-size: clamp(16px, 1.6vw, 19px);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-  margin: 0;
-  line-height: 1.35;
-  letter-spacing: -0.2px;
-}
-
-.useCaseBody {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.72;
-  color: rgba(255, 255, 255, 0.42);
-  margin: 0;
-}
 
 /* ── Languages ──────────────────────────────────────────── */
 .langIntro {
@@ -624,17 +522,14 @@
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .suiteRow { grid-template-columns: 180px 1fr auto; gap: 32px; }
-  .useCaseRow { grid-template-columns: 52px 200px 1fr; gap: 28px; }
+
   .compareHeader, .compareRow { grid-template-columns: 140px 1fr 1fr; }
   .langIntro { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 900px) {
-  .suiteRow { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
-  .suiteLink { display: none; }
-  .useCaseRow { grid-template-columns: 44px 1fr; gap: 20px; }
-  .useCaseBody { grid-column: 2; }
+
+
   .compareHeader, .compareRow { grid-template-columns: 120px 1fr 1fr; }
   .compareCell { padding: 0 14px; }
   .featureRow { grid-template-columns: 1fr; gap: 10px; }
@@ -665,8 +560,7 @@
   .chip { min-width: 0; flex: 1 1 calc(50% - 8px); }
   .stepRow { grid-template-columns: 1fr; gap: 12px; }
   .stepIndex { font-size: 40px; letter-spacing: -2px; }
-  .useCaseRow { grid-template-columns: 1fr; gap: 8px; }
-  .useCaseNum { display: none; }
+
   .compareRow { grid-template-columns: 1fr; }
   .langGrid { grid-template-columns: repeat(2, 1fr); }
   .langIntro { grid-template-columns: 1fr; }

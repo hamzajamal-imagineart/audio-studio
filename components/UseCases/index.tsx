@@ -2,7 +2,7 @@
 import { useRef, useState, useEffect } from 'react'
 import styles from "./UseCases.module.css";
 
-type UseCase = {
+export type UseCase = {
   tag: string;
   title: string;
   body: string;
@@ -102,21 +102,27 @@ function VideoCard({ uc, reverse, isActive, onPlay }: { uc: UseCase; reverse: bo
   )
 }
 
-export default function UseCases() {
+type Props = {
+  heading?: string
+  sub?: string
+  useCases?: UseCase[]
+}
+
+export default function UseCases({ heading, sub, useCases: useCasesProp }: Props = {}) {
   const [playingId, setPlayingId] = useState<string | null>(null)
+  const items = useCasesProp ?? useCases
 
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header} data-animate>
-          <h2 className={styles.h2}>Built For Every Kind Of Creator.</h2>
+          <h2 className={styles.h2}>{heading ?? 'Built For Every Kind Of Creator.'}</h2>
           <p className={styles.sub}>
-            From first-time YouTubers to enterprise marketing teams, AI Audio Studio adapts to how
-            you create.
+            {sub ?? 'From first-time YouTubers to enterprise marketing teams, AI Audio Studio adapts to how you create.'}
           </p>
         </div>
         <div className={styles.list}>
-          {useCases.map((uc, i) => (
+          {items.map((uc, i) => (
             <VideoCard
               key={uc.tag}
               uc={uc}
