@@ -89,18 +89,18 @@ const WHO_USES: UseCase[] = [
 ]
 
 const GENRES = [
-  { emoji: '🎵', name: 'Lo-Fi / Chill Hop', desc: 'Mellow beats, study-session vibes' },
-  { emoji: '🎻', name: 'Cinematic / Epic', desc: 'Orchestral swells, trailer-ready' },
-  { emoji: '🎤', name: 'Pop', desc: 'Catchy hooks, radio-friendly' },
-  { emoji: '🎧', name: 'Hip-Hop / Rap', desc: 'Hard-hitting 808s, trap hi-hats' },
-  { emoji: '⚡', name: 'EDM / Electronic', desc: 'Festival drops, high-energy builds' },
-  { emoji: '🎷', name: 'Jazz', desc: 'Smooth sax, cocktail-bar atmosphere' },
-  { emoji: '🎹', name: 'Classical', desc: 'Piano sonatas, orchestral depth' },
-  { emoji: '🎸', name: 'Rock / Indie', desc: 'Distorted guitars, raw energy' },
-  { emoji: '🌊', name: 'Ambient / Meditation', desc: 'Spacious pads, deep relaxation' },
-  { emoji: '🤠', name: 'Country / Folk', desc: 'Acoustic guitar, storytelling warmth' },
-  { emoji: '🎶', name: 'R&B / Soul', desc: 'Groove-driven rhythm, emotional depth' },
-  { emoji: '🥁', name: 'Reggae / Afrobeat', desc: 'Island rhythms, feel-good energy' },
+  { name: 'Lo-Fi / Chill Hop',    desc: 'Mellow beats, study-session vibes' },
+  { name: 'Cinematic / Epic',     desc: 'Orchestral swells, trailer-ready' },
+  { name: 'Pop',                  desc: 'Catchy hooks, radio-friendly' },
+  { name: 'Hip-Hop / Rap',        desc: 'Hard-hitting 808s, trap hi-hats' },
+  { name: 'EDM / Electronic',     desc: 'Festival drops, high-energy builds' },
+  { name: 'Jazz',                 desc: 'Smooth sax, cocktail-bar atmosphere' },
+  { name: 'Classical',            desc: 'Piano sonatas, orchestral depth' },
+  { name: 'Rock / Indie',         desc: 'Distorted guitars, raw energy' },
+  { name: 'Ambient / Meditation', desc: 'Spacious pads, deep relaxation' },
+  { name: 'Country / Folk',       desc: 'Acoustic guitar, storytelling warmth' },
+  { name: 'R&B / Soul',           desc: 'Groove-driven rhythm, emotional depth' },
+  { name: 'Reggae / Afrobeat',    desc: 'Island rhythms, feel-good energy' },
 ]
 
 const COMPARE_ROWS = [
@@ -266,30 +266,25 @@ export default function AIMusicGeneratorPage() {
       />
 
       {/* ── Genre Showcase ───────────────────────────────────── */}
-      <section className={`${styles.section} ${styles.sectionLight}`}>
-        <div className={styles.inner}>
+      <section className={styles.sectionGenre}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/music-hero-bg.jpg" alt="" className={styles.genreBg} aria-hidden="true" />
+        <div className={styles.genreOverlay} aria-hidden="true" />
+        <div className={styles.genreInner}>
           <div className={styles.sectionHeader} data-animate>
-            <h2 className={styles.heading}>Generate Music in Any Genre</h2>
-            <p className={styles.sub}>From cinematic orchestral scores to lo-fi study beats, the AI music generator handles every style.</p>
+            <h2 className={styles.headingLight}>Generate Music in Any Genre</h2>
+            <p className={styles.subLight}>From cinematic orchestral scores to lo-fi study beats, the AI music generator handles every style.</p>
           </div>
           <div className={styles.genreGrid}>
             {GENRES.map((g, i) => (
-              <div key={i} className={styles.genreTile} data-animate data-d={String((i % 4) + 1)}>
-                <span className={styles.genreEmoji}>{g.emoji}</span>
-                <div className={styles.genreText}>
-                  <span className={styles.genreName}>{g.name}</span>
-                  <span className={styles.genreDesc}>{g.desc}</span>
-                </div>
-                <div className={styles.genrePlay} aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M3 2L12 7L3 12V2Z" fill="currentColor"/>
-                  </svg>
-                </div>
-              </div>
+              <a key={i} href="https://www.imagine.art/audio/music/" target="_blank" rel="noopener noreferrer" className={styles.genreTile} data-animate data-d={String((i % 4) + 1)}>
+                <span className={styles.genreName}>{g.name}</span>
+                <span className={styles.genreDesc}>{g.desc}</span>
+              </a>
             ))}
           </div>
           <div className={styles.sectionCta} data-animate>
-            <a href="https://www.imagine.art/audio/music/" target="_blank" rel="noopener noreferrer" className={styles.btnGrey}>Try Any Genre Free →</a>
+            <a href="https://www.imagine.art/audio/music/" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryDark}>Try Any Genre Free →</a>
           </div>
         </div>
       </section>
