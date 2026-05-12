@@ -57,7 +57,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 640px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 0 var(--px);
@@ -201,6 +201,7 @@
   top: 20px;
   transform: rotate(-15deg);
   transform-origin: center bottom;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .heroCardFront {
@@ -210,6 +211,7 @@
   transform: rotate(15deg);
   transform-origin: center bottom;
   opacity: 0.88;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .heroCardGlow {
@@ -264,10 +266,9 @@
 }
 
 .heroCardAvatar {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -283,14 +284,46 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
+  transition: background 0.18s, transform 0.18s;
+}
+
+.heroCard:hover .heroCardPlay {
+  background: rgba(0, 0, 0, 0.75);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.heroCardPlayActive {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.heroCardWave {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+  margin-top: 6px;
+}
+
+.heroCardWaveBar {
+  display: block;
+  width: 2.5px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  animation: waveBar 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes waveBar {
+  from { height: 3px; }
+  to   { height: 14px; }
 }
 
 /* ── Feature chips ──────────────────────────────────────── */

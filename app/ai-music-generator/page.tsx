@@ -6,6 +6,7 @@ import PromptBox from '@/components/Hero/PromptBox'
 import ThreeTools, { type Card, TtsIcon, CloneIcon, MusicIcon } from '@/components/ThreeTools'
 import UseCases, { type UseCase } from '@/components/UseCases'
 import BeyondAudio from '@/components/BeyondAudio'
+import HeroCards from './HeroCards'
 import DotCursorEffect from './DotCursorEffect'
 import styles from './page.module.css'
 
@@ -162,46 +163,8 @@ export default function AIMusicGeneratorPage() {
             <p className={styles.heroMeta}>Free to start · No credit card · No signup · Royalty-free output</p>
           </div>
 
-          {/* Right column — tilted cards */}
-          <div className={styles.heroCards} aria-hidden="true">
-            <div className={styles.heroCardBack}>
-              <div className={styles.heroCardGlow} />
-              <div className={styles.heroCard}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/music-card-1.jpg" alt="" className={styles.heroCardImg} />
-                <div className={styles.heroCardInfo}>
-                  <span className={styles.heroCardTitle}>Liquid Gold</span>
-                  <div className={styles.heroCardMeta}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/assets/music-avatar.jpg" alt="" className={styles.heroCardAvatar} />
-                    <span className={styles.heroCardAuthor}>by Tayyab Abbas</span>
-                  </div>
-                </div>
-                <div className={styles.heroCardPlay}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2L12 7L3 12V2Z" fill="white"/></svg>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.heroCardFront}>
-              <div className={styles.heroCardGlow} />
-              <div className={styles.heroCard}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/music-card-2.jpg" alt="" className={styles.heroCardImg} />
-                <div className={styles.heroCardInfo}>
-                  <span className={styles.heroCardTitle}>Liquid Gold</span>
-                  <div className={styles.heroCardMeta}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/assets/music-avatar.jpg" alt="" className={styles.heroCardAvatar} />
-                    <span className={styles.heroCardAuthor}>by Tayyab Abbas</span>
-                  </div>
-                </div>
-                <div className={styles.heroCardPlay}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2L12 7L3 12V2Z" fill="white"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Right column — playable music cards */}
+          <HeroCards />
 
         </div>
       </section>
