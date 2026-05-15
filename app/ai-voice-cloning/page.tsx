@@ -21,7 +21,7 @@ const SUITE_CARDS: Card[] = [
     bullets: ['All three tools in one plan', 'No extra subscriptions', 'Commercial license on paid plans', 'Free to start'],
     ctaText: 'Explore the Audio Studio',
     ctaHref: 'https://www.imagine.art/audio',
-    video: '/assets/voice-cloning-tool.mp4',
+    video: '/audio-studio/assets/voice-cloning-tool.mp4',
   },
   {
     icon: <TtsIcon />,
@@ -29,8 +29,8 @@ const SUITE_CARDS: Card[] = [
     oneLiner: '200+ voices across 70+ languages. Adjust pace, pitch, and emotion. Perfect for videos, podcasts, and e-learning.',
     bullets: ['200+ ultra-realistic AI voices', 'Adjust tone, pace, and emotion', 'MP3, WAV, FLAC export', 'Free to start'],
     ctaText: 'Try Text to Speech',
-    ctaHref: '/ai-text-to-speech',
-    video: '/assets/tts-tool.mp4',
+    ctaHref: '/audio-studio/ai-text-to-speech/',
+    video: '/audio-studio/assets/tts-tool.mp4',
   },
   {
     icon: <MusicIcon />,
@@ -39,15 +39,15 @@ const SUITE_CARDS: Card[] = [
     bullets: ['Any genre, any mood', 'Up to 4-minute tracks', 'Royalty-free license', 'Export MP3'],
     ctaText: 'Generate Music',
     ctaHref: 'https://www.imagine.art/audio/music/',
-    video: '/assets/music-generator-tool.mp4',
+    video: '/audio-studio/assets/music-generator-tool.mp4',
   },
 ]
 
 const WHO_USES: UseCase[] = [
-  { tag: 'For YouTubers', title: 'Narrate Every Video In Your Own Voice.', body: 'Narrate every video in your own voice without recording. Scale from two videos a week to ten without losing your signature sound or hiring voice talent.', video: '/assets/usecase-for-youtubers.mp4', ctaLabel: 'Try Voice Cloning', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
-  { tag: 'For Podcasters', title: 'Produce Episodes When Recording Is Not Possible.', body: 'Produce intros, sponsor reads, and full episodes when recording isn\'t possible. Localize your show into Spanish, Hindi, or Mandarin to reach new audiences.', video: '/assets/usecase-for-podcast.mp4', ctaLabel: 'Clone Your Voice', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
-  { tag: 'For Marketers', title: 'Localize One Ad Into 70+ Languages.', body: 'Localize one ad script into 70+ languages using a single brand voice. Ship global campaigns in days, not months, without re-booking voice actors.', video: '/assets/usecase-for-marketers.mp4', ctaLabel: 'Start for Free', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
-  { tag: 'For Game Studios', title: 'Generate NPC Dialogue At Scale.', body: 'Generate NPC dialogue at scale. Test voice direction with cloned actor samples before booking final recording sessions.', video: '/assets/usecase-for-developers.mp4', ctaLabel: 'Try Voice Cloning', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For YouTubers', title: 'Narrate Every Video In Your Own Voice.', body: 'Narrate every video in your own voice without recording. Scale from two videos a week to ten without losing your signature sound or hiring voice talent.', video: '/audio-studio/assets/usecase-for-youtubers.mp4', ctaLabel: 'Try Voice Cloning', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For Podcasters', title: 'Produce Episodes When Recording Is Not Possible.', body: 'Produce intros, sponsor reads, and full episodes when recording isn\'t possible. Localize your show into Spanish, Hindi, or Mandarin to reach new audiences.', video: '/audio-studio/assets/usecase-for-podcast.mp4', ctaLabel: 'Clone Your Voice', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For Marketers', title: 'Localize One Ad Into 70+ Languages.', body: 'Localize one ad script into 70+ languages using a single brand voice. Ship global campaigns in days, not months, without re-booking voice actors.', video: '/audio-studio/assets/usecase-for-marketers.mp4', ctaLabel: 'Start for Free', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
+  { tag: 'For Game Studios', title: 'Generate NPC Dialogue At Scale.', body: 'Generate NPC dialogue at scale. Test voice direction with cloned actor samples before booking final recording sessions.', video: '/audio-studio/assets/usecase-for-developers.mp4', ctaLabel: 'Try Voice Cloning', ctaHref: 'https://www.imagine.art/audio/voice-cloning' },
 ]
 
 const CHIPS = [
@@ -127,7 +127,7 @@ export default function VoiceCloningPage() {
       {/* ── Hero ────────────────────────────────────────────── */}
       <section className={styles.hero}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/voice-cloning-hero.png" alt="" className={styles.heroBg} aria-hidden="true" />
+        <img src="/audio-studio/assets/voice-cloning-hero.png" alt="" className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroBgOverlay} aria-hidden="true" />
         <h1 className={styles.heroHeading}>AI Voice Cloning: Clone Any Voice In 10 Seconds</h1>
         <p className={styles.heroSub}>Upload a 10-second voice sample to clone tone, pace, and accent with stunning realism. Generate lifelike speech in 70+ languages from one seamless workspace.</p>
@@ -275,7 +275,7 @@ export default function VoiceCloningPage() {
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
           <div className={styles.ctaCard}>
-            <video src="/assets/voice-cloning-tool.mp4" autoPlay loop muted playsInline className={styles.ctaVideo} />
+            <video src="/audio-studio/assets/voice-cloning-tool.mp4" autoPlay loop muted playsInline className={styles.ctaVideo} />
             <div className={styles.ctaOverlay} aria-hidden="true" />
             <div className={styles.ctaContent} data-animate>
               <h2 className={styles.ctaHeading}>Start Cloning Voices Free.</h2>

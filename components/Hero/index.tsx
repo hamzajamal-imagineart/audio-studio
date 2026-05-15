@@ -39,8 +39,8 @@ export default function Hero() {
 
       {/* Hero cards */}
       <div className={styles.heroCards}>
-        <HeroCard side="left" image="/assets/Rectangle 49986.jpg" />
-        <HeroCard side="right" image="/assets/Rectangle 499861.jpg" />
+        <HeroCard side="left" image="/audio-studio/assets/Rectangle 49986.jpg" />
+        <HeroCard side="right" image="/audio-studio/assets/Rectangle 499861.jpg" />
       </div>
 
       {/* Content */}

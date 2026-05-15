@@ -16,7 +16,7 @@ const cards: BeyondCard[] = [
     title: "AI Audio Studio",
     body: "Voice, cloning, music. The complete audio platform.",
     href: "https://www.imagine.art/audio",
-    image: "/assets/Rectangle 499868.jpg",
+    image: "/audio-studio/assets/Rectangle 499868.jpg",
     highlight: true,
   },
   {
@@ -24,16 +24,16 @@ const cards: BeyondCard[] = [
     title: "AI Image Generator",
     body: "Create stunning visuals from text prompts.",
     href: "https://www.imagine.art/ai-image-generator",
-    image: "/assets/Rectangle 499866.jpg",
-    video: "/assets/image-generator.webm",
+    image: "/audio-studio/assets/Rectangle 499866.jpg",
+    video: "/audio-studio/assets/image-generator.webm",
   },
   {
     tag: "Video",
     title: "AI Video Generator",
     body: "Turn text or images into video clips.",
     href: "https://www.imagine.art/ai-video-generator",
-    image: "/assets/Rectangle 499867.jpg",
-    video: "/assets/video-generator.webm",
+    image: "/audio-studio/assets/Rectangle 499867.jpg",
+    video: "/audio-studio/assets/video-generator.webm",
   },
 ];
 

@@ -60,7 +60,7 @@ const SUITE_CARDS: Card[] = [
     bullets: ['All three tools in one plan', 'No extra subscriptions', 'Commercial license on paid plans', 'Free to start'],
     ctaText: 'Explore the Audio Studio',
     ctaHref: 'https://www.imagine.art/audio',
-    video: '/assets/music-generator-tool.mp4',
+    video: '/audio-studio/assets/music-generator-tool.mp4',
   },
   {
     icon: <TtsIcon />,
@@ -68,8 +68,8 @@ const SUITE_CARDS: Card[] = [
     oneLiner: 'Convert text into lifelike audio with 200+ voices across 70+ languages. Adjust pace, pitch, and emotion. Perfect for videos, podcasts, audiobooks, and e-learning.',
     bullets: ['200+ AI voices', 'Adjust tone, pace, and emotion', 'MP3, WAV, FLAC export', 'Free to start'],
     ctaText: 'Try Text to Speech',
-    ctaHref: '/ai-text-to-speech',
-    video: '/assets/tts-tool.mp4',
+    ctaHref: '/audio-studio/ai-text-to-speech/',
+    video: '/audio-studio/assets/tts-tool.mp4',
   },
   {
     icon: <CloneIcon />,
@@ -77,16 +77,16 @@ const SUITE_CARDS: Card[] = [
     oneLiner: 'Clone any voice from a 10-second audio sample. Generate speech in 70+ languages while preserving the original tone and identity.',
     bullets: ['10-second sample', 'Cross-language cloning', 'Commercial use on paid plans', 'No studio needed'],
     ctaText: 'Clone a Voice',
-    ctaHref: '/ai-voice-cloning',
-    video: '/assets/voice-cloning-tool.mp4',
+    ctaHref: '/audio-studio/ai-voice-cloning/',
+    video: '/audio-studio/assets/voice-cloning-tool.mp4',
   },
 ]
 
 const WHO_USES: UseCase[] = [
-  { tag: 'For YouTubers', title: 'Generate Unique Background Music For Every Video.', body: 'No copyright claims, no content ID strikes — every track is original and cleared for monetization on paid plans.', video: '/assets/usecase-for-youtubers.mp4', ctaLabel: 'Generate Music Free', ctaHref: 'https://www.imagine.art/audio/music/' },
-  { tag: 'For Podcasters', title: 'Custom Intros, Outros, And Transitions In Minutes.', body: 'Create custom intros, outros, transition music, and background beds for your podcast. Match the energy of every episode without searching stock libraries for hours.', video: '/assets/usecase-for-podcast.mp4', ctaLabel: 'Try for Free', ctaHref: 'https://www.imagine.art/audio/music/' },
-  { tag: 'For Marketers', title: 'Original Music For Every Ad, In Every Market.', body: 'Produce original music for ad campaigns, product demos, social ads, and brand videos. Generate multiple variations in minutes to A/B test which soundtrack converts best.', video: '/assets/usecase-for-marketers.mp4', ctaLabel: 'Start for Free', ctaHref: 'https://www.imagine.art/audio/music/' },
-  { tag: 'For Game Developers', title: 'Prototype Soundtracks Without Hiring A Composer.', body: 'Prototype game soundtracks, menu music, level themes, and ambient backgrounds without hiring a composer for every draft. Iterate on mood and pacing in real time.', video: '/assets/usecase-for-developers.mp4', ctaLabel: 'Try for Free', ctaHref: 'https://www.imagine.art/audio/music/' },
+  { tag: 'For YouTubers', title: 'Generate Unique Background Music For Every Video.', body: 'No copyright claims, no content ID strikes — every track is original and cleared for monetization on paid plans.', video: '/audio-studio/assets/usecase-for-youtubers.mp4', ctaLabel: 'Generate Music Free', ctaHref: 'https://www.imagine.art/audio/music/' },
+  { tag: 'For Podcasters', title: 'Custom Intros, Outros, And Transitions In Minutes.', body: 'Create custom intros, outros, transition music, and background beds for your podcast. Match the energy of every episode without searching stock libraries for hours.', video: '/audio-studio/assets/usecase-for-podcast.mp4', ctaLabel: 'Try for Free', ctaHref: 'https://www.imagine.art/audio/music/' },
+  { tag: 'For Marketers', title: 'Original Music For Every Ad, In Every Market.', body: 'Produce original music for ad campaigns, product demos, social ads, and brand videos. Generate multiple variations in minutes to A/B test which soundtrack converts best.', video: '/audio-studio/assets/usecase-for-marketers.mp4', ctaLabel: 'Start for Free', ctaHref: 'https://www.imagine.art/audio/music/' },
+  { tag: 'For Game Developers', title: 'Prototype Soundtracks Without Hiring A Composer.', body: 'Prototype game soundtracks, menu music, level themes, and ambient backgrounds without hiring a composer for every draft. Iterate on mood and pacing in real time.', video: '/audio-studio/assets/usecase-for-developers.mp4', ctaLabel: 'Try for Free', ctaHref: 'https://www.imagine.art/audio/music/' },
 ]
 
 const GENRES = [
@@ -135,7 +135,7 @@ export default function AIMusicGeneratorPage() {
       {/* ── Hero ────────────────────────────────────────────── */}
       <section className={styles.hero}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/music-hero-bg.jpg" alt="" className={styles.heroBg} aria-hidden="true" />
+        <img src="/audio-studio/assets/music-hero-bg.jpg" alt="" className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroPurple} aria-hidden="true" />
 
@@ -231,7 +231,7 @@ export default function AIMusicGeneratorPage() {
       {/* ── Genre Showcase ───────────────────────────────────── */}
       <section className={styles.sectionGenre}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/music-hero-bg.jpg" alt="" className={styles.genreBg} aria-hidden="true" />
+        <img src="/audio-studio/assets/music-hero-bg.jpg" alt="" className={styles.genreBg} aria-hidden="true" />
         <div className={styles.genreOverlay} aria-hidden="true" />
         <div className={styles.genreInner}>
           <div className={styles.sectionHeader} data-animate>
@@ -305,7 +305,7 @@ export default function AIMusicGeneratorPage() {
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
           <div className={styles.ctaCard}>
-            <video src="/assets/music-generator-tool.mp4" autoPlay loop muted playsInline className={styles.ctaVideo} />
+            <video src="/audio-studio/assets/music-generator-tool.mp4" autoPlay loop muted playsInline className={styles.ctaVideo} />
             <div className={styles.ctaOverlay} aria-hidden="true" />
             <div className={styles.ctaContent} data-animate>
               <h2 className={styles.ctaHeading}>Start Creating Music with AI, Free.</h2>

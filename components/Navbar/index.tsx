@@ -22,12 +22,12 @@ export default function Navbar() {
       <header className={navbarClass}>
         <div className={styles.navbarInner}>
 
-          {/* Logo: TODO: add logo SVGs to /public/assets/ */}
+          {/* Logo: TODO: add logo SVGs to /public/audio-studio/assets/ */}
           <a href="https://www.imagine.art/" target="_blank" rel="noopener noreferrer" className={styles.logo}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className={styles.logoWhite} src="/assets/logo-imagine-white.svg" alt="ImagineArt Audio Studio" width={158} height={39} />
+            <img className={styles.logoWhite} src="/audio-studio/assets/logo-imagine-white.svg" alt="ImagineArt Audio Studio" width={158} height={39} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className={styles.logoDark} src="/assets/logo-imagine-black.svg" alt="ImagineArt Audio Studio" width={158} height={39} />
+            <img className={styles.logoDark} src="/audio-studio/assets/logo-imagine-black.svg" alt="ImagineArt Audio Studio" width={158} height={39} />
           </a>
 
           {/* Desktop nav */}
@@ -68,7 +68,7 @@ export default function Navbar() {
         <div className={styles.navMobileTopbar}>
           <a href="https://www.imagine.art/" target="_blank" rel="noopener noreferrer" className={styles.logo}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo-imagine-white.svg" alt="ImagineArt Audio Studio" width={130} height={32} style={{ display: 'block' }} />
+            <img src="/audio-studio/assets/logo-imagine-white.svg" alt="ImagineArt Audio Studio" width={130} height={32} style={{ display: 'block' }} />
           </a>
           <button className={styles.navMobileClose} onClick={closeMobile} aria-label="Close menu">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

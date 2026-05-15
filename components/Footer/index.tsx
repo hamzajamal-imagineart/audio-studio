@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand + app stores */}
           <div className={styles.brand}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo-icon.svg" alt="ImagineArt" width={28} height={28} style={{ display: 'block' }} />
+            <img src="/audio-studio/assets/logo-icon.svg" alt="ImagineArt" width={28} height={28} style={{ display: 'block' }} />
             <div className={styles.app}>
               <span className={styles.appLbl}>Try Imagine Mobile</span>
               <a href="https://app.adjust.com/1a1xymg6" className={styles.store} target="_blank" rel="noopener noreferrer">
@@ -48,7 +48,7 @@ export default function Footer() {
                 <li><a href={`${BASE}/ai-image-generator`} target="_blank" rel="noopener noreferrer">AI Image Generator</a></li>
                 <li><a href={`${BASE}/ai-video-generator`} target="_blank" rel="noopener noreferrer">AI Video Generator</a></li>
                 <li><span className={styles.currentPage}>AI Audio Generator</span></li>
-                <li><a href="/ai-text-to-speech" rel="noopener noreferrer">AI Text-to-Speech</a></li>
+                <li><a href="/audio-studio/ai-text-to-speech/" rel="noopener noreferrer">AI Text-to-Speech</a></li>
                 <li><a href={`${BASE}/audio/music/elevenlabs-music`} target="_blank" rel="noopener noreferrer">AI Music Generator</a></li>
                 <li><a href={`${BASE}/ai-film-studio`} target="_blank" rel="noopener noreferrer">AI Film Studio</a></li>
                 <li><a href={`${BASE}/workflow`} target="_blank" rel="noopener noreferrer">AI Workflows</a></li>
@@ -94,7 +94,7 @@ export default function Footer() {
       {/* Full-width watermark */}
       <div className={styles.wordmark}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/watermark.svg" alt="" aria-hidden="true" />
+        <img src="/audio-studio/assets/watermark.svg" alt="" aria-hidden="true" />
       </div>
 
       {/* Bottom bar */}

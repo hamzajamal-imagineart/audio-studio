@@ -10,8 +10,8 @@ type CardData = {
 }
 
 const CARDS: CardData[] = [
-  { img: '/assets/music-card-1.jpg', audio: '/assets/music-cover1.mp3', title: 'Velvet Dream',  author: 'ImagineArt AI' },
-  { img: '/assets/music-card-2.jpg', audio: '/assets/music-cover2.mp3', title: 'Midnight Soul', author: 'ImagineArt AI' },
+  { img: '/audio-studio/assets/music-card-1.jpg', audio: '/audio-studio/assets/music-cover1.mp3', title: 'Velvet Dream',  author: 'ImagineArt AI' },
+  { img: '/audio-studio/assets/music-card-2.jpg', audio: '/audio-studio/assets/music-cover2.mp3', title: 'Midnight Soul', author: 'ImagineArt AI' },
 ]
 
 function MusicCard({ card, position, isPlaying, onPlay }: {
@@ -50,7 +50,7 @@ function MusicCard({ card, position, isPlaying, onPlay }: {
           <span className={styles.heroCardTitle}>{card.title}</span>
           <div className={styles.heroCardMeta}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo-icon.svg" alt="" className={styles.heroCardAvatar} />
+            <img src="/audio-studio/assets/logo-icon.svg" alt="" className={styles.heroCardAvatar} />
             <span className={styles.heroCardAuthor}>{card.author}</span>
           </div>
           {isPlaying && (
