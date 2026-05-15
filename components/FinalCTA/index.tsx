@@ -6,7 +6,7 @@ export default function FinalCTA() {
       <div className={styles.inner}>
         <div className={styles.card}>
           <video
-            src="/assets/audio-studio-last.mp4"
+            src="/audio-studio/assets/audio-studio-last.mp4"
             autoPlay
             loop
             muted

@@ -90,7 +90,7 @@ const cards: Card[] = [
     icon: <TtsIcon />,
     title: "AI Text To Speech",
     oneLiner: "Turn any text into lifelike voiceovers in 70+ languages.",
-    video: "/assets/tts-tool.mp4",
+    video: "/audio-studio/assets/tts-tool.mp4",
     bullets: [
       "10,000+ ultra-realistic AI voices",
       "Adjust tone, pace, emotion",
@@ -104,7 +104,7 @@ const cards: Card[] = [
     icon: <CloneIcon />,
     title: "AI Voice Cloning",
     oneLiner: "Clone any voice from just 10 seconds of audio.",
-    video: "/assets/voice-cloning-tool.mp4",
+    video: "/audio-studio/assets/voice-cloning-tool.mp4",
     bullets: [
       "99% similarity to source voice",
       "Cross-language cloning",
@@ -118,7 +118,7 @@ const cards: Card[] = [
     icon: <MusicIcon />,
     title: "AI Music Generator",
     oneLiner: "Compose original songs and instrumentals from a text prompt.",
-    video: "/assets/music-generator-tool.mp4",
+    video: "/audio-studio/assets/music-generator-tool.mp4",
     bullets: [
       "Any genre, any mood",
       "Up to 4-minute tracks",
